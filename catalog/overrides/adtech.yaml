@@ -1,0 +1,380 @@
+# Publicité ciblée, localisation et graphes d'identité.
+#
+# C'est le coeur du sujet et la partie la plus mal couverte par les sources
+# publiques. Ces sociétés ne vous connaissent souvent ni par votre nom ni par
+# votre adresse email, mais par l'identifiant publicitaire de votre téléphone
+# (IDFA sur iPhone, AAID sur Android) et par les traces de déplacement qui y
+# sont rattachées.
+#
+# Conséquence pratique: une demande envoyée sans cet identifiant a peu de
+# chances d'aboutir chez un courtier de localisation. RemoveBroker le demande
+# donc dans le profil, en option, et l'inclut dans les demandes de cette
+# catégorie.
+#
+# Catégories utilisées ici:
+#   location   -> revente de traces de déplacement rattachées à un identifiant
+#   marketing  -> segments d'audience, graphes d'identité, régies
+
+brokers:
+  # --- Localisation revendue à la publicité --------------------------------
+  - name: Kochava
+    domain: kochava.com
+    website: https://www.kochava.com
+    optOutUrl: https://www.kochava.com/opt-out-do-not-sell-request-process/
+    category: location
+    regions: [us, eu, intl]
+    notes: Poursuivi par la FTC pour la revente de données de localisation sensibles. Le formulaire demande chaque identifiant publicitaire séparément.
+
+  - name: Azira
+    domain: azira.com
+    website: https://azira.com
+    category: location
+    regions: [us, eu, intl]
+    notes: Reprend les actifs de Near Intelligence, courtier de données de localisation.
+
+  - name: Outlogic (X-Mode)
+    domain: outlogic.io
+    website: https://outlogic.io
+    category: location
+    regions: [us, intl]
+    notes: Ex-X-Mode Social. Interdit par la FTC de vendre des données de localisation sensibles.
+
+  - name: Placer.ai
+    domain: placer.ai
+    website: https://www.placer.ai
+    category: location
+    regions: [us, eu, intl]
+    notes: Analyse de fréquentation des lieux physiques à partir de données mobiles.
+
+  - name: Foursquare
+    domain: foursquare.com
+    website: https://foursquare.com
+    optOutUrl: https://foursquare.com/legal/privacy/
+    category: location
+    regions: [us, eu, intl]
+    notes: A absorbé Factual. Un des plus gros fournisseurs de données de lieux et de déplacements.
+
+  - name: Mobilewalla
+    domain: mobilewalla.com
+    website: https://www.mobilewalla.com
+    category: location
+    regions: [us, eu, intl]
+
+  - name: Cuebiq
+    domain: cuebiq.com
+    website: https://www.cuebiq.com
+    category: location
+    regions: [us, eu, intl]
+
+  - name: Veraset
+    domain: veraset.com
+    website: https://www.veraset.com
+    category: location
+    regions: [us, intl]
+
+  - name: SafeGraph
+    domain: safegraph.com
+    website: https://www.safegraph.com
+    category: location
+    regions: [us, intl]
+
+  - name: Unacast
+    domain: unacast.com
+    website: https://www.unacast.com
+    category: location
+    regions: [us, eu, intl]
+    notes: Regroupé avec Gravy Analytics, dont la base de localisation a fuité en 2025.
+
+  - name: Gravy Analytics
+    domain: gravyanalytics.com
+    website: https://gravyanalytics.com
+    category: location
+    regions: [us, intl]
+
+  - name: InMobi
+    domain: inmobi.com
+    website: https://www.inmobi.com
+    category: location
+    regions: [us, eu, intl]
+
+  - name: Complementics
+    domain: complementics.com
+    website: https://complementics.com
+    category: location
+    regions: [us, intl]
+
+  - name: Blis
+    domain: blis.com
+    website: https://www.blis.com
+    category: location
+    regions: [eu, uk, intl]
+
+  - name: GroundTruth
+    domain: groundtruth.com
+    website: https://www.groundtruth.com
+    category: location
+    regions: [us, intl]
+
+  - name: Vistar Media
+    domain: vistarmedia.com
+    website: https://www.vistarmedia.com
+    category: location
+    regions: [us, eu, intl]
+
+  - name: Lifesight
+    domain: lifesight.io
+    website: https://www.lifesight.io
+    category: location
+    regions: [eu, intl]
+
+  - name: Onemata
+    domain: onemata.com
+    website: https://www.onemata.com
+    category: location
+    regions: [us, intl]
+
+
+  - name: HEROW
+    domain: herow.io
+    website: https://www.herow.io
+    category: location
+    regions: [eu, fr]
+    notes: SDK français de géolocalisation embarqué dans des applications mobiles.
+
+  - name: S4M
+    domain: s4m.io
+    website: https://www.s4m.io
+    category: location
+    regions: [eu, fr]
+    notes: Publicité mobile drive-to-store, mesure de visites en magasin.
+
+  - name: Vectaury
+    domain: vectaury.io
+    website: https://vectaury.io
+    category: location
+    regions: [eu, fr]
+    notes: Mise en demeure par la CNIL en 2018 pour la collecte de localisation via SDK sans consentement valable.
+
+  - name: Adsquare
+    domain: adsquare.com
+    website: https://www.adsquare.com
+    category: location
+    regions: [eu, intl]
+
+  - name: Tamoco
+    domain: tamoco.com
+    website: https://www.tamoco.com
+    category: location
+    regions: [eu, uk, intl]
+
+  # --- Graphes d'identité et segments d'audience ---------------------------
+  - name: ID5
+    domain: id5.io
+    website: https://id5.io
+    category: marketing
+    regions: [eu, fr, intl]
+    notes: Identifiant publicitaire partagé entre éditeurs, alternative aux cookies tiers.
+
+  - name: Utiq
+    domain: utiq.com
+    website: https://utiq.com
+    category: marketing
+    regions: [eu, fr]
+    notes: Identifiant publicitaire adossé aux opérateurs télécoms européens, dont Orange et Bouygues.
+
+  - name: The Trade Desk
+    domain: thetradedesk.com
+    website: https://www.thetradedesk.com
+    category: marketing
+    regions: [us, eu, intl]
+    notes: Opère l'identifiant UID2, construit à partir d'adresses email hachées.
+
+  - name: Lotame
+    domain: lotame.com
+    website: https://www.lotame.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: Quantcast
+    domain: quantcast.com
+    website: https://www.quantcast.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: Zeta Global
+    domain: zetaglobal.com
+    website: https://zetaglobal.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: Nexxen
+    domain: nexxen.com
+    website: https://www.nexxen.com
+    category: marketing
+    regions: [us, eu, intl]
+    notes: Ex-Tremor et Amobee.
+
+  - name: Eyeota
+    domain: eyeota.com
+    website: https://www.eyeota.com
+    category: marketing
+    regions: [eu, intl]
+
+  - name: Bombora
+    domain: bombora.com
+    website: https://bombora.com
+    category: b2b
+    regions: [us, eu, intl]
+
+  - name: Semasio
+    domain: semasio.com
+    website: https://www.semasio.com
+    category: marketing
+    regions: [eu]
+
+  - name: OnAudience
+    domain: onaudience.com
+    website: https://www.onaudience.com
+    category: marketing
+    regions: [eu, intl]
+
+  - name: Azerion
+    domain: azerion.com
+    website: https://www.azerion.com
+    category: marketing
+    regions: [eu]
+
+  - name: RTB House
+    domain: rtbhouse.com
+    website: https://www.rtbhouse.com
+    category: marketing
+    regions: [eu, intl]
+
+  - name: Ströer
+    domain: stroeer.de
+    website: https://www.stroeer.de
+    category: marketing
+    regions: [eu]
+
+  - name: Numberly
+    domain: numberly.com
+    website: https://numberly.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Mediarithmics
+    domain: mediarithmics.com
+    website: https://www.mediarithmics.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Adikteev
+    domain: adikteev.com
+    website: https://www.adikteev.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Verve Group
+    domain: verve.com
+    website: https://verve.com
+    category: marketing
+    regions: [eu, us, intl]
+
+  - name: OpenX
+    domain: openx.com
+    website: https://www.openx.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: PubMatic
+    domain: pubmatic.com
+    website: https://pubmatic.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: Magnite
+    domain: magnite.com
+    website: https://www.magnite.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: Index Exchange
+    domain: indexexchange.com
+    website: https://www.indexexchange.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: Xandr
+    domain: xandr.com
+    website: https://www.xandr.com
+    category: marketing
+    regions: [us, eu, intl]
+    notes: Filiale de Microsoft Advertising.
+
+  - name: Taboola
+    domain: taboola.com
+    website: https://www.taboola.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  - name: Outbrain
+    domain: outbrain.com
+    website: https://www.outbrain.com
+    category: marketing
+    regions: [us, eu, intl]
+
+  # --- Corrections sur les entrées issues des sources publiques ------------
+  - patch: true
+    domain: liveramp.com
+    category: marketing
+    notes: Graphe d'identité reliant adresses email, identifiants publicitaires et données hors ligne.
+
+  - patch: true
+    domain: kochava.com
+    category: location
+
+  # --- Contacts vérifiés à la main ------------------------------------------
+  #
+  # Ces sociétés ne publient pas d'adresse exploitable par un robot: page rendue
+  # en JavaScript, protection anti-robot, ou adresse écrite en toutes lettres.
+  # Chaque valeur ci-dessous a été relevée sur la source indiquée, une par une.
+
+  - patch: true
+    domain: thetradedesk.com
+    email: dpo@thetradedesk.com
+    optOutUrl: https://submit-irm.trustarc.com/services/validation/short/d9f1fb99/?brandId=9cbf55ca-6676-48dc-8e9f-ff1f056f80a5
+    notes: Adresse publiée sous forme obfusquée dans la politique de confidentialité. Le formulaire est hébergé par TrustArc.
+
+  - patch: true
+    domain: xandr.com
+    optOutUrl: https://aka.ms/privacyresponseother
+    notes: Filiale de Microsoft Advertising. Le formulaire indiqué est celui des demandes RGPD sans compte Microsoft, le cas d'une personne pistée par Xandr.
+
+  - patch: true
+    domain: sirdata.com
+    email: dpo@sirdata.com
+    optOutUrl: https://www.sirdata.com/privacy/
+    notes: Contact confirmé par l'enregistrement de SIRDATA SAS au registre des courtiers du procureur général de Californie.
+
+  - patch: true
+    domain: adform.com
+    email: dpo@adform.com
+    notes: Adform A/S, Silkegade 3B, 1113 Copenhague, Danemark.
+
+  - patch: true
+    domain: numberly.com
+    email: dpo@numberly.com
+    notes: Le groupe 1000mercis demande une pièce d'identité et répond sous un mois.
+
+  - patch: true
+    domain: mediarithmics.com
+    email: privacy@mediarithmics.com
+
+  - patch: true
+    domain: selligent.com
+    email: dpo@meetmarigold.com
+    notes: Selligent appartient désormais à Marigold, qui centralise les demandes.
+
+  - patch: true
+    domain: kompass.com
+    email: dpo@kompass.com

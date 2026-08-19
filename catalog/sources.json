@@ -1,0 +1,55 @@
+{
+  "$comment": "Sources du catalogue. Le script scripts/build-catalog.mjs les telecharge, les fusionne et ecrit catalog/catalog.json. Une source injoignable est ignoree sans faire echouer le build.",
+  "sources": [
+    {
+      "id": "cppa",
+      "label": "Registre officiel des data brokers de Californie (CPPA)",
+      "url": "https://cppa.ca.gov/data_broker_registry/registry.csv",
+      "format": "cppa-csv",
+      "enabled": true,
+      "authority": "legal",
+      "note": "Enregistrement obligatoire (SB 362 / Delete Act). Mis a jour en continu: c'est la source qui fait apparaitre les nouveaux brokers automatiquement."
+    },
+    {
+      "id": "optery",
+      "label": "Optery Data Brokers Directory",
+      "url": "https://raw.githubusercontent.com/optery/optery-data-brokers-directory/main/data/data-brokers.json",
+      "format": "optery-json",
+      "enabled": true,
+      "authority": "curated",
+      "note": "Noms commerciaux, categories, URL d'opt-out et guides pas-a-pas."
+    },
+    {
+      "id": "eraser",
+      "label": "Liste communautaire eraser",
+      "url": "https://raw.githubusercontent.com/digisamroc/eraser/main/data/brokers.yaml",
+      "format": "eraser-yaml",
+      "enabled": true,
+      "authority": "community",
+      "note": "Couverture large des courtiers marketing US avec adresse privacy."
+    },
+    {
+      "id": "datenanfragen",
+      "label": "Base de contacts RGPD Datenanfragen (CC0)",
+      "url": "https://codeload.github.com/datenanfragen/data/tar.gz/refs/heads/master",
+      "format": "datenanfragen-tar",
+      "binary": true,
+      "enabled": true,
+      "authority": "community",
+      "note": "Tenue par une association allemande, verifiee a la main et versee au domaine public. Seule source qui donne l'adresse du delegue a la protection des donnees d'une societe europeenne."
+    },
+    {
+      "id": "tcf",
+      "label": "Liste des fournisseurs du cadre de consentement europeen (IAB Europe TCF)",
+      "url": "https://vendor-list.consensu.org/v3/vendor-list.json",
+      "format": "tcf-json",
+      "enabled": true,
+      "authority": "industry",
+      "note": "Registre public mis a jour chaque semaine. Recense les societes qui traitent des donnees d'internautes europeens a des fins publicitaires. Seuls le nom et l'adresse de la politique de confidentialite publiee par le fournisseur sont repris. Desactiver cette source suffit a l'exclure."
+    }
+  ],
+  "localDirectories": {
+    "overrides": "catalog/overrides",
+    "recipes": "catalog/recipes"
+  }
+}

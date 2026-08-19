@@ -1,0 +1,33 @@
+# Recettes d'automatisation de formulaires.
+#
+# Les recettes visant des annuaires strictement americains ont ete retirees en
+# meme temps que leurs courtiers: le projet ne couvre plus que la France et
+# l'Europe. Ecrire des recettes pour les formulaires europeens est la
+# contribution la plus utile aujourd'hui, voir docs/CONTRIBUER.md.
+
+recipes:
+  - id: intelius
+    domain: intelius.com
+    name: Intelius
+    kind: direct-form
+    captcha: unknown
+    form:
+      url: https://www.intelius.com/opt-out
+      fields:
+        - selector: input[name="firstName"], input[name*="first" i]
+          value: "{{firstName}}"
+        - selector: input[name="lastName"], input[name*="last" i]
+          value: "{{lastName}}"
+        - selector: input[type="email"], input[name*="email" i]
+          value: "{{email}}"
+        - selector: select[name*="state" i]
+          value: "{{stateCode}}"
+          optional: true
+      submit: button[type="submit"]
+      success:
+        text:
+          - email
+          - confirm
+          - request
+    confirmByEmail: true
+    expectedSender: privacy@intelius.com

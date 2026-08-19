@@ -1,0 +1,33 @@
+services:
+  removebroker:
+    build: .
+    image: removebroker:1.0.0
+    container_name: removebroker
+    restart: unless-stopped
+
+    # Volontairement lié à la boucle locale. L'API n'a pas d'authentification:
+    # elle part du principe que seule la personne devant la machine peut
+    # l'atteindre. Pour un accès distant, passez par un tunnel SSH ou un VPN,
+    # jamais par une exposition directe.
+    ports:
+      - "127.0.0.1:7777:7777"
+
+    volumes:
+      - removebroker-data:/data
+
+    environment:
+      # Sans trousseau système dans un conteneur, choisissez la phrase secrète
+      # depuis l'interface, ou fournissez la clé ici.
+      # RB_PASSPHRASE: "votre phrase secrète"
+      # RB_MASTER_KEY: "clé base64 de 32 octets"
+      TZ: Europe/Paris
+
+    # Le conteneur n'a besoin d'écrire que dans son volume de données.
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  removebroker-data:

@@ -1,0 +1,36 @@
+# Entrées retirées du catalogue.
+#
+# Les sources amont sont larges: le registre californien, l'annuaire Optery et
+# la base Datenanfragen listent des sociétés qui ne sont pas des courtiers en
+# données au sens de ce projet. Ce fichier les écarte, une par une, avec le
+# motif. Voir docs/PERIMETRE.md pour les règles.
+#
+# Pour proposer un retrait, ajoutez une entrée ici en indiquant pourquoi la
+# suppression ne peut pas aboutir, ou pourquoi la société ne détient rien sur
+# une personne vivant en Europe.
+
+brokers:
+  # Services dont vous êtes client: ce sont vos données chez un prestataire que
+  # vous avez choisi, pas une revente à votre insu. La demande se fait auprès
+  # d'eux directement, et fermer le compte est le geste utile.
+  - patch: true
+    remove: true
+    domain: github.com
+    notes: Hébergeur de code dont l'utilisateur est client, pas un courtier en données.
+
+  - patch: true
+    remove: true
+    domain: csob.cz
+    notes: Banque de détail tchèque. Relation client, et l'essentiel de ses traitements relève d'obligations légales bancaires.
+
+  # Sociétés américaines sans activité sur les personnes vivant en Europe: leur
+  # écrire ne produit qu'une réponse « aucune donnée vous concernant ».
+  - patch: true
+    remove: true
+    domain: t-mobile.com
+    notes: Opérateur mobile américain. Ne détient rien sur un abonné européen.
+
+  - patch: true
+    remove: true
+    domain: nctue.com
+    notes: Registre d'impayés télécoms réservé aux opérateurs américains.

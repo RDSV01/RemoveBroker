@@ -1,0 +1,90 @@
+name: Ajouter un courtier en données
+description: Signaler une société qui détient des données personnelles et n'est pas encore dans le catalogue
+title: "Courtier: "
+labels: [catalogue]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci. Les courtiers européens sont ce qui manque le plus au catalogue.
+
+        Si vous êtes à l'aise avec Git, une proposition de modification sur
+        `catalog/overrides/eu-fr.yaml` va plus vite qu'une issue. Sinon,
+        remplissez ce formulaire: quelqu'un s'en chargera.
+
+  - type: input
+    id: nom
+    attributes:
+      label: Nom de la société
+      placeholder: Nom commercial, celui qui apparaît sur le site
+    validations:
+      required: true
+
+  - type: input
+    id: site
+    attributes:
+      label: Site web
+      placeholder: https://www.exemple.fr
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Adresse de contact vie privée
+      description: Souvent indiquée dans la politique de confidentialité, sous "délégué à la protection des données" ou "DPO". Laissez vide si vous ne l'avez pas trouvée.
+      placeholder: dpo@exemple.fr
+
+  - type: input
+    id: formulaire
+    attributes:
+      label: Page d'exercice des droits
+      placeholder: https://www.exemple.fr/vos-donnees
+
+  - type: dropdown
+    id: categorie
+    attributes:
+      label: Type d'activité
+      options:
+        - Recherche de personnes
+        - Annuaire téléphonique
+        - Enquête et vérification d'antécédents
+        - Prospection commerciale B2B
+        - Données d'entreprise
+        - Marketing et publicité
+        - Crédit et solvabilité
+        - Santé
+        - Autre
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: zones
+    attributes:
+      label: Zones concernées
+      options:
+        - label: France
+        - label: Union européenne
+        - label: Royaume-Uni
+        - label: États-Unis
+        - label: International
+
+  - type: textarea
+    id: contexte
+    attributes:
+      label: Ce qu'il faut savoir
+      description: Comment vous avez découvert cette société, ce qu'elle détient, si elle exige une pièce d'identité, tout ce qui aiderait quelqu'un à lui écrire.
+      placeholder: |
+        Exemple: cette société republie les annonces du BODACC, y compris
+        l'adresse personnelle des dirigeants. Elle répond aux demandes RGPD
+        par email sous une quinzaine de jours.
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Vérifications
+      options:
+        - label: J'ai vérifié que cette société n'est pas déjà dans le catalogue, sous ce nom ou un autre
+          required: true
+        - label: Les informations ci-dessus proviennent du site de la société, pas d'une supposition
+          required: true

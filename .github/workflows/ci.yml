@@ -1,0 +1,51 @@
+# Vérifications sur chaque proposition de modification.
+#
+# Volontairement court: typage, tests, catalogue valide. Un contributeur qui
+# ajoute un courtier doit avoir sa réponse en moins de deux minutes, sinon il
+# n'ajoutera pas le suivant.
+
+name: Vérifications
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Le verrou est retire avant l'installation, sur recommandation de Rollup
+      # lui-meme: npm n'inscrit dans un verrou que les dependances optionnelles
+      # de la plateforme qui l'a genere (npm/cli#4828). Un verrou fabrique sous
+      # Windows prive donc Linux et macOS du binaire natif de Rollup, et
+      # 'vite build' s'arrete sur 'Cannot find module @rollup/rollup-linux-x64-gnu'.
+      # Le verrou reste dans le depot: il sert au developpement local.
+      - name: Installer
+        shell: bash
+        run: |
+          rm -f package-lock.json
+          npm install --no-audit --no-fund
+
+      - name: Typage
+        run: npm run typecheck
+
+      - name: Construire
+        run: npm run build
+
+      - name: Tests
+        run: node --test apps/server/dist/**/*.test.js
+
+      # Valide aussi les fichiers de catalog/overrides/, par lesquels passent
+      # les contributions de courtiers. Le catalogue compilé, lui, est
+      # reconstruit par le workflow hebdomadaire: un contributeur n'a pas à le
+      # régénérer, et une modification amont ne fait pas échouer sa proposition.
+      - name: Catalogue valide
+        run: node scripts/check-catalog.mjs

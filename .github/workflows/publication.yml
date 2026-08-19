@@ -1,0 +1,134 @@
+# Construit les installateurs et les attache à une version publiée.
+#
+# Déclenché par une étiquette de version: git tag v1.0.0 && git push --tags.
+# Les trois systèmes sont construits sur leur propre machine, parce que
+# better-sqlite3 est un module natif qui doit être compilé pour sa cible.
+
+name: Publication
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+# Une étiquette poussée peut être livrée deux fois par GitHub. Sans ce
+# verrou, deux exécutions courent ensemble vers la même version et en
+# produisent deux: l'une publiée, l'autre en brouillon, avec des fichiers
+# incomplets. Observé le 19 août 2026 sur la version 1.0.0.
+concurrency:
+  group: publication-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  construire:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            commande: dist:win
+          - os: macos-latest
+            commande: dist:mac
+          - os: ubuntu-latest
+            commande: dist:linux
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Le verrou est retire avant l'installation, sur recommandation de Rollup
+      # lui-meme: npm n'inscrit dans un verrou que les dependances optionnelles
+      # de la plateforme qui l'a genere (npm/cli#4828). Un verrou fabrique sous
+      # Windows prive donc Linux et macOS du binaire natif de Rollup, et
+      # 'vite build' s'arrete sur 'Cannot find module @rollup/rollup-linux-x64-gnu'.
+      # Le verrou reste dans le depot: il sert au developpement local.
+      - name: Installer
+        shell: bash
+        run: |
+          rm -f package-lock.json
+          npm install --no-audit --no-fund
+
+      - name: Construire l'installateur
+        run: npm run ${{ matrix.commande }}
+        env:
+          # Pas de signature de code: le projet n'a pas de certificat payant.
+          # Les instructions pour passer l'avertissement du système sont dans
+          # le fichier d'installation.
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Empreintes
+        shell: bash
+        run: |
+          cd dist-desktop
+          for f in *.exe *.dmg *.AppImage *.deb; do
+            [ -e "$f" ] || continue
+            # sha256sum existe sur Linux et sur le bash du runner Windows,
+            # shasum sur macOS: aucun des deux n'est present partout.
+            if command -v sha256sum >/dev/null 2>&1; then
+              sha256sum "$f" >> SHA256SUMS.txt
+            else
+              shasum -a 256 "$f" >> SHA256SUMS.txt
+            fi
+          done
+          cat SHA256SUMS.txt || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: removebroker-${{ matrix.os }}
+          path: |
+            dist-desktop/*.exe
+            dist-desktop/*.dmg
+            dist-desktop/*.AppImage
+            dist-desktop/*.deb
+            dist-desktop/SHA256SUMS.txt
+
+  publier:
+    needs: construire
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artefacts
+
+      # Les trois machines produisent chacune un SHA256SUMS.txt, tous du même
+      # nom: attachés tels quels à la version, ils s'écrasent et un seul
+      # survit. La version 1.0.0 n'a d'abord publié que les empreintes Linux,
+      # laissant l'installateur Windows sans moyen de vérification alors qu'il
+      # n'est pas signé. Les trois sont désormais fusionnées en une seule.
+      - name: Rassembler les empreintes
+        shell: bash
+        run: |
+          mkdir -p publication
+          cat artefacts/*/SHA256SUMS.txt | sort -k2 > publication/SHA256SUMS.txt
+          find artefacts -name SHA256SUMS.txt -delete
+          echo "Empreintes publiées:"
+          cat publication/SHA256SUMS.txt
+          # Sans ces quatre lignes, une machine muette passerait inaperçue.
+          for motif in .exe .dmg .AppImage .deb; do
+            grep -q -- "$motif" publication/SHA256SUMS.txt \
+              || { echo "Aucune empreinte pour $motif"; exit 1; }
+          done
+
+      - name: Créer la version
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artefacts/**/*
+            publication/SHA256SUMS.txt
+          generate_release_notes: true
+          body: |
+            Téléchargez le fichier correspondant à votre système, puis
+            reportez-vous à `docs/INSTALLATION.md` si votre système affiche un
+            avertissement: les installateurs ne sont pas signés, faute de
+            certificat payant. Les empreintes SHA256 sont jointes pour vérifier
+            que le fichier téléchargé est bien celui construit ici.

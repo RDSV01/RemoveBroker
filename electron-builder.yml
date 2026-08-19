@@ -1,0 +1,77 @@
+# Empaquetage de l'application de bureau.
+#
+# Objectif: un seul fichier à télécharger, un double-clic, et l'interface
+# s'ouvre. Aucune installation de Node, de navigateur ni de base de données.
+
+appId: org.removebroker.app
+productName: RemoveBroker
+copyright: RemoveBroker contributors
+
+directories:
+  output: dist-desktop
+  buildResources: build
+
+# Le processus principal, le serveur compilé, l'interface compilée et le
+# catalogue. Les sources TypeScript et les dépendances de développement restent
+# dehors: elles n'apportent que du poids.
+files:
+  - apps/desktop/**/*
+  - apps/server/dist/**/*
+  - apps/server/package.json
+  - apps/web/dist/**/*
+  - catalog/catalog.json
+  - catalog/index.json
+  - catalog/recipes/**/*
+  - package.json
+  - LICENSE
+  - '!**/*.map'
+  - '!**/*.ts'
+  - '!**/node_modules/**/{test,__tests__,tests,example,examples,doc,docs}/**'
+
+# Les navigateurs Playwright pèsent plusieurs centaines de mégaoctets et ne
+# servent qu'aux courtiers sans adresse email. Ils sont téléchargés à la
+# demande, depuis l'interface, la première fois qu'ils sont nécessaires.
+asarUnpack:
+  - '**/node_modules/better-sqlite3/**'
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: RemoveBroker-${version}-installateur.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: RemoveBroker
+  # L'installateur ne demande pas les droits administrateur: l'application
+  # écrit uniquement dans le dossier de l'utilisateur.
+  installerLanguages:
+    - fr_FR
+    - en_US
+
+mac:
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  category: public.app-category.utilities
+  artifactName: RemoveBroker-${version}-${arch}.${ext}
+
+linux:
+  target:
+    - target: AppImage
+      arch: [x64]
+    - target: deb
+      arch: [x64]
+  category: Utility
+  synopsis: Suppression automatique de vos donnees chez les courtiers en donnees
+  artifactName: RemoveBroker-${version}-${arch}.${ext}
+
+# better-sqlite3 est distribué avec des binaires Node-API, stables d'une version
+# de Node à l'autre: il n'y a rien à recompiler, à condition qu'Electron embarque
+# Node 22 ou plus récent (Electron 35+). Avec une version antérieure, la
+# bibliothèque se charge puis plante à la première requête.
+npmRebuild: false

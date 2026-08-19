@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-desktop
+docs/images
+.github
+.git
+*.log
+data
+build/icon.png
+
+# Le verrou est propre a la plateforme qui l'a genere (npm/cli#4828): l'emporter
+# dans l'image ferait retomber les commandes npm suivantes sur des binaires
+# absents. L'installation se fait sans lui, voir le Dockerfile.
+package-lock.json

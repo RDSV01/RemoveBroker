@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question d'utilisation
+    url: https://github.com/RDSV01/RemoveBroker/discussions
+    about: Comment configurer, comment interpréter une réponse, que faire d'un refus.
+  - name: Faille de sécurité
+    url: https://github.com/RDSV01/RemoveBroker/security/advisories/new
+    about: Signalement privé, jamais dans une issue publique.

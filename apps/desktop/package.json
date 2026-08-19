@@ -1,0 +1,8 @@
+{
+  "name": "@removebroker/desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enveloppe de bureau RemoveBroker: lance le serveur local et affiche l'interface",
+  "main": "main.cjs",
+  "license": "AGPL-3.0-or-later"
+}

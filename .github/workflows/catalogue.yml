@@ -1,0 +1,68 @@
+# Mise à jour hebdomadaire du catalogue de courtiers.
+#
+# C'est la pièce qui permet à RemoveBroker de rester à jour sans serveur payé:
+# GitHub Actions reconstruit le catalogue à partir des sources publiques, le
+# commit dans ce dépôt, et les applications installées le téléchargent depuis
+# l'API publique de GitHub. Aucune infrastructure à financer, et le fichier
+# reste vérifiable par n'importe qui puisque son historique est public.
+
+name: Catalogue
+
+on:
+  schedule:
+    # Tous les lundis à 4h UTC. Les registres publics bougent lentement.
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+    inputs:
+      enrich:
+        description: 'Chercher les adresses DPO manquantes (plus lent)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installer les dépendances de construction
+        run: npm install --no-audit --no-fund --ignore-scripts
+
+      - name: Reconstruire le catalogue
+        run: node scripts/build-catalog.mjs
+
+      - name: Chercher les adresses manquantes
+        if: inputs.enrich
+        run: node scripts/enrich-catalog.mjs --only eu --limit 250
+
+      # Les nouvelles entrées hors d'Europe n'ont pas encore de verdict: sans
+      # cette passe, elles entreraient au catalogue sur la seule foi de leur
+      # catégorie. Le cache rend les passages suivants presque instantanés.
+      - name: Vérifier qui traite des données européennes
+        run: node scripts/detect-rgpd.mjs --limit 150
+
+      - name: Réintégrer les adresses et les verdicts
+        run: node scripts/build-catalog.mjs
+
+      - name: Vérifier la cohérence du catalogue
+        run: node scripts/check-catalog.mjs
+
+      - name: Publier la mise à jour
+        run: |
+          if git diff --quiet -- catalog/; then
+            echo "Aucun changement dans le catalogue."
+            exit 0
+          fi
+          total=$(node -p "require('./catalog/index.json').count")
+          git config user.name  'removebroker-bot'
+          git config user.email 'bot@removebroker.invalid'
+          git add catalog/
+          git commit -m "catalogue: mise a jour automatique ($total courtiers)"
+          git push

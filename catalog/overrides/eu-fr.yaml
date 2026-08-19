@@ -1,0 +1,450 @@
+# Courtiers en données actifs en Europe et en France.
+#
+# Aucun registre public obligatoire n'existe côté UE, contrairement au registre
+# CPPA californien. Cette liste est donc curatée à la main: c'est ici qu'il faut
+# contribuer pour améliorer la couverture européenne, qui est la priorité du
+# projet.
+#
+# Les adresses de contact manquantes sont complétées automatiquement par
+# scripts/enrich-catalog.mjs, qui lit la politique de confidentialité publiée
+# par chaque société et y cherche une adresse de délégué à la protection des
+# données. Ne renseignez `email:` à la main que si vous l'avez vérifiée.
+#
+# Deux types d'entrées:
+#   1. entrée complète  -> ajoute un courtier absent des sources publiques
+#   2. patch: true      -> corrige une entrée existante, identifiée par `domain`
+#
+# Champs: name, domain, website, email, optOutUrl, category, regions,
+#         requiresId, notes, guideUrl
+# Catégories: people-search phone-directory background-check b2b business-search
+#             marketing location credit-risk health other
+
+brokers:
+  # --- Annuaires et recherche de personnes, France -------------------------
+  - name: Solocal (PagesJaunes)
+    domain: pagesjaunes.fr
+    website: https://www.pagesjaunes.fr
+    email: dpo@solocal.com
+    optOutUrl: https://www.pagesjaunes.fr/protection-donnees-personnelles
+    category: phone-directory
+    regions: [eu, fr]
+    notes: Éditeur de PagesJaunes et PagesBlanches. Demander la suppression de la fiche et l'opposition à la diffusion de l'annuaire universel.
+
+  - name: 118 712 (Le Numéro)
+    domain: 118712.fr
+    website: https://www.118712.fr
+    category: phone-directory
+    regions: [eu, fr]
+    notes: Service de renseignements téléphoniques. L'opposition passe aussi par la liste rouge de votre opérateur.
+
+  - name: Annuaire Pages Blanches
+    domain: pagesblanches.fr
+    website: https://www.pagesblanches.fr
+    category: phone-directory
+    regions: [eu, fr]
+
+  - name: Copains d'avant
+    domain: linternaute.com
+    website: https://copainsdavant.linternaute.com
+    category: people-search
+    regions: [eu, fr]
+    notes: Profils anciens souvent indexés par les moteurs de recherche.
+
+  - name: Trombi
+    domain: trombi.com
+    website: https://www.trombi.com
+    category: people-search
+    regions: [eu, fr]
+
+  # --- Prospection B2B et bases de contacts, France ------------------------
+  #
+  # Les rediffuseurs de registres publics (Infogreffe, Pappers, Societe.com)
+  # ne figurent pas ici: leur traitement repose sur une obligation légale, et
+  # l'article 17(3)(b) du RGPD exclut l'effacement dans ce cas. Une demande n'y
+  # produirait qu'un refus motivé. Voir docs/PERIMETRE.md.
+  - name: Manageo
+    domain: manageo.fr
+    website: https://www.manageo.fr
+    category: b2b
+    regions: [eu, fr]
+
+  - name: Altares (Dun and Bradstreet France)
+    domain: altares.com
+    website: https://www.altares.com
+    email: dpo@altares.com
+    category: b2b
+    regions: [eu, fr]
+    notes: Partenaire français de Dun and Bradstreet, bases B2B et scoring de solvabilité.
+
+  - name: Ellisphere
+    domain: ellisphere.com
+    website: https://www.ellisphere.com
+    category: credit-risk
+    regions: [eu, fr]
+
+  - name: Creditsafe France
+    domain: creditsafe.com
+    website: https://www.creditsafe.com/fr
+    category: credit-risk
+    regions: [eu, fr]
+
+  - name: Kompass International
+    domain: kompass.com
+    website: https://www.kompass.com
+    category: b2b
+    regions: [eu, fr]
+
+  - name: Nomination
+    domain: nomination.fr
+    website: https://www.nomination.fr
+    category: b2b
+    regions: [eu, fr]
+    notes: Base de décideurs français, très utilisée en prospection commerciale.
+
+  - name: Corporama
+    domain: corporama.com
+    website: https://www.corporama.com
+    category: b2b
+    regions: [eu, fr]
+
+  - name: Societeinfo
+    domain: societeinfo.com
+    website: https://societeinfo.com
+    category: b2b
+    regions: [eu, fr]
+
+  - name: Dropcontact
+    domain: dropcontact.com
+    website: https://www.dropcontact.com
+    category: b2b
+    regions: [eu, fr]
+    notes: Enrichissement d'emails professionnels, hébergé en France.
+
+  - name: Kaspr
+    domain: kaspr.io
+    website: https://www.kaspr.io
+    category: b2b
+    regions: [eu, fr]
+    notes: Extraction de coordonnées depuis LinkedIn. Groupe Cognism.
+
+  - name: Pharow
+    domain: pharow.com
+    website: https://www.pharow.com
+    category: b2b
+    regions: [eu, fr]
+
+  - name: Mediapost
+    domain: mediapost.fr
+    website: https://www.mediapost.fr
+    category: marketing
+    regions: [eu, fr]
+    notes: Courrier publicitaire adressé et données de géomarketing, filiale du groupe La Poste.
+
+  - name: Adrexo
+    domain: adrexo.fr
+    website: https://www.adrexo.fr
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Sarbacane
+    domain: sarbacane.com
+    website: https://www.sarbacane.com
+    category: marketing
+    regions: [eu, fr]
+
+  # --- Adtech et marketing, Europe ----------------------------------------
+  - name: Criteo
+    domain: criteo.com
+    website: https://www.criteo.com
+    email: dpo@criteo.com
+    optOutUrl: https://www.criteo.com/privacy/
+    category: marketing
+    regions: [eu, fr]
+    notes: Adtech française déjà sanctionnée par la CNIL. Demande RGPD recommandée.
+
+  - name: Teads
+    domain: teads.com
+    website: https://www.teads.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Equativ (Smart AdServer)
+    domain: equativ.com
+    website: https://equativ.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Weborama
+    domain: weborama.com
+    website: https://weborama.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Ogury
+    domain: ogury.com
+    website: https://ogury.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Sirdata
+    domain: sirdata.com
+    website: https://www.sirdata.com
+    category: marketing
+    regions: [eu, fr]
+    notes: Fournisseur français de segments d'audience, courtier de données de navigation.
+
+  - name: Adot
+    domain: adot.com
+    website: https://www.adot.com
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Acxiom France
+    domain: acxiom.fr
+    website: https://www.acxiom.fr
+    category: marketing
+    regions: [eu, fr]
+
+  - name: Schober
+    domain: schober.de
+    website: https://www.schober.de
+    category: marketing
+    regions: [eu]
+    notes: Un des plus gros courtiers marketing allemands.
+
+  - name: AZ Direct (Bertelsmann)
+    domain: az-direct.com
+    website: https://www.az-direct.com
+    category: marketing
+    regions: [eu]
+
+  - name: Deutsche Post Direkt
+    domain: deutschepost.de
+    website: https://www.deutschepost.de
+    category: marketing
+    regions: [eu]
+
+  - name: Adform
+    domain: adform.com
+    website: https://site.adform.com
+    category: marketing
+    regions: [eu]
+
+  - name: Zeotap
+    domain: zeotap.com
+    website: https://zeotap.com
+    category: marketing
+    regions: [eu]
+
+  - name: Emetriq
+    domain: emetriq.com
+    website: https://www.emetriq.com
+    category: marketing
+    regions: [eu]
+
+  - name: Selligent
+    domain: selligent.com
+    website: https://www.selligent.com
+    category: marketing
+    regions: [eu]
+
+  # --- Crédit, risque et solvabilité, Europe ------------------------------
+  - name: CRIF
+    domain: crif.com
+    website: https://www.crif.com
+    category: credit-risk
+    regions: [eu]
+
+  - name: Cerved
+    domain: cerved.com
+    website: https://www.cerved.com
+    category: credit-risk
+    regions: [eu]
+
+  - name: Experian UK
+    domain: experian.co.uk
+    website: https://www.experian.co.uk
+    optOutUrl: https://www.experian.co.uk/consumer/rights.html
+    category: credit-risk
+    regions: [eu]
+    requiresId: true
+
+  - name: SCHUFA
+    domain: schufa.de
+    website: https://www.schufa.de
+    category: credit-risk
+    regions: [eu]
+    requiresId: true
+    notes: Bureau de crédit allemand. Droit d'accès et de rectification, l'effacement est rarement accordé pour les données de solvabilité.
+
+  - name: Arvato Financial Solutions (Infoscore)
+    domain: arvato.com
+    website: https://finance.arvato.com
+    category: credit-risk
+    regions: [eu]
+
+  - name: Bisnode (Dun and Bradstreet Europe)
+    domain: bisnode.com
+    website: https://www.bisnode.com
+    category: b2b
+    regions: [eu]
+
+  - name: Graydon
+    domain: graydon.com
+    website: https://www.graydon.com
+    category: credit-risk
+    regions: [eu]
+
+  - name: Intrum
+    domain: intrum.com
+    website: https://www.intrum.com
+    category: credit-risk
+    regions: [eu]
+
+  # --- Recherche de personnes, Europe -------------------------------------
+  - name: Yasni
+    domain: yasni.com
+    website: http://www.yasni.com
+    category: people-search
+    regions: [eu]
+    notes: Moteur de recherche de personnes encore actif sur plusieurs domaines européens.
+
+  - name: WebMii
+    domain: webmii.com
+    website: https://webmii.com
+    category: people-search
+    regions: [eu]
+
+  - name: 123people
+    domain: 123people.com
+    website: https://www.123people.com
+    category: people-search
+    regions: [eu]
+
+  - name: Das Telefonbuch
+    domain: dastelefonbuch.de
+    website: https://www.dastelefonbuch.de
+    category: phone-directory
+    regions: [eu]
+
+  - name: Paginebianche
+    domain: paginebianche.it
+    website: https://www.paginebianche.it
+    category: phone-directory
+    regions: [eu]
+
+  - name: Paginas Blancas
+    domain: paginasblancas.es
+    website: https://www.paginasblancas.es
+    category: phone-directory
+    regions: [eu]
+
+  - name: 192.com
+    domain: 192.com
+    website: https://www.192.com
+    optOutUrl: https://www.192.com/help/contact/
+    category: people-search
+    regions: [eu]
+    notes: Principal service britannique de recherche de personnes, alimenté par les listes électorales.
+
+  # --- Corrections d'entrées issues des sources publiques -----------------
+  - patch: true
+    domain: acxiom.com
+    regions: [us, eu]
+    notes: Filiale européenne soumise au RGPD. Une demande fondée sur l'article 17 depuis l'UE doit être traitée sous un mois.
+
+  - patch: true
+    domain: liveramp.com
+    regions: [us, eu]
+
+  - patch: true
+    domain: zoominfo.com
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: apollo.io
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: lusha.com
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: rocketreach.co
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: cognism.com
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: hunter.io
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: snov.io
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: seamless.ai
+    regions: [us, eu]
+    category: b2b
+
+  - patch: true
+    domain: experian.com
+    regions: [us, eu]
+
+  - patch: true
+    domain: equifax.com
+    regions: [us, eu]
+
+  - patch: true
+    domain: transunion.com
+    regions: [us, eu]
+
+  - patch: true
+    domain: dnb.com
+    regions: [us, eu]
+
+  - patch: true
+    domain: nielsen.com
+    regions: [us, eu]
+
+  - patch: true
+    domain: epsilon.com
+    regions: [us, eu]
+
+  - patch: true
+    domain: data-axle.com
+    regions: [us, eu]
+
+  # Rediffuseur du registre du commerce français, arrivé par l'annuaire Optery
+  # qui l'a rangé parmi les annuaires d'entreprises américains. L'effacement y
+  # est exclu par l'article 17(3)(b): voir docs/PERIMETRE.md.
+  - patch: true
+    domain: verif.com
+    remove: true
+
+  # --- Annuaires français: la marche à suivre, vérifiée ---------------------
+
+  - patch: true
+    domain: linternaute.com
+    optOutUrl: https://ccmbenchmark.zendesk.com/hc/fr/articles/200156341
+    guideUrl: https://ccmbenchmark.zendesk.com/hc/fr/articles/200156341
+    notes: Suppression depuis le compte, ou demande au support avec nom, prénom, date de naissance et lien de la fiche. Supprime aussi le compte Linternaute.
+
+  # Filiale donnees de WPP, groupe britannique. Sa page de politique n'est
+  # qu'un selecteur de langue: le detecteur automatique n'y voit aucune mention
+  # du droit europeen et l'ecarterait. Elle repond pourtant aux demandes RGPD,
+  # constate sur une reponse reelle le 19 aout 2026.
+  - patch: true
+    domain: choreograph.com
+    regions: [eu, us]
+    notes: Filiale de WPP. La politique publiee en ligne ne se lit pas sans navigateur, mais la societe traite bien les demandes RGPD.

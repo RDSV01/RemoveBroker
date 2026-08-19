@@ -1,0 +1,5154 @@
+{
+ "complementics.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://complementics.com/privacy",
+  "checkedAt": "2026-08-19T20:43:49.136Z"
+ },
+ "veraset.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:43:49.539Z"
+ },
+ "safegraph.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.safegraph.com/privacy",
+  "checkedAt": "2026-08-19T20:43:49.775Z"
+ },
+ "onemata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:43:49.695Z"
+ },
+ "intelius.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.intelius.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:43:50.213Z"
+ },
+ "outlogic.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://outlogic.io/privacy",
+  "checkedAt": "2026-08-19T20:43:50.340Z"
+ },
+ "01advertising.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.01advertising.com/legal/privacy",
+  "checkedAt": "2026-08-19T20:43:50.559Z"
+ },
+ "marriott.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:43:51.025Z"
+ },
+ "choreograph.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.choreograph.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:43:50.865Z"
+ },
+ "spycloud.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.spycloud.com/privacy",
+  "checkedAt": "2026-08-19T20:43:51.733Z"
+ },
+ "autoweb.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:43:55.170Z"
+ },
+ "acronymix.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://acronymix.com/privacy",
+  "checkedAt": "2026-08-19T20:44:02.405Z"
+ },
+ "big-village.com": {
+  "europe": true,
+  "marqueurs": [
+   "general data protection regulation",
+   "supervisory authority"
+  ],
+  "source": "https://www.big-village.com/privacy",
+  "checkedAt": "2026-08-19T20:43:52.233Z"
+ },
+ "bdo.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "supervisory authority"
+  ],
+  "source": "https://www.bdo.com/privacy",
+  "checkedAt": "2026-08-19T20:43:52.449Z"
+ },
+ "buxtonco.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "supervisory authority"
+  ],
+  "source": "https://www.buxtonco.com/privacy",
+  "checkedAt": "2026-08-19T20:43:52.492Z"
+ },
+ "citydata.ai": {
+  "europe": true,
+  "marqueurs": [
+   "supervisory authority",
+   "data protection officer",
+   "residents? of the european union"
+  ],
+  "source": "https://citydata.ai/privacy",
+  "checkedAt": "2026-08-19T20:43:53.475Z"
+ },
+ "costar.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:43:53.682Z"
+ },
+ "cadent.tv": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:43:55.452Z"
+ },
+ "datafy.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://datafy.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:43:56.081Z"
+ },
+ "decide.co": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:43:56.923Z"
+ },
+ "collectivedata.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:43:57.027Z"
+ },
+ "digitalvikingmedia.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.digitalvikingmedia.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:43:57.516Z"
+ },
+ "cybba.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://cybba.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:43:59.217Z"
+ },
+ "dtn.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.dtn.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:43:59.221Z"
+ },
+ "datadelivers.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://datadelivers.com/privacy",
+  "checkedAt": "2026-08-19T20:43:59.932Z"
+ },
+ "famousbirthdays.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://famousbirthdays.com/privacy",
+  "checkedAt": "2026-08-19T20:44:00.117Z"
+ },
+ "eab.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.eab.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:00.408Z"
+ },
+ "fourthwall.tv": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:00.523Z"
+ },
+ "fusion92.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:01.162Z"
+ },
+ "eltoro.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:02.700Z"
+ },
+ "healthcare.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.healthcare.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:03.422Z"
+ },
+ "ispot.tv": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.ispot.tv/privacy",
+  "checkedAt": "2026-08-19T20:44:03.689Z"
+ },
+ "m1-data.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://m1-data.com/privacy",
+  "checkedAt": "2026-08-19T20:44:03.987Z"
+ },
+ "l2-data.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:04.152Z"
+ },
+ "modfxlabs.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.modfxlabs.com/privacy",
+  "checkedAt": "2026-08-19T20:44:04.697Z"
+ },
+ "leadmemedia.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:04.833Z"
+ },
+ "matchbookdata.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.matchbookdata.com/privacy",
+  "checkedAt": "2026-08-19T20:44:05.179Z"
+ },
+ "madhive.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:05.987Z"
+ },
+ "consumercanvas.net": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.consumercanvas.net/privacy-notice",
+  "checkedAt": "2026-08-19T20:44:06.640Z"
+ },
+ "onspotdata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.onspotdata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:06.766Z"
+ },
+ "healthwisedata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.healthwisedata.com/privacy",
+  "checkedAt": "2026-08-19T20:44:07.434Z"
+ },
+ "quadrant.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.quadrant.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:07.536Z"
+ },
+ "propertyradar.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.propertyradar.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:08.191Z"
+ },
+ "placeexchange.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.placeexchange.com/privacy",
+  "checkedAt": "2026-08-19T20:44:08.485Z"
+ },
+ "spglobal.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:08.860Z"
+ },
+ "n-focus.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.n-focus.com/privacy",
+  "checkedAt": "2026-08-19T20:44:09.574Z"
+ },
+ "semcasting.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.semcasting.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:10.206Z"
+ },
+ "33across.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:11.246Z"
+ },
+ "abovedata.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://abovedata.io/privacy",
+  "checkedAt": "2026-08-19T20:44:12.008Z"
+ },
+ "infillion.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:12.616Z"
+ },
+ "knowertech.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://knowertech.com/privacy",
+  "checkedAt": "2026-08-19T20:44:12.757Z"
+ },
+ "enformion.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://enformion.com/privacy",
+  "checkedAt": "2026-08-19T20:44:13.546Z"
+ },
+ "activimpact.ai": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://activimpact.ai/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:14.216Z"
+ },
+ "videoamp.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.videoamp.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:15.308Z"
+ },
+ "affinityanswers.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://affinityanswers.com/privacy",
+  "checkedAt": "2026-08-19T20:44:15.504Z"
+ },
+ "adept-id.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:16.674Z"
+ },
+ "aidentified.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.aidentified.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:17.683Z"
+ },
+ "rrd.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:19.748Z"
+ },
+ "accurateappend.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.accurateappend.com/privacy",
+  "checkedAt": "2026-08-19T20:44:20.117Z"
+ },
+ "affinity.solutions": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:20.344Z"
+ },
+ "agrmarketingsolutions.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.agrmarketingsolutions.com/privacy",
+  "checkedAt": "2026-08-19T20:44:20.857Z"
+ },
+ "altairdata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.altairdata.com/privacy",
+  "checkedAt": "2026-08-19T20:44:26.058Z"
+ },
+ "alliantinsight.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://alliantinsight.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:26.624Z"
+ },
+ "allantgroup.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://allantgroup.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:27.242Z"
+ },
+ "anchorcomputer.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "http://www.anchorcomputer.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:28.856Z"
+ },
+ "aristotle.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.aristotle.com/privacy",
+  "checkedAt": "2026-08-19T20:44:29.253Z"
+ },
+ "astoriacompany.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://astoriacompany.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:29.310Z"
+ },
+ "exploreatlas.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:29.316Z"
+ },
+ "altrata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.altrata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:30.202Z"
+ },
+ "bbdirect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:30.352Z"
+ },
+ "attribits.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://attribits.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:31.962Z"
+ },
+ "allwebleads.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://allwebleads.com/privacy",
+  "checkedAt": "2026-08-19T20:44:32.366Z"
+ },
+ "belardiwong.com": {
+  "europe": true,
+  "marqueurs": [
+   "general data protection regulation",
+   "residents? of the european union"
+  ],
+  "source": "https://belardiwong.com/privacy",
+  "checkedAt": "2026-08-19T20:44:32.544Z"
+ },
+ "audienceacuity.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://audienceacuity.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:33.137Z"
+ },
+ "blackpearl.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "supervisory authority"
+  ],
+  "source": "https://blackpearl.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:34.441Z"
+ },
+ "bestpickreports.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.bestpickreports.com/privacy",
+  "checkedAt": "2026-08-19T20:44:34.831Z"
+ },
+ "biscred.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://biscred.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:35.264Z"
+ },
+ "blueaction.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:35.507Z"
+ },
+ "bookyourdata.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.bookyourdata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:35.572Z"
+ },
+ "bdex.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:35.581Z"
+ },
+ "brooksim.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.brooksim.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:37.321Z"
+ },
+ "bridg.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.bridg.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:37.540Z"
+ },
+ "buildertrend.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:39.556Z"
+ },
+ "carneydirect.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.carneydirect.com/privacy",
+  "checkedAt": "2026-08-19T20:44:39.681Z"
+ },
+ "brandwatch.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.brandwatch.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:40.138Z"
+ },
+ "alescodata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.alescodata.com/privacy",
+  "checkedAt": "2026-08-19T20:44:40.433Z"
+ },
+ "censia.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "supervisory authority"
+  ],
+  "source": "https://www.censia.com/privacy",
+  "checkedAt": "2026-08-19T20:44:40.681Z"
+ },
+ "civisanalytics.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.civisanalytics.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:42.533Z"
+ },
+ "cdkglobal.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://cdkglobal.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:43.156Z"
+ },
+ "clearcompany.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://clearcompany.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:43.603Z"
+ },
+ "cision.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:44.225Z"
+ },
+ "completemailinglists.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.completemailinglists.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:45.243Z"
+ },
+ "catalist.us": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "http://catalist.us/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:45.538Z"
+ },
+ "completemedicallists.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:45.651Z"
+ },
+ "greenwich.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.greenwich.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:46.043Z"
+ },
+ "connectedinvestors.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:46.446Z"
+ },
+ "crunchbase.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:47.410Z"
+ },
+ "convergemarketing.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.convergemarketing.com/privacy",
+  "checkedAt": "2026-08-19T20:44:47.533Z"
+ },
+ "clientcommand.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:48.287Z"
+ },
+ "convex.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.convex.com/privacy",
+  "checkedAt": "2026-08-19T20:44:48.377Z"
+ },
+ "crosspixel.net": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://crosspixel.net/privacy",
+  "checkedAt": "2026-08-19T20:44:49.660Z"
+ },
+ "datalane.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:49.661Z"
+ },
+ "datapartners.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.datapartners.com/privacy",
+  "checkedAt": "2026-08-19T20:44:49.773Z"
+ },
+ "datadecisionsgroup.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:50.311Z"
+ },
+ "date-detective.app": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:50.895Z"
+ },
+ "datasys.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:51.291Z"
+ },
+ "decisionlinks.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.decisionlinks.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:52.916Z"
+ },
+ "deeprootanalytics.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://deeprootanalytics.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:53.804Z"
+ },
+ "dealersocket.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:54.597Z"
+ },
+ "datalinedata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.datalinedata.com/privacy",
+  "checkedAt": "2026-08-19T20:44:54.687Z"
+ },
+ "monocl.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:55.047Z"
+ },
+ "deloitte.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:55.795Z"
+ },
+ "digitalmediasolutions.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:56.893Z"
+ },
+ "dice.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:56.903Z"
+ },
+ "deepsync.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://deepsync.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:57.490Z"
+ },
+ "dealerx.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.dealerx.com/privacy",
+  "checkedAt": "2026-08-19T20:44:57.887Z"
+ },
+ "dspolitical.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.dspolitical.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:44:58.604Z"
+ },
+ "disconetwork.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:44:59.124Z"
+ },
+ "edvisors.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:44:59.434Z"
+ },
+ "endgame.io": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://endgame.io/privacy",
+  "checkedAt": "2026-08-19T20:45:00.811Z"
+ },
+ "erepublic.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://erepublic.com/privacy",
+  "checkedAt": "2026-08-19T20:45:03.059Z"
+ },
+ "lightcast.io": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://lightcast.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:03.496Z"
+ },
+ "dresdendirect.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "http://dresdendirect.com/privacy",
+  "checkedAt": "2026-08-19T20:45:04.133Z"
+ },
+ "enigma.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://enigma.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:05.232Z"
+ },
+ "fideo.ai": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "data protection officer"
+  ],
+  "source": "https://www.fideo.ai/privacy",
+  "checkedAt": "2026-08-19T20:45:05.296Z"
+ },
+ "telephonelists.biz": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:05.376Z"
+ },
+ "exactcustomer.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.exactcustomer.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:05.756Z"
+ },
+ "exlservice.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://exlservice.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:07.299Z"
+ },
+ "firstorion.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://firstorion.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:07.792Z"
+ },
+ "finsum.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:08.118Z"
+ },
+ "forager.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://forager.ai/privacy",
+  "checkedAt": "2026-08-19T20:45:08.661Z"
+ },
+ "fivestarrated.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.fivestarrated.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:09.193Z"
+ },
+ "forddirect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:09.873Z"
+ },
+ "fullcontact.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.fullcontact.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:11.156Z"
+ },
+ "firstdirectmarketing.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://firstdirectmarketing.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:11.299Z"
+ },
+ "fourleafdata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.fourleafdata.com/privacy",
+  "checkedAt": "2026-08-19T20:45:11.949Z"
+ },
+ "fushiamedia.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.fushiamedia.com/privacy",
+  "checkedAt": "2026-08-19T20:45:12.285Z"
+ },
+ "grassrootsanalytics.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:13.341Z"
+ },
+ "biointelli.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.biointelli.com/privacy",
+  "checkedAt": "2026-08-19T20:45:14.373Z"
+ },
+ "greatlakeslists.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:15.203Z"
+ },
+ "fusable.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:15.986Z"
+ },
+ "h1.co": {
+  "europe": true,
+  "marqueurs": [
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.h1.co/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:16.165Z"
+ },
+ "healthlinkdimensions.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://healthlinkdimensions.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:16.885Z"
+ },
+ "hightouch.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "supervisory authority"
+  ],
+  "source": "https://hightouch.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:16.940Z"
+ },
+ "focus-usa.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:17.262Z"
+ },
+ "hubspot.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.hubspot.com/privacy",
+  "checkedAt": "2026-08-19T20:45:17.935Z"
+ },
+ "helixcampaigns.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://helixcampaigns.com/privacy",
+  "checkedAt": "2026-08-19T20:45:19.153Z"
+ },
+ "i-360.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.i-360.com/privacy",
+  "checkedAt": "2026-08-19T20:45:20.566Z"
+ },
+ "us.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:20.762Z"
+ },
+ "inboundinsight.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:21.692Z"
+ },
+ "giantpartners.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.giantpartners.com/privacy",
+  "checkedAt": "2026-08-19T20:45:21.971Z"
+ },
+ "infopay.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://infopay.com/privacy",
+  "checkedAt": "2026-08-19T20:45:24.151Z"
+ },
+ "grayhairsoftware.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://grayhairsoftware.com/privacy",
+  "checkedAt": "2026-08-19T20:45:24.316Z"
+ },
+ "illumin.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "data protection officer"
+  ],
+  "source": "http://www.illumin.com/legal/privacy",
+  "checkedAt": "2026-08-19T20:45:24.702Z"
+ },
+ "instantly.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses"
+  ],
+  "source": "https://instantly.ai/privacy",
+  "checkedAt": "2026-08-19T20:45:24.789Z"
+ },
+ "ididata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:26.031Z"
+ },
+ "irys.us": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "data protection officer"
+  ],
+  "source": "https://irys.us/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:27.003Z"
+ },
+ "intentsify.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:27.040Z"
+ },
+ "hireez.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:27.238Z"
+ },
+ "idatabasesolutions.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.idatabasesolutions.com/privacy",
+  "checkedAt": "2026-08-19T20:45:27.930Z"
+ },
+ "issgovernance.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.issgovernance.com/privacy",
+  "checkedAt": "2026-08-19T20:45:28.362Z"
+ },
+ "jdmlistservices.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.jdmlistservices.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:28.540Z"
+ },
+ "jdpower.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:28.926Z"
+ },
+ "jmr-media.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:29.398Z"
+ },
+ "ileads.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:30.402Z"
+ },
+ "keymarketingadvantage.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:32.032Z"
+ },
+ "koddi.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "http://www.koddi.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:32.192Z"
+ },
+ "kontextdata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:33.183Z"
+ },
+ "keywordconnects.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://keywordconnects.com/privacy",
+  "checkedAt": "2026-08-19T20:45:33.905Z"
+ },
+ "lsmapps.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:33.972Z"
+ },
+ "kindsight.io": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.kindsight.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:34.300Z"
+ },
+ "livedatatechnologies.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "supervisory authority"
+  ],
+  "source": "https://livedatatechnologies.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:35.111Z"
+ },
+ "komodohealth.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.komodohealth.com/privacy-notice",
+  "checkedAt": "2026-08-19T20:45:36.222Z"
+ },
+ "liftbasedata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.liftbasedata.com/privacy",
+  "checkedAt": "2026-08-19T20:45:36.453Z"
+ },
+ "mrss.com": {
+  "europe": true,
+  "marqueurs": [
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.mrss.com/privacy",
+  "checkedAt": "2026-08-19T20:45:36.768Z"
+ },
+ "malvernmedia.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.malvernmedia.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:38.077Z"
+ },
+ "lizdev.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://lizdev.com/privacy",
+  "checkedAt": "2026-08-19T20:45:38.408Z"
+ },
+ "maxmind.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:38.638Z"
+ },
+ "lightboxre.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://lightboxre.com/privacy",
+  "checkedAt": "2026-08-19T20:45:38.683Z"
+ },
+ "melissa.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "residents? of the european union"
+  ],
+  "source": "https://www.melissa.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:39.297Z"
+ },
+ "mediawallah.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:39.805Z"
+ },
+ "lionsharemarketing.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.lionsharemarketing.com/privacy",
+  "checkedAt": "2026-08-19T20:45:40.305Z"
+ },
+ "meltwater.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.meltwater.com/privacy",
+  "checkedAt": "2026-08-19T20:45:40.372Z"
+ },
+ "internetbrands.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "data protection officer"
+  ],
+  "source": "https://www.internetbrands.com/privacy",
+  "checkedAt": "2026-08-19T20:45:40.938Z"
+ },
+ "messagedigital.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://messagedigital.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:41.437Z"
+ },
+ "milestonemarketingsolutions.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.milestonemarketingsolutions.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:41.889Z"
+ },
+ "marketops.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.marketops.com/privacy",
+  "checkedAt": "2026-08-19T20:45:42.396Z"
+ },
+ "merkle.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:42.913Z"
+ },
+ "omginc.xyz": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.omginc.xyz/privacy",
+  "checkedAt": "2026-08-19T20:45:43.980Z"
+ },
+ "apollointeractive.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:44.681Z"
+ },
+ "medprosystems.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:44.797Z"
+ },
+ "narvar.com": {
+  "europe": true,
+  "marqueurs": [
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://corp.narvar.com/privacy",
+  "checkedAt": "2026-08-19T20:45:44.800Z"
+ },
+ "monitorbase.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:45.732Z"
+ },
+ "netwisedata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:46.026Z"
+ },
+ "missionwired.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.missionwired.com/privacy",
+  "checkedAt": "2026-08-19T20:45:46.516Z"
+ },
+ "paramountdirectmarketing.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:46.923Z"
+ },
+ "nationalopinioninstitute.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://nationalopinioninstitute.com/privacy",
+  "checkedAt": "2026-08-19T20:45:47.395Z"
+ },
+ "opensend.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://opensend.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:47.445Z"
+ },
+ "persistent.id": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://persistent.id/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:48.366Z"
+ },
+ "peoplefindersdaas.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:48.758Z"
+ },
+ "pitchbook.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:49.700Z"
+ },
+ "pacificeast.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.pacificeast.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:50.565Z"
+ },
+ "pmg.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.pmg.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:50.777Z"
+ },
+ "multimedialists.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.multimedialists.com/privacy",
+  "checkedAt": "2026-08-19T20:45:51.322Z"
+ },
+ "porchgroupmedia.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.porchgroupmedia.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:52.165Z"
+ },
+ "path2response.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.path2response.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:52.206Z"
+ },
+ "preqin.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:53.659Z"
+ },
+ "popacta.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.popacta.com/privacy",
+  "checkedAt": "2026-08-19T20:45:53.831Z"
+ },
+ "postie.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://postie.com/privacy",
+  "checkedAt": "2026-08-19T20:45:53.845Z"
+ },
+ "postpilot.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.postpilot.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:54.102Z"
+ },
+ "privco.com": {
+  "europe": true,
+  "marqueurs": [
+   "general data protection regulation",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.privco.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:54.529Z"
+ },
+ "plungedigital.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.plungedigital.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:54.675Z"
+ },
+ "possiblenow.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:54.987Z"
+ },
+ "bigdbm.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "data protection officer",
+   "residents? of the european union"
+  ],
+  "source": "https://bigdbm.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:55.015Z"
+ },
+ "rampedup.io": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://rampedup.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:55.755Z"
+ },
+ "realeflow.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:45:56.826Z"
+ },
+ "realintent.co": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://realintent.co/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:57.841Z"
+ },
+ "quad.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.quad.com/legal/privacy",
+  "checkedAt": "2026-08-19T20:45:58.182Z"
+ },
+ "realsourcedata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:45:59.004Z"
+ },
+ "qualfon.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.qualfon.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:45:59.137Z"
+ },
+ "rgrmarketing.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.rgrmarketing.com/privacy",
+  "checkedAt": "2026-08-19T20:45:59.969Z"
+ },
+ "relpro.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.relpro.com/privacy",
+  "checkedAt": "2026-08-19T20:46:00.252Z"
+ },
+ "recruitbot.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.recruitbot.com/privacy",
+  "checkedAt": "2026-08-19T20:46:01.540Z"
+ },
+ "retention.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.retention.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:01.687Z"
+ },
+ "reklaimyours.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.reklaimyours.com/privacy",
+  "checkedAt": "2026-08-19T20:46:02.367Z"
+ },
+ "revenuebase.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://revenuebase.ai/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:02.661Z"
+ },
+ "reveliolabs.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "residents? of the european union"
+  ],
+  "source": "https://www.reveliolabs.com/privacy",
+  "checkedAt": "2026-08-19T20:46:02.821Z"
+ },
+ "revoptimal.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://revoptimal.com/privacy",
+  "checkedAt": "2026-08-19T20:46:03.000Z"
+ },
+ "rayinsights.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.rayinsights.com/privacy",
+  "checkedAt": "2026-08-19T20:46:03.421Z"
+ },
+ "redidata.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.redidata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:04.067Z"
+ },
+ "salesintel.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.salesintel.io/privacy",
+  "checkedAt": "2026-08-19T20:46:04.327Z"
+ },
+ "remodeling.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.remodeling.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:04.834Z"
+ },
+ "richmediallc.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.richmediallc.com/privacy",
+  "checkedAt": "2026-08-19T20:46:05.850Z"
+ },
+ "scileads.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://scileads.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:06.521Z"
+ },
+ "roundsky.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:06.689Z"
+ },
+ "sg360.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:06.979Z"
+ },
+ "sbfe.org": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:07.429Z"
+ },
+ "sharelocalmedia.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.sharelocalmedia.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:07.707Z"
+ },
+ "simiocloud.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:07.799Z"
+ },
+ "salutarydata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://salutarydata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:08.007Z"
+ },
+ "sheerid.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.sheerid.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:09.074Z"
+ },
+ "slashdotmedia.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.slashdotmedia.com/privacy",
+  "checkedAt": "2026-08-19T20:46:09.185Z"
+ },
+ "predactiv.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.predactiv.com/privacy",
+  "checkedAt": "2026-08-19T20:46:09.313Z"
+ },
+ "smartmove.us": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:09.874Z"
+ },
+ "steppingblocks.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.steppingblocks.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:10.192Z"
+ },
+ "sms-inc.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:10.354Z"
+ },
+ "siteimpact.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.siteimpact.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:10.856Z"
+ },
+ "theswarm.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.theswarm.com/privacy",
+  "checkedAt": "2026-08-19T20:46:11.585Z"
+ },
+ "statsocial.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "data protection officer"
+  ],
+  "source": "https://statsocial.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:12.285Z"
+ },
+ "stirista.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.stirista.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:14.478Z"
+ },
+ "swoop.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://swoop.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:14.485Z"
+ },
+ "targetsmart.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://targetsmart.com/privacy",
+  "checkedAt": "2026-08-19T20:46:16.514Z"
+ },
+ "telesign.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.telesign.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:17.626Z"
+ },
+ "thedatagroup.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "supervisory authority"
+  ],
+  "source": "https://thedatagroup.com/privacy",
+  "checkedAt": "2026-08-19T20:46:18.167Z"
+ },
+ "strategicdataintelligence.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://strategicdataintelligence.com/privacy",
+  "checkedAt": "2026-08-19T20:46:19.378Z"
+ },
+ "thinkdatagroup.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.thinkdatagroup.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:19.545Z"
+ },
+ "thomsonreuters.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "supervisory authority",
+   "data protection officer"
+  ],
+  "source": "https://www.thomsonreuters.com/privacy",
+  "checkedAt": "2026-08-19T20:46:19.976Z"
+ },
+ "traackr.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.traackr.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:20.503Z"
+ },
+ "trestleiq.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:21.959Z"
+ },
+ "trueblueanalytics.org": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://trueblueanalytics.org/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:22.083Z"
+ },
+ "finthrive.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:23.079Z"
+ },
+ "tunnldata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://tunnldata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:24.514Z"
+ },
+ "upscapital.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:24.731Z"
+ },
+ "usadata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:27.186Z"
+ },
+ "usdatacorporation.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:28.010Z"
+ },
+ "thebridgecorp.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.thebridgecorp.com/privacy",
+  "checkedAt": "2026-08-19T20:46:28.284Z"
+ },
+ "vendelux.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:29.429Z"
+ },
+ "ventiveiq.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://ventiveiq.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:30.221Z"
+ },
+ "sterling.ai": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://sterling.ai/privacy",
+  "checkedAt": "2026-08-19T20:46:31.216Z"
+ },
+ "sourcepathdigital.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://sourcepathdigital.com/privacy",
+  "checkedAt": "2026-08-19T20:46:31.537Z"
+ },
+ "warmly.ai": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://warmly.ai/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:31.874Z"
+ },
+ "wealthfeed.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.wealthfeed.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:33.911Z"
+ },
+ "unearthcampaigns.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.unearthcampaigns.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:34.413Z"
+ },
+ "windfall.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.windfall.com/privacy",
+  "checkedAt": "2026-08-19T20:46:35.761Z"
+ },
+ "usmarketinggrp.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://usmarketinggrp.com/privacy",
+  "checkedAt": "2026-08-19T20:46:36.511Z"
+ },
+ "versium.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.versium.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:37.277Z"
+ },
+ "zs.com": {
+  "europe": true,
+  "marqueurs": [
+   "standard contractual clauses",
+   "supervisory authority",
+   "data protection officer"
+  ],
+  "source": "https://www.zs.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:37.472Z"
+ },
+ "winrdata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:38.470Z"
+ },
+ "wiland.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.wiland.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:39.055Z"
+ },
+ "180bytwo.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.180bytwo.com/privacy",
+  "checkedAt": "2026-08-19T20:46:39.308Z"
+ },
+ "4-eyes.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:39.653Z"
+ },
+ "360mediadirect.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.360mediadirect.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:39.761Z"
+ },
+ "4legalleads.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:40.080Z"
+ },
+ "degree.me": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:40.352Z"
+ },
+ "webbula.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.webbula.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:41.407Z"
+ },
+ "idology.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:41.900Z"
+ },
+ "acutraq.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.acutraq.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:43.659Z"
+ },
+ "addirectinc.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:43.736Z"
+ },
+ "xcelerated.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://xcelerated.com/privacy",
+  "checkedAt": "2026-08-19T20:46:44.043Z"
+ },
+ "aslmarketing.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:45.258Z"
+ },
+ "adrearubin.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:46.240Z"
+ },
+ "take5mg.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:46.814Z"
+ },
+ "aceagents.ai": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.aceagents.ai/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:47.510Z"
+ },
+ "executiveenergy.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:48.413Z"
+ },
+ "agedsolarleads.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://agedsolarleads.com/privacy",
+  "checkedAt": "2026-08-19T20:46:48.453Z"
+ },
+ "adadapted.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.adadapted.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:48.611Z"
+ },
+ "aisinfo.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.aisinfo.com/privacy",
+  "checkedAt": "2026-08-19T20:46:49.052Z"
+ },
+ "amone.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:49.879Z"
+ },
+ "acbj.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:50.010Z"
+ },
+ "amerilist.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:50.158Z"
+ },
+ "altisource.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.altisource.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:50.160Z"
+ },
+ "advcredit.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:50.423Z"
+ },
+ "apartments.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:51.173Z"
+ },
+ "appsci.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.appsci.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:51.484Z"
+ },
+ "arrakis.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:51.634Z"
+ },
+ "lgads.tv": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:52.022Z"
+ },
+ "assurance.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:52.462Z"
+ },
+ "atlanticfox.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:52.893Z"
+ },
+ "appily.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:54.067Z"
+ },
+ "automotivemastermind.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.automotivemastermind.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:54.721Z"
+ },
+ "arity.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://arity.com/privacy",
+  "checkedAt": "2026-08-19T20:46:54.761Z"
+ },
+ "aspire-north.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:54.881Z"
+ },
+ "attomdata.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area"
+  ],
+  "source": "https://www.attomdata.com/privacy",
+  "checkedAt": "2026-08-19T20:46:54.988Z"
+ },
+ "blisspointmedia.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:55.554Z"
+ },
+ "billtrust.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.billtrust.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:56.304Z"
+ },
+ "bridgevine.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:56.680Z"
+ },
+ "birchwoodcreditservices.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.birchwoodcreditservices.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:56.681Z"
+ },
+ "awl.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://awl.com/privacy",
+  "checkedAt": "2026-08-19T20:46:56.749Z"
+ },
+ "bisi.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:57.270Z"
+ },
+ "brightswipe.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:57.274Z"
+ },
+ "brightcheck.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.brightcheck.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:46:58.034Z"
+ },
+ "businesswatchnetwork.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:58.204Z"
+ },
+ "buyerlink.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:46:59.598Z"
+ },
+ "cisive.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:46:59.815Z"
+ },
+ "careerbuilder.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:01.959Z"
+ },
+ "business.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.business.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:02.110Z"
+ },
+ "anexinet.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.anexinet.com/privacy",
+  "checkedAt": "2026-08-19T20:47:04.415Z"
+ },
+ "ice.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:04.965Z"
+ },
+ "compile.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:05.439Z"
+ },
+ "ciccredit.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:06.154Z"
+ },
+ "clearout.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:06.647Z"
+ },
+ "cengage.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.cengage.com/privacy",
+  "checkedAt": "2026-08-19T20:47:08.214Z"
+ },
+ "calltruth.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:08.698Z"
+ },
+ "universalcis.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:08.698Z"
+ },
+ "civitech.io": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.civitech.io/privacy",
+  "checkedAt": "2026-08-19T20:47:08.922Z"
+ },
+ "connextdigital.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:10.975Z"
+ },
+ "consider.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.consider.com/legal/privacy",
+  "checkedAt": "2026-08-19T20:47:11.114Z"
+ },
+ "cicreports.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.cicreports.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:11.664Z"
+ },
+ "teletrack.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:11.745Z"
+ },
+ "corelogic.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.corelogic.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:12.550Z"
+ },
+ "crawlbee.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:12.713Z"
+ },
+ "ddotslab.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:13.669Z"
+ },
+ "crosswalknyc.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.crosswalknyc.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:13.899Z"
+ },
+ "datafacts.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.datafacts.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:15.580Z"
+ },
+ "datadirectmarketing.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:16.806Z"
+ },
+ "datadojo.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:17.348Z"
+ },
+ "contentgine.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:17.619Z"
+ },
+ "dataskip.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:18.875Z"
+ },
+ "data.exchange": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:20.457Z"
+ },
+ "coresignal.com": {
+  "europe": true,
+  "marqueurs": [
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.coresignal.com/privacy-notice",
+  "checkedAt": "2026-08-19T20:47:21.195Z"
+ },
+ "delivr.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "supervisory authority"
+  ],
+  "source": "https://www.delivr.ai/privacy",
+  "checkedAt": "2026-08-19T20:47:21.473Z"
+ },
+ "ctam.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.ctam.com/privacy",
+  "checkedAt": "2026-08-19T20:47:21.692Z"
+ },
+ "diablomedia.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bEEA\\b",
+   "supervisory authority"
+  ],
+  "source": "https://www.diablomedia.com/privacy",
+  "checkedAt": "2026-08-19T20:47:22.572Z"
+ },
+ "demyst.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area"
+  ],
+  "source": "https://www.demyst.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:22.776Z"
+ },
+ "v12data.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.v12data.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:22.794Z"
+ },
+ "deluxe.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:22.897Z"
+ },
+ "diligent.com": {
+  "europe": true,
+  "marqueurs": [
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses",
+   "data protection officer"
+  ],
+  "source": "https://www.diligent.com/privacy",
+  "checkedAt": "2026-08-19T20:47:23.668Z"
+ },
+ "digdevdirect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:24.157Z"
+ },
+ "digicenter.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:24.368Z"
+ },
+ "teamdms.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.teamdms.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:25.577Z"
+ },
+ "creditinfosystems.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.creditinfosystems.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:26.623Z"
+ },
+ "driveniq.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:26.784Z"
+ },
+ "dynata.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "supervisory authority",
+   "data protection officer"
+  ],
+  "source": "https://www.dynata.com/privacy",
+  "checkedAt": "2026-08-19T20:47:27.905Z"
+ },
+ "dpcoptout.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://dpcoptout.com/privacy",
+  "checkedAt": "2026-08-19T20:47:28.335Z"
+ },
+ "drobu.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:28.746Z"
+ },
+ "socialgist.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:30.400Z"
+ },
+ "earlywarning.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.earlywarning.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:32.794Z"
+ },
+ "worldpay.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:33.293Z"
+ },
+ "electroniccommerceatoz.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:33.343Z"
+ },
+ "ekata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:33.622Z"
+ },
+ "digitalsegment.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.digitalsegment.com/privacy",
+  "checkedAt": "2026-08-19T20:47:34.020Z"
+ },
+ "listmatch.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:35.713Z"
+ },
+ "emailindustries.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.emailindustries.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:37.359Z"
+ },
+ "eprodirect.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.eprodirect.com/privacy",
+  "checkedAt": "2026-08-19T20:47:37.769Z"
+ },
+ "propstream.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.propstream.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:38.224Z"
+ },
+ "everydayhealth.care": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:39.054Z"
+ },
+ "emailmovers.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "data protection officer"
+  ],
+  "source": "https://emailmovers.com/gdpr",
+  "checkedAt": "2026-08-19T20:47:40.245Z"
+ },
+ "dmdatabases.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:40.301Z"
+ },
+ "solarpower-experts.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:40.389Z"
+ },
+ "emerges.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:40.507Z"
+ },
+ "fetcher.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.fetcher.ai/privacy",
+  "checkedAt": "2026-08-19T20:47:41.565Z"
+ },
+ "faraday.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:41.637Z"
+ },
+ "experianverify.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:41.787Z"
+ },
+ "fhamortgagefinder.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:43.222Z"
+ },
+ "fantasysportsknockout.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.fantasysportsknockout.com/legal/privacy",
+  "checkedAt": "2026-08-19T20:47:44.874Z"
+ },
+ "datatree.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.datatree.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:45.694Z"
+ },
+ "fmadata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.fmadata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:46.566Z"
+ },
+ "reachdata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:47.403Z"
+ },
+ "fairscreen.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.fairscreen.com/privacy",
+  "checkedAt": "2026-08-19T20:47:47.667Z"
+ },
+ "forewarn.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.forewarn.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:48.266Z"
+ },
+ "5x5coop.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:49.213Z"
+ },
+ "freshaddress.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.freshaddress.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:49.449Z"
+ },
+ "hellofyllo.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:50.282Z"
+ },
+ "fusedleads.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:51.245Z"
+ },
+ "g2risksolutions.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.g2risksolutions.com/privacy-notice",
+  "checkedAt": "2026-08-19T20:47:53.875Z"
+ },
+ "govdelivery.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://govdelivery.com/privacy",
+  "checkedAt": "2026-08-19T20:47:54.805Z"
+ },
+ "carmarketsolutions.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:54.897Z"
+ },
+ "gale.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "http://www.gale.com/privacy",
+  "checkedAt": "2026-08-19T20:47:55.575Z"
+ },
+ "greenhouse.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.greenhouse.com/privacy",
+  "checkedAt": "2026-08-19T20:47:56.442Z"
+ },
+ "grata.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.grata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:56.584Z"
+ },
+ "granitelists.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:57.159Z"
+ },
+ "gundersondirect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:47:58.336Z"
+ },
+ "backgroundchecks.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.backgroundchecks.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:47:58.570Z"
+ },
+ "grin.co": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.grin.co/privacy",
+  "checkedAt": "2026-08-19T20:47:58.647Z"
+ },
+ "h1insights.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:47:59.028Z"
+ },
+ "healthline.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:01.052Z"
+ },
+ "hygenicsdata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:01.207Z"
+ },
+ "harmonresearch.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.harmonresearch.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:01.633Z"
+ },
+ "ip2location.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "supervisory authority",
+   "data protection officer"
+  ],
+  "source": "https://www.ip2location.com/privacy",
+  "checkedAt": "2026-08-19T20:48:02.567Z"
+ },
+ "hearst.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:02.597Z"
+ },
+ "pickmedicare.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:02.868Z"
+ },
+ "here.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:03.962Z"
+ },
+ "homes.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:04.069Z"
+ },
+ "homeyou.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.homeyou.com/privacy",
+  "checkedAt": "2026-08-19T20:48:05.658Z"
+ },
+ "idengine.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:05.675Z"
+ },
+ "neighborhoodalerts.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:05.991Z"
+ },
+ "homeownersmarketingservices.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://homeownersmarketingservices.com/privacy",
+  "checkedAt": "2026-08-19T20:48:06.787Z"
+ },
+ "imprintanalytics.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:06.799Z"
+ },
+ "contacts411.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:07.490Z"
+ },
+ "ipreo.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:08.594Z"
+ },
+ "mlxp.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:08.754Z"
+ },
+ "infocore.com": {
+  "europe": true,
+  "marqueurs": [
+   "standard contractual clauses",
+   "data protection officer"
+  ],
+  "source": "https://www.infocore.com/privacy",
+  "checkedAt": "2026-08-19T20:48:09.628Z"
+ },
+ "inflection.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.inflection.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:09.697Z"
+ },
+ "iheart.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.iheart.com/privacy",
+  "checkedAt": "2026-08-19T20:48:10.007Z"
+ },
+ "inchecksolutions.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.inchecksolutions.com/privacy",
+  "checkedAt": "2026-08-19T20:48:10.614Z"
+ },
+ "infogroup.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:11.943Z"
+ },
+ "insideview.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:13.814Z"
+ },
+ "innovis.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:14.138Z"
+ },
+ "integratedmedicaldata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:14.763Z"
+ },
+ "esiteanalytics.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "supervisory authority"
+  ],
+  "source": "https://www.esiteanalytics.com/privacy",
+  "checkedAt": "2026-08-19T20:48:15.214Z"
+ },
+ "ruf.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:16.424Z"
+ },
+ "intellicorp.net": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:16.721Z"
+ },
+ "backgroundsonline.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:19.906Z"
+ },
+ "getivydata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:20.377Z"
+ },
+ "jornaya.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:21.897Z"
+ },
+ "jigyasaanalytics.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:23.567Z"
+ },
+ "jverify.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:25.202Z"
+ },
+ "iwave.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.iwave.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:25.653Z"
+ },
+ "kbmg.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:25.744Z"
+ },
+ "keymarketingcorp.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:26.130Z"
+ },
+ "killi.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:26.631Z"
+ },
+ "intranetquorum.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:26.682Z"
+ },
+ "keyopinionleaders.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:27.123Z"
+ },
+ "klarifi.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "data protection officer"
+  ],
+  "source": "https://www.klarifi.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:28.210Z"
+ },
+ "knowwho.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:29.813Z"
+ },
+ "kloudend.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:30.787Z"
+ },
+ "leadloft.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:32.804Z"
+ },
+ "leidos.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.leidos.com/privacy",
+  "checkedAt": "2026-08-19T20:48:33.834Z"
+ },
+ "leadershipconnect.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "supervisory authority"
+  ],
+  "source": "http://leadershipconnect.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:35.770Z"
+ },
+ "lighthouselist.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:37.689Z"
+ },
+ "listservicedirect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:42.417Z"
+ },
+ "outlastdfs.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:43.799Z"
+ },
+ "listmatch.co": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.listmatch.co/privacy",
+  "checkedAt": "2026-08-19T20:48:45.476Z"
+ },
+ "finalsite.net": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:45.520Z"
+ },
+ "lists-inc.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:45.828Z"
+ },
+ "localblox.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:46.383Z"
+ },
+ "logiq.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:48.002Z"
+ },
+ "lotadata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:48.466Z"
+ },
+ "listsonline.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "supervisory authority",
+   "residents? of the european union"
+  ],
+  "source": "http://www.listsonline.com/privacy",
+  "checkedAt": "2026-08-19T20:48:49.484Z"
+ },
+ "locatesmarter.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://locatesmarter.com/privacy",
+  "checkedAt": "2026-08-19T20:48:50.356Z"
+ },
+ "lciinc.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.lciinc.com/privacy-notice",
+  "checkedAt": "2026-08-19T20:48:51.690Z"
+ },
+ "machintel.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.machintel.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:52.086Z"
+ },
+ "marinusanalytics.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.marinusanalytics.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:52.381Z"
+ },
+ "mrginc.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:53.885Z"
+ },
+ "usinfosearch.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:54.288Z"
+ },
+ "getemails.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:55.114Z"
+ },
+ "mchdata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:57.385Z"
+ },
+ "mediasourcesolutions.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "supervisory authority",
+   "data protection officer"
+  ],
+  "source": "https://www.mediasourcesolutions.com/privacy",
+  "checkedAt": "2026-08-19T20:48:57.520Z"
+ },
+ "mediaocean.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:57.701Z"
+ },
+ "minervadata.xyz": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:58.003Z"
+ },
+ "modernize.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:58.467Z"
+ },
+ "mediasoftstudio.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:58.871Z"
+ },
+ "mogean.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.mogean.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:48:59.325Z"
+ },
+ "morningstar.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:59.407Z"
+ },
+ "monevo.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:59.517Z"
+ },
+ "mfidata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:48:59.688Z"
+ },
+ "move.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:48:59.920Z"
+ },
+ "movoto.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:00.042Z"
+ },
+ "ncsolutions.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:01.083Z"
+ },
+ "myrenterchecker.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "http://www.myrenterchecker.com/privacy",
+  "checkedAt": "2026-08-19T20:49:03.412Z"
+ },
+ "ncr.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.ncr.com/privacy",
+  "checkedAt": "2026-08-19T20:49:05.609Z"
+ },
+ "mycentraljersey.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:05.705Z"
+ },
+ "studentclearinghouse.org": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.studentclearinghouse.org/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:06.229Z"
+ },
+ "near.co": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:06.829Z"
+ },
+ "fivestrata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:07.991Z"
+ },
+ "trufactor.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:13.748Z"
+ },
+ "nelists.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:15.464Z"
+ },
+ "nexxagroup.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.nexxagroup.com/privacy",
+  "checkedAt": "2026-08-19T20:49:16.508Z"
+ },
+ "nextwavemarketingstrategies.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.nextwavemarketingstrategies.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:18.955Z"
+ },
+ "onemodel.co": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.onemodel.co/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:19.997Z"
+ },
+ "novalist.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.novalist.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:20.202Z"
+ },
+ "namericanmedia.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:22.279Z"
+ },
+ "pushint.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:22.947Z"
+ },
+ "optimalfusion.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "http://www.optimalfusion.com/privacy",
+  "checkedAt": "2026-08-19T20:49:23.834Z"
+ },
+ "owneriq.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:26.065Z"
+ },
+ "parade.pet": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:26.070Z"
+ },
+ "nymblr.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:26.216Z"
+ },
+ "indivizio.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:27.000Z"
+ },
+ "partnerscredit.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:28.399Z"
+ },
+ "peekyou.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:28.868Z"
+ },
+ "interseller.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.interseller.io/privacy",
+  "checkedAt": "2026-08-19T20:49:29.715Z"
+ },
+ "parasolleads.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:29.999Z"
+ },
+ "kycdata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:31.902Z"
+ },
+ "plexuss.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:32.608Z"
+ },
+ "plmrkg.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:33.854Z"
+ },
+ "polepoleto.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:33.858Z"
+ },
+ "polityinc.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.polityinc.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:34.995Z"
+ },
+ "preferredcommunications.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:35.464Z"
+ },
+ "applecart.co": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.applecart.co/privacy",
+  "checkedAt": "2026-08-19T20:49:37.309Z"
+ },
+ "pbinfo.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:37.446Z"
+ },
+ "prospectordatabase.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:37.851Z"
+ },
+ "700credit.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.700credit.com/privacy",
+  "checkedAt": "2026-08-19T20:49:38.225Z"
+ },
+ "pwc.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.pwc.com/privacy",
+  "checkedAt": "2026-08-19T20:49:39.195Z"
+ },
+ "proximaplatform.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:39.702Z"
+ },
+ "purecars.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.purecars.com/privacy",
+  "checkedAt": "2026-08-19T20:49:39.741Z"
+ },
+ "prodpro.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.prodpro.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:40.465Z"
+ },
+ "qwoted.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area"
+  ],
+  "source": "https://www.qwoted.com/privacy",
+  "checkedAt": "2026-08-19T20:49:41.122Z"
+ },
+ "qualcomm.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:42.898Z"
+ },
+ "reachmarketing.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://reachmarketing.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:44.085Z"
+ },
+ "rpmleader.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://rpmleader.com/privacy",
+  "checkedAt": "2026-08-19T20:49:46.431Z"
+ },
+ "realsatisfied.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.realsatisfied.com/privacy",
+  "checkedAt": "2026-08-19T20:49:46.614Z"
+ },
+ "refinitiv.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:47.899Z"
+ },
+ "yello.co": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.yello.co/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:48.703Z"
+ },
+ "redbirddirect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:48.906Z"
+ },
+ "moodysanalytics.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:49.192Z"
+ },
+ "bvdinfo.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.bvdinfo.com/privacy",
+  "checkedAt": "2026-08-19T20:49:49.211Z"
+ },
+ "realitydebtsolutions.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.realitydebtsolutions.com/privacy",
+  "checkedAt": "2026-08-19T20:49:51.625Z"
+ },
+ "researchusallc.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:51.753Z"
+ },
+ "carpe.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.carpe.io/privacy",
+  "checkedAt": "2026-08-19T20:49:53.085Z"
+ },
+ "rooftopdigital.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:53.587Z"
+ },
+ "pharosiq.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://pharosiq.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:53.603Z"
+ },
+ "rocadvertising.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:54.201Z"
+ },
+ "rentrisk.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:54.668Z"
+ },
+ "safeopt.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:54.815Z"
+ },
+ "reonomy.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:54.910Z"
+ },
+ "findtrueowner.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:55.289Z"
+ },
+ "sawyerlists.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:55.779Z"
+ },
+ "saferentsolutions.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.saferentsolutions.com/privacy",
+  "checkedAt": "2026-08-19T20:49:56.004Z"
+ },
+ "sabio.inc": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:49:57.020Z"
+ },
+ "scanbuy.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:49:57.768Z"
+ },
+ "realpage.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.realpage.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:58.105Z"
+ },
+ "sentilink.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.sentilink.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:49:59.724Z"
+ },
+ "srv1st.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "supervisory authority"
+  ],
+  "source": "https://www.srv1st.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:00.690Z"
+ },
+ "locateplus.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.locateplus.com/privacy",
+  "checkedAt": "2026-08-19T20:50:01.242Z"
+ },
+ "skyhook.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:02.063Z"
+ },
+ "skipsmasher.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:02.120Z"
+ },
+ "smacomm.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:03.773Z"
+ },
+ "solarreviews.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.solarreviews.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:03.890Z"
+ },
+ "sourceit.co": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:04.890Z"
+ },
+ "sourcescrub.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:06.053Z"
+ },
+ "spectrumlists.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:07.257Z"
+ },
+ "staircase.co": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:08.897Z"
+ },
+ "neustar.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:09.201Z"
+ },
+ "sourceitmarketing.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.sourceitmarketing.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:10.548Z"
+ },
+ "spectrummailinglists.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:14.250Z"
+ },
+ "saleseer.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://saleseer.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:14.439Z"
+ },
+ "myflashcloud.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:15.917Z"
+ },
+ "spoker.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:16.188Z"
+ },
+ "strategicinfo.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:16.778Z"
+ },
+ "structure.ac": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:17.769Z"
+ },
+ "techtarget.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.techtarget.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:19.128Z"
+ },
+ "gostrata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.gostrata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:19.160Z"
+ },
+ "suus.inc": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:19.835Z"
+ },
+ "telefi.app": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.telefi.app/privacy",
+  "checkedAt": "2026-08-19T20:50:20.184Z"
+ },
+ "thefeedfoundation.org": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:20.342Z"
+ },
+ "yankeegroup.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:20.893Z"
+ },
+ "theknot.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://www.theknot.com/privacy",
+  "checkedAt": "2026-08-19T20:50:21.080Z"
+ },
+ "cowen.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:21.469Z"
+ },
+ "throtle.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.throtle.io/privacy",
+  "checkedAt": "2026-08-19T20:50:21.639Z"
+ },
+ "lead.co": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.lead.co/privacy",
+  "checkedAt": "2026-08-19T20:50:22.702Z"
+ },
+ "tinuiti.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://tinuiti.com/privacy",
+  "checkedAt": "2026-08-19T20:50:22.764Z"
+ },
+ "towerdata.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.towerdata.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:23.223Z"
+ },
+ "tracersinfo.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:23.567Z"
+ },
+ "trueopulence.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:24.895Z"
+ },
+ "tymaxmedia.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:25.396Z"
+ },
+ "transcend.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:25.694Z"
+ },
+ "twinedata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:25.843Z"
+ },
+ "venpath.net": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:26.178Z"
+ },
+ "step2successmarketing.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:26.868Z"
+ },
+ "vertify.com": {
+  "europe": true,
+  "marqueurs": [
+   "supervisory authority",
+   "residents? of the european union"
+  ],
+  "source": "https://www.vertify.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:29.725Z"
+ },
+ "unitedone.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:30.325Z"
+ },
+ "whoodle.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:31.073Z"
+ },
+ "scrapingrobot.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.scrapingrobot.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:31.965Z"
+ },
+ "ubermedia.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:32.575Z"
+ },
+ "versefantasysports.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:32.599Z"
+ },
+ "domymail.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:33.353Z"
+ },
+ "windfalldata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.windfalldata.com/privacy",
+  "checkedAt": "2026-08-19T20:50:33.462Z"
+ },
+ "xome.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:34.271Z"
+ },
+ "wisdommediagroupllc.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:35.893Z"
+ },
+ "xmode.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:36.066Z"
+ },
+ "exactdata.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:37.120Z"
+ },
+ "verinext.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://verinext.com/privacy",
+  "checkedAt": "2026-08-19T20:50:37.277Z"
+ },
+ "wodwo.co": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:37.407Z"
+ },
+ "yobi.ventures": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:37.705Z"
+ },
+ "xactus.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.xactus.com/privacy",
+  "checkedAt": "2026-08-19T20:50:38.720Z"
+ },
+ "amplemarket.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://amplemarket.com/privacy",
+  "checkedAt": "2026-08-19T20:50:38.843Z"
+ },
+ "33mileradius.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.33mileradius.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:40.105Z"
+ },
+ "achcoop.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://achcoop.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:40.653Z"
+ },
+ "agedleadstore.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://agedleadstore.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:40.668Z"
+ },
+ "clay.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "standard contractual clauses"
+  ],
+  "source": "https://clay.com/privacy",
+  "checkedAt": "2026-08-19T20:50:41.115Z"
+ },
+ "cbinsights.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.cbinsights.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:43.021Z"
+ },
+ "datanyze.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.datanyze.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:43.155Z"
+ },
+ "explorium.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.explorium.ai/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:43.200Z"
+ },
+ "findem.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:43.258Z"
+ },
+ "precisely.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://www.precisely.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:44.272Z"
+ },
+ "leadiq.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://leadiq.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:44.371Z"
+ },
+ "kbsynergy.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:44.407Z"
+ },
+ "leadspace.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.leadspace.com/privacy-notice",
+  "checkedAt": "2026-08-19T20:50:45.440Z"
+ },
+ "lead411.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://lead411.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:45.928Z"
+ },
+ "fraiser.org": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://fraiser.org/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:46.018Z"
+ },
+ "outwardmedia.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://outwardmedia.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:47.942Z"
+ },
+ "peopledatalabs.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:48.145Z"
+ },
+ "leadpost.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "data protection officer"
+  ],
+  "source": "https://leadpost.com/gdpr",
+  "checkedAt": "2026-08-19T20:50:48.147Z"
+ },
+ "seekout.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.seekout.com/privacy",
+  "checkedAt": "2026-08-19T20:50:49.228Z"
+ },
+ "getrev.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:49.714Z"
+ },
+ "modigie.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.modigie.com/privacy",
+  "checkedAt": "2026-08-19T20:50:50.480Z"
+ },
+ "theorg.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://theorg.com/privacy",
+  "checkedAt": "2026-08-19T20:50:50.671Z"
+ },
+ "uplead.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.uplead.com/privacy",
+  "checkedAt": "2026-08-19T20:50:51.529Z"
+ },
+ "statara.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:51.548Z"
+ },
+ "veeva.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses",
+   "data protection officer"
+  ],
+  "source": "https://veeva.com/privacy",
+  "checkedAt": "2026-08-19T20:50:51.647Z"
+ },
+ "analytics-iq.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:52.107Z"
+ },
+ "aeroleads.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://aeroleads.com/privacy",
+  "checkedAt": "2026-08-19T20:50:52.541Z"
+ },
+ "swordfish.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:52.754Z"
+ },
+ "adapt.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:53.405Z"
+ },
+ "affluense.ai": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.affluense.ai/privacy",
+  "checkedAt": "2026-08-19T20:50:53.480Z"
+ },
+ "alignable.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.alignable.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:53.704Z"
+ },
+ "allpeople.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:54.130Z"
+ },
+ "anymailfinder.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:55.588Z"
+ },
+ "speedeondata.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://speedeondata.com/privacy",
+  "checkedAt": "2026-08-19T20:50:55.615Z"
+ },
+ "andrewswharton.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:56.003Z"
+ },
+ "arounddeal.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:56.363Z"
+ },
+ "allpeople.biz": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:57.259Z"
+ },
+ "cience.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.cience.com/privacy-center",
+  "checkedAt": "2026-08-19T20:50:57.504Z"
+ },
+ "catalyzeai.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:57.528Z"
+ },
+ "visualvisitor.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:58.035Z"
+ },
+ "clearbit.com": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework",
+   "standard contractual clauses"
+  ],
+  "source": "https://clearbit.com/privacy",
+  "checkedAt": "2026-08-19T20:50:58.249Z"
+ },
+ "causeiq.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:58.896Z"
+ },
+ "clodura.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.clodura.ai/privacy-policy",
+  "checkedAt": "2026-08-19T20:50:58.994Z"
+ },
+ "companydirectorylist.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:59.130Z"
+ },
+ "crexi.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:59.335Z"
+ },
+ "closelyhq.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:50:59.824Z"
+ },
+ "cyndx.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:50:59.890Z"
+ },
+ "cortera.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://cortera.com/privacy",
+  "checkedAt": "2026-08-19T20:51:00.114Z"
+ },
+ "datagma.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "standard contractual clauses"
+  ],
+  "source": "https://datagma.com/privacy",
+  "checkedAt": "2026-08-19T20:51:00.476Z"
+ },
+ "edgein.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "residents? of the european union"
+  ],
+  "source": "https://edgein.io/privacy",
+  "checkedAt": "2026-08-19T20:51:01.032Z"
+ },
+ "doctorsatlas.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:01.558Z"
+ },
+ "datamasters.org": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "data protection officer"
+  ],
+  "source": "https://www.datamasters.org/privacy",
+  "checkedAt": "2026-08-19T20:51:02.146Z"
+ },
+ "data-lead.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:02.332Z"
+ },
+ "enpnetwork.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:02.392Z"
+ },
+ "fastbase.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://www.fastbase.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:02.409Z"
+ },
+ "finalscout.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://finalscout.com/privacy",
+  "checkedAt": "2026-08-19T20:51:03.396Z"
+ },
+ "equilar.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "supervisory authority",
+   "data protection officer"
+  ],
+  "source": "https://www.equilar.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:03.794Z"
+ },
+ "getemail.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:04.595Z"
+ },
+ "fullenrich.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://fullenrich.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:05.002Z"
+ },
+ "getprospect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:05.812Z"
+ },
+ "firmfuel.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://firmfuel.com/privacy",
+  "checkedAt": "2026-08-19T20:51:07.505Z"
+ },
+ "govtribe.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:07.625Z"
+ },
+ "email-verifier.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:07.978Z"
+ },
+ "golden.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:08.052Z"
+ },
+ "flashintel.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:08.429Z"
+ },
+ "huntmails.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:10.358Z"
+ },
+ "kendoemailapp.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation"
+  ],
+  "source": "https://kendoemailapp.com/privacy",
+  "checkedAt": "2026-08-19T20:51:11.590Z"
+ },
+ "konaequity.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:12.748Z"
+ },
+ "leadar.ai": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:13.814Z"
+ },
+ "infofree.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://infofree.com/privacy",
+  "checkedAt": "2026-08-19T20:51:14.317Z"
+ },
+ "leadsive.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:14.747Z"
+ },
+ "leadzod.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.leadzod.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:16.175Z"
+ },
+ "leadsmarket.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.leadsmarket.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:16.359Z"
+ },
+ "intentmacro.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:17.084Z"
+ },
+ "marketforcecorp.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.marketforcecorp.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:18.725Z"
+ },
+ "limeleads.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:18.995Z"
+ },
+ "muckrack.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:20.080Z"
+ },
+ "muraena.ai": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://muraena.ai/privacy",
+  "checkedAt": "2026-08-19T20:51:22.418Z"
+ },
+ "mightyrep.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:24.270Z"
+ },
+ "nexsales.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:24.793Z"
+ },
+ "noon.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "supervisory authority",
+   "residents? of the european union"
+  ],
+  "source": "https://www.noon.ai/privacy",
+  "checkedAt": "2026-08-19T20:51:24.987Z"
+ },
+ "orbitly.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:25.581Z"
+ },
+ "intentgine.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:26.702Z"
+ },
+ "peopleai.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:27.788Z"
+ },
+ "ppl-data.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:31.713Z"
+ },
+ "prezi.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://prezi.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:33.312Z"
+ },
+ "oncoreleads.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://oncoreleads.com/privacy",
+  "checkedAt": "2026-08-19T20:51:34.064Z"
+ },
+ "reversecontact.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.reversecontact.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:34.363Z"
+ },
+ "rhetorik.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://rhetorik.com/privacy",
+  "checkedAt": "2026-08-19T20:51:36.173Z"
+ },
+ "salesblink.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b"
+  ],
+  "source": "https://salesblink.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:37.444Z"
+ },
+ "revonect.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:38.046Z"
+ },
+ "saleshandy.com": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "standard contractual clauses"
+  ],
+  "source": "https://www.saleshandy.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:38.871Z"
+ },
+ "salesgear.io": {
+  "europe": true,
+  "marqueurs": [
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://www.salesgear.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:42.957Z"
+ },
+ "shadowinc.io": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:43.338Z"
+ },
+ "signalhire.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "politique introuvable sans navigateur",
+  "checkedAt": "2026-08-19T20:51:44.619Z"
+ },
+ "sprouts.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "european economic area",
+   "\\bEEA\\b",
+   "EU[\\s-]?U\\.?S\\.? data privacy framework"
+  ],
+  "source": "https://sprouts.ai/privacy",
+  "checkedAt": "2026-08-19T20:51:45.814Z"
+ },
+ "success.ai": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "supervisory authority"
+  ],
+  "source": "https://www.success.ai/privacy",
+  "checkedAt": "2026-08-19T20:51:46.479Z"
+ },
+ "tagmydeals.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:48.081Z"
+ },
+ "thebluebook.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:49.688Z"
+ },
+ "shortlyst.ai": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.shortlyst.ai/privacy",
+  "checkedAt": "2026-08-19T20:51:49.887Z"
+ },
+ "tomba.io": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "\\bEEA\\b",
+   "standard contractual clauses",
+   "supervisory authority"
+  ],
+  "source": "https://tomba.io/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:50.783Z"
+ },
+ "traded.co": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:51.618Z"
+ },
+ "trustoria.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:51:52.137Z"
+ },
+ "topline.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://topline.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:52.214Z"
+ },
+ "wiza.co": {
+  "europe": true,
+  "marqueurs": [
+   "\\bGDPR\\b",
+   "general data protection regulation",
+   "european economic area",
+   "\\bEEA\\b"
+  ],
+  "source": "https://wiza.co/privacy",
+  "checkedAt": "2026-08-19T20:51:52.998Z"
+ },
+ "voilanorbert.com": {
+  "europe": false,
+  "marqueurs": [],
+  "raison": "aucune mention du droit europeen",
+  "source": "https://www.voilanorbert.com/privacy-policy",
+  "checkedAt": "2026-08-19T20:51:55.571Z"
+ },
+ "flexnetoperations.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:52:06.319Z"
+ },
+ "buzzfile.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:52:20.586Z"
+ },
+ "matchandappend.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:52:21.010Z"
+ },
+ "owler.com": {
+  "europe": null,
+  "marqueurs": [],
+  "raison": "site injoignable",
+  "checkedAt": "2026-08-19T20:52:56.038Z"
+ }
+}

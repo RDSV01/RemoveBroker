@@ -1,0 +1,64 @@
+{
+  "revision": 30,
+  "generatedAt": "2026-08-19T20:54:17.519Z",
+  "count": 1972,
+  "sha256": "ac78ebc85b1efd862d2ead2facdb7a9bbc5feed127d324f5e01661f3ad590862",
+  "sources": [
+    {
+      "id": "cppa",
+      "label": "Registre officiel des data brokers de Californie (CPPA)",
+      "count": 603
+    },
+    {
+      "id": "optery",
+      "label": "Optery Data Brokers Directory",
+      "count": 956
+    },
+    {
+      "id": "eraser",
+      "label": "Liste communautaire eraser",
+      "count": 764
+    },
+    {
+      "id": "datenanfragen",
+      "label": "Base de contacts RGPD Datenanfragen (CC0)",
+      "count": 2554
+    },
+    {
+      "id": "tcf",
+      "label": "Liste des fournisseurs du cadre de consentement europeen (IAB Europe TCF)",
+      "count": 1202
+    },
+    {
+      "id": "overrides",
+      "label": "Surcharges du dépôt",
+      "count": 130
+    }
+  ],
+  "stats": {
+    "withEmail": 1568,
+    "withForm": 525,
+    "withRecipe": 1,
+    "registeredCA": 296,
+    "euRelevant": 1972,
+    "france": 150,
+    "byCategory": {
+      "people-search": 11,
+      "background-check": 2,
+      "location": 23,
+      "phone-directory": 5,
+      "credit-risk": 30,
+      "marketing": 1786,
+      "b2b": 115
+    },
+    "byRegion": {
+      "us": 655,
+      "eu": 1459,
+      "intl": 252,
+      "fr": 150,
+      "uk": 19
+    }
+  },
+  "added": [],
+  "removed": []
+}
