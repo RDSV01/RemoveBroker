@@ -26,11 +26,11 @@ concerns you when you live in France.
 
 ## A European catalogue, France first
 
-**1,605 reachable companies**, including **108 French ones**, all subject to the
+**1,607 reachable companies**, including **110 French ones**, all subject to the
 GDPR.
 
 The headline figure counts companies a request can actually be sent to, backed
-by an address or a form. The catalogue lists 1,972: for the remaining 367 no
+by an address or a form. The catalogue lists 1,971: for the remaining 364 no
 contact has been found yet, and counting them would inflate a number you cannot
 use.
 
@@ -76,9 +76,9 @@ it. Nothing else to install.
 
 | System | File |
 | --- | --- |
-| Windows 10/11 | `RemoveBroker-1.0.0-installateur.exe` |
-| macOS | `RemoveBroker-1.0.0-arm64.dmg` or `-x64.dmg` |
-| Linux | `RemoveBroker-1.0.0-x86_64.AppImage` or `-amd64.deb` |
+| Windows 10/11 | `RemoveBroker-1.1.0-installateur.exe` |
+| macOS | `RemoveBroker-1.1.0-arm64.dmg` or `-x64.dmg` |
+| Linux | `RemoveBroker-1.1.0-x86_64.AppImage` or `-amd64.deb` |
 
 The installers are unsigned, so Windows and macOS will warn you on first launch.
 [docs/INSTALLATION.md](docs/INSTALLATION.md) explains how to proceed and lists

@@ -139,10 +139,29 @@ function claimNext(): Job | null {
   return { id: row.id, kind: row.kind, payload: JSON.parse(row.payload), attempts: row.attempts };
 }
 
+/**
+ * Clôture un travail, sauf s'il s'est lui-même replanifié.
+ *
+ * Un gestionnaire peut décider de reporter son travail plutôt que de l'exécuter
+ * (limite quotidienne d'envoi atteinte, par exemple): il remet alors la ligne en
+ * `queued` avec une nouvelle date. La clôture doit respecter cette décision,
+ * d'où la condition `status = 'running'`: elle n'écrit que si personne n'a
+ * touché à la ligne entre-temps.
+ *
+ * Sans cette condition, la clôture écrasait la reprogrammation en `done` et le
+ * travail disparaissait sans avoir eu lieu. Observé le 20 août 2026: 1 429
+ * demandes reportées à cause de la limite quotidienne, dont l'email n'est
+ * jamais parti et que plus aucun travail ne reprenait.
+ */
 function finish(job: Job, error?: Error): void {
   const db = getDb();
   if (!error) {
-    db.prepare("UPDATE job SET status = 'done', updated_at = ? WHERE id = ?").run(nowIso(), job.id);
+    const closed = db.prepare("UPDATE job SET status = 'done', updated_at = ? WHERE id = ? AND status = 'running'")
+      .run(nowIso(), job.id);
+    if (closed.changes === 0) {
+      bus.emit('job', { id: job.id, kind: job.kind, status: 'deferred' });
+      return;
+    }
     bus.emit('job', { id: job.id, kind: job.kind, status: 'done' });
     return;
   }
@@ -150,8 +169,9 @@ function finish(job: Job, error?: Error): void {
   const attempts = job.attempts + 1;
   const max = MAX_ATTEMPTS[job.kind] ?? 3;
   if (attempts >= max) {
-    db.prepare("UPDATE job SET status = 'failed', attempts = ?, last_error = ?, updated_at = ? WHERE id = ?")
+    const closed = db.prepare("UPDATE job SET status = 'failed', attempts = ?, last_error = ?, updated_at = ? WHERE id = ? AND status = 'running'")
       .run(attempts, error.message.slice(0, 500), nowIso(), job.id);
+    if (closed.changes === 0) return;
     log.warn('travail abandonné', { kind: job.kind, tentatives: attempts });
     bus.emit('job', { id: job.id, kind: job.kind, status: 'failed' });
     return;
@@ -161,9 +181,19 @@ function finish(job: Job, error?: Error): void {
   // rarement mieux à la suivante lancée dans la seconde.
   const delayMinutes = Math.min(60, 2 ** attempts);
   const runAfter = new Date(Date.now() + delayMinutes * 60_000).toISOString();
-  db.prepare("UPDATE job SET status = 'queued', attempts = ?, last_error = ?, run_after = ?, updated_at = ? WHERE id = ?")
+  const closed = db.prepare("UPDATE job SET status = 'queued', attempts = ?, last_error = ?, run_after = ?, updated_at = ? WHERE id = ? AND status = 'running'")
     .run(attempts, error.message.slice(0, 500), runAfter, nowIso(), job.id);
+  if (closed.changes === 0) return;
   bus.emit('job', { id: job.id, kind: job.kind, status: 'retry', attempts });
+}
+
+/** Identifiants de demandes ayant encore un travail en file ou en cours. */
+export function requestIdsWithPendingJob(): Set<string> {
+  const rows = getDb().prepare(`
+    SELECT DISTINCT json_extract(payload, '$.requestId') AS requestId
+    FROM job WHERE status IN ('queued','running')
+  `).all() as { requestId: string | null }[];
+  return new Set(rows.map((r) => r.requestId).filter((id): id is string => Boolean(id)));
 }
 
 async function tick(): Promise<void> {

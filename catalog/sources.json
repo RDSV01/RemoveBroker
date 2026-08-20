@@ -13,7 +13,7 @@
     {
       "id": "optery",
       "label": "Optery Data Brokers Directory",
-      "url": "https://raw.githubusercontent.com/optery/optery-data-brokers-directory/main/data/data-brokers.json",
+      "url": "https://raw.githubusercontent.com/optery/optery-data-brokers-directory/master/data/data-brokers.json",
       "format": "optery-json",
       "enabled": true,
       "authority": "curated",

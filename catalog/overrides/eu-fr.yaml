@@ -40,6 +40,11 @@ brokers:
   - name: Annuaire Pages Blanches
     domain: pagesblanches.fr
     website: https://www.pagesblanches.fr
+    # pagesblanches.fr redirige vers pagesjaunes.fr/pagesblanches: le
+    # responsable de traitement est Solocal, qui publie cette adresse pour
+    # l'exercice des droits. Vérifié le 20 août 2026.
+    email: dpo@solocal.com
+    optOutUrl: https://www.pagesjaunes.fr/protection-donnees-personnelles
     category: phone-directory
     regions: [eu, fr]
 
@@ -199,11 +204,10 @@ brokers:
     category: marketing
     regions: [eu, fr]
 
-  - name: Acxiom France
-    domain: acxiom.fr
-    website: https://www.acxiom.fr
-    category: marketing
-    regions: [eu, fr]
+  # Acxiom France a été retiré: acxiom.fr ne résout plus (vérifié le 20 août
+  # 2026), l'entrée n'avait aucun contact et doublonnait acxiom.com, dont
+  # l'adresse publiée couvre les demandes européennes. Une entrée à laquelle
+  # rien ne peut être envoyé n'a pas sa place au catalogue.
 
   - name: Schober
     domain: schober.de
@@ -350,8 +354,20 @@ brokers:
   # --- Corrections d'entrées issues des sources publiques -----------------
   - patch: true
     domain: acxiom.com
+    # Adresse publiée dans les avis de confidentialité international et RGPD
+    # d'Acxiom, qui désignent la même boîte pour joindre le délégué à la
+    # protection des données. Vérifié le 20 août 2026.
+    email: askprivacy@acxiom.com
     regions: [us, eu]
     notes: Filiale européenne soumise au RGPD. Une demande fondée sur l'article 17 depuis l'UE doit être traitée sous un mois.
+
+  # Le cadre de consentement européen répertorie Solocal Group séparément de
+  # PagesJaunes: même délégué à la protection des données, traitements
+  # distincts (régie publicitaire d'un côté, annuaire de l'autre).
+  - patch: true
+    domain: solocal.com
+    email: dpo@solocal.com
+    regions: [eu, fr]
 
   - patch: true
     domain: liveramp.com

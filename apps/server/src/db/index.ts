@@ -155,6 +155,55 @@ const MIGRATIONS: string[] = [
     found_at    TEXT NOT NULL DEFAULT (datetime('now'))
   );
   `,
+
+  /**
+   * Doublons de relève, et l'index qui les empêche de revenir.
+   *
+   * La recherche IMAP `SINCE` ne connaît que le jour: à chaque passage, les
+   * messages déjà lus revenaient. Le contrôle par identifiant de message existe
+   * désormais, mais les doublons créés avant lui restent en base et gonflent
+   * l'historique d'une demande. Sur la première utilisation réelle: la même
+   * réponse enregistrée cinq fois, donc cinq changements de statut pour un seul
+   * message reçu.
+   *
+   * L'index sert le contrôle lui-même: il est consulté pour chaque message lu.
+   */
+  `
+  DELETE FROM message WHERE rowid NOT IN (
+    SELECT MIN(rowid) FROM message
+    WHERE message_id IS NOT NULL AND message_id <> ''
+    GROUP BY request_id, direction, message_id
+  ) AND message_id IS NOT NULL AND message_id <> '';
+
+  CREATE INDEX idx_message_msgid ON message(message_id);
+  `,
+
+  /**
+   * Reports quotidiens répétés dans la chronologie.
+   *
+   * Chaque report d'envoi y inscrivait une ligne, tous les jours, pour chaque
+   * demande en attente de son tour. Une campagne complète en produit autant que
+   * de demandes, quotidiennement. Un seul report par demande suffit à
+   * l'expliquer; les suivants ne disent rien de plus et rendent illisible le
+   * seul écran où l'utilisateur peut vérifier ce qui s'est passé.
+   */
+  `
+  DELETE FROM request_event WHERE type = 'throttled' AND id NOT IN (
+    SELECT MAX(id) FROM request_event WHERE type = 'throttled' GROUP BY request_id
+  );
+  `,
+
+  /**
+   * Adresses dont on sait qu'elles rebondissent.
+   *
+   * Une adresse morte restait dans le catalogue: « Réessayer » réécrivait au
+   * même endroit et rebondissait de la même façon, indéfiniment. La marquer ici
+   * la retire de la vue de cette installation, sans toucher au catalogue
+   * public, et laisse la recherche de contact en proposer une autre.
+   */
+  `
+  ALTER TABLE broker_contact ADD COLUMN dead INTEGER NOT NULL DEFAULT 0;
+  `,
 ];
 
 export function openDatabase(): Database.Database {

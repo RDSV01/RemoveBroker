@@ -526,6 +526,7 @@ async function main() {
   const cfg = JSON.parse(await fs.readFile(path.join(CATALOG_DIR, 'sources.json'), 'utf8'));
   const collected = [];
   const sourceStats = [];
+  const failedSources = [];
 
   for (const source of cfg.sources) {
     if (!source.enabled) continue;
@@ -538,8 +539,9 @@ async function main() {
       sourceStats.push({ id: source.id, label: source.label, count: records.length });
       console.log(`${records.length} entrées`);
     } catch (err) {
-      console.log(`échec: ${err.message} (source ignorée)`);
+      console.log(`échec: ${err.message}`);
       sourceStats.push({ id: source.id, label: source.label, count: 0, error: String(err.message) });
+      failedSources.push(`${source.id} (${err.message})`);
     }
   }
 
@@ -743,6 +745,25 @@ async function main() {
   // seules entrées absentes des sources: une entrée peut être lue puis écartée
   // par un filtre, auquel cas `removed` reste à zéro alors que le catalogue
   // maigrit. Mesurer l'écart réel est le seul moyen de tenir la promesse.
+  /**
+   * Une source en panne rend le catalogue incomplet par construction.
+   *
+   * L'ancienne version continuait sans elle et publiait le résultat: l'URL du
+   * répertoire Optery pointait vers une branche inexistante, la source
+   * répondait 404 à chaque exécution hebdomadaire, et trois cents entrées
+   * disparaissaient du catalogue de tous les utilisateurs sans que rien ne le
+   * signale. La perte, à 3 %, passait sous le seuil de garde.
+   *
+   * Publier un catalogue amputé est pire que ne rien publier: la semaine
+   * précédente reste servie, et les demandes continuent de partir.
+   */
+  if (failedSources.length && !args.includes('--force')) {
+    console.error(`\nRefus d'écrire: ${failedSources.length} source(s) en échec: ${failedSources.join(', ')}.`);
+    console.error('Le catalogue precedent est conserve. Corrigez la source, ou relancez avec --force.');
+    process.exitCode = 1;
+    return;
+  }
+
   const SEUIL_PERTE = 0.2;
   const perdues = Math.max(previous.size - entries.length, removed.length);
   if (previous.size && perdues > previous.size * SEUIL_PERTE && !args.includes('--force')) {

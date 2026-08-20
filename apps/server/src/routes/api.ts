@@ -4,14 +4,16 @@ import { z } from 'zod';
 import { getDb, nowIso } from '../db/index.js';
 import { paths } from '../config/paths.js';
 import {
-  allBrokers, catalogMeta, catalogStats, deleteCustomBroker, getBroker,
+  allBrokers, catalogMeta, catalogStats, deleteCustomBroker, getBroker, loadCatalog,
   updateCatalog, upsertCustomBroker,
 } from '../core/catalog.js';
 import { getProfile, saveProfile } from '../core/profile.js';
 import { autoStartState, setAutoStart } from '../core/autostart.js';
 import { getRedactedSettings, getSetting, patchSecret, setSetting } from '../core/settings.js';
 import { exportKey, keyringStatus, lock, rotateKey, setMode, unlock } from '../crypto/keyring.js';
-import { createCampaign, listCampaigns, relevanceScore, selectBrokers } from '../engine/campaign.js';
+import {
+  closeFinishedCampaigns, createCampaign, listCampaigns, recoverStuckRequests, relevanceScore, selectBrokers,
+} from '../engine/campaign.js';
 import { startEngine } from '../engine/lifecycle.js';
 import { bus } from '../engine/bus.js';
 import { enqueue, pauseQueue, queueStatus, resumeQueue, setConcurrency } from '../engine/queue.js';
@@ -92,11 +94,18 @@ function brokerStateMap(): Map<string, { hidden: boolean; note?: string; status?
   return new Map(rows.map((r) => [r.broker_id, { hidden: Boolean(r.hidden), note: r.note ?? undefined, status: r.last_status ?? undefined, updatedAt: r.updated_at }]));
 }
 
-/** Dernier statut connu par courtier, calculé depuis les demandes. */
+/**
+ * Dernier statut connu par courtier, calculé depuis les demandes.
+ *
+ * Une sous-requête corrélée relançait un tri par courtier pour chacune des deux
+ * mille demandes, à chaque affichage de la page Courtiers. Une seule passe
+ * groupée suffit: `max(updated_at)` choisit la ligne, et SQLite rapporte les
+ * colonnes de cette ligne-là.
+ */
 function latestStatusByBroker(): Map<string, { status: string; requestId: string; updatedAt: string }> {
   const rows = getDb().prepare(`
-    SELECT broker_id, status, id, updated_at FROM request
-    WHERE id IN (SELECT id FROM request r2 WHERE r2.broker_id = request.broker_id ORDER BY updated_at DESC LIMIT 1)
+    SELECT broker_id, status, id, max(updated_at) AS updated_at
+    FROM request GROUP BY broker_id
   `).all() as { broker_id: string; status: string; id: string; updated_at: string }[];
   return new Map(rows.map((r) => [r.broker_id, { status: r.status, requestId: r.id, updatedAt: r.updated_at }]));
 }
@@ -514,7 +523,16 @@ export function registerApi(app: FastifyInstance): void {
   // Moteur
   // -------------------------------------------------------------------------
   app.post('/api/queue/pause', async () => { pauseQueue(); return queueStatus(); });
-  app.post('/api/queue/resume', async () => { resumeQueue(); return queueStatus(); });
+
+  // Reprendre remet aussi en file les demandes qu'aucun travail ne porte plus.
+  // C'est le geste que fait naturellement quelqu'un qui trouve ses envois à
+  // l'arrêt: il doit suffire, sans redémarrage ni ligne de commande.
+  app.post('/api/queue/resume', async () => {
+    resumeQueue();
+    const recovered = recoverStuckRequests();
+    closeFinishedCampaigns();
+    return { ...queueStatus(), recovered };
+  });
 
   app.post('/api/inbox/poll', async (_req, reply) => {
     try {
@@ -581,8 +599,13 @@ export function registerApi(app: FastifyInstance): void {
       DELETE FROM request_event; DELETE FROM message; DELETE FROM artifact;
       DELETE FROM request; DELETE FROM campaign; DELETE FROM job;
       DELETE FROM broker_state; DELETE FROM custom_broker;
+      DELETE FROM broker_contact;
       DELETE FROM profile; DELETE FROM settings;
     `);
+    // Les contacts découverts vivaient aussi en mémoire: sans ce rechargement,
+    // l'application effacée continuait de connaître les adresses trouvées lors
+    // de la session précédente.
+    loadCatalog();
     for (const file of fs.readdirSync(paths.evidenceDir)) {
       fs.rmSync(`${paths.evidenceDir}/${file}`, { force: true });
     }

@@ -180,6 +180,10 @@ export function requestStats() {
   // douze demandes 'en attente d'envoi' alors que onze étaient déjà envoyées et
   // attendaient seulement une réponse: de quoi croire à des envois ratés.
   const pendingSend = (byStatus.queued ?? 0) + (byStatus.in_progress ?? 0);
+  // Une société injoignable n'attend rien de l'utilisateur: la compter parmi
+  // les actions lui en présentait deux cents impossibles à traiter, et cachait
+  // les quelques-unes qui le concernent réellement.
+  const unreachable = byStatus.unreachable ?? 0;
   return {
     total,
     byStatus,
@@ -188,26 +192,43 @@ export function requestStats() {
     inFlight,
     pendingSend,
     actionRequired: byStatus.action_required ?? 0,
+    unreachable,
     failed: byStatus.failed ?? 0,
     rejected: byStatus.rejected ?? 0,
-    progress: total ? Math.round(((done + (byStatus.rejected ?? 0)) / total) * 100) : 0,
+    // Les injoignables sortent du dénominateur: une demande qui ne peut pas
+    // partir ne mesure pas l'avancement, elle mesure le silence du courtier.
+    progress: total - unreachable > 0
+      ? Math.round(((done + (byStatus.rejected ?? 0)) / (total - unreachable)) * 100)
+      : 0,
   };
 }
 
-/** Nombre d'emails envoyés aujourd'hui, pour respecter la limite du fournisseur. */
+/**
+ * Nombre d'emails partis aujourd'hui, pour respecter la limite du fournisseur.
+ *
+ * Compté sur les messages, pas sur les demandes: une relance et une mise en
+ * demeure partent par la même boîte et comptent autant qu'une demande initiale,
+ * alors qu'elles ne changent pas `sent_at`. Le jour où plusieurs centaines de
+ * relances tombent le même matin, l'ancien calcul laissait dépasser la limite
+ * sans rien voir.
+ */
 export function emailsSentToday(): number {
   const row = getDb().prepare(`
-    SELECT COUNT(*) AS n FROM request
-    WHERE method = 'email' AND sent_at IS NOT NULL AND date(sent_at) = date('now')
+    SELECT COUNT(*) AS n FROM message
+    WHERE direction = 'out' AND date(at) = date('now')
   `).get() as { n: number };
   return row.n;
 }
 
 /** Demandes déjà envoyées à un courtier, pour ne pas en renvoyer sans raison. */
 export function hasOpenRequest(brokerId: string): boolean {
+  // « Injoignable » n'est pas un état définitif: la société peut publier une
+  // adresse, ou le catalogue en trouver une. Une nouvelle campagne doit pouvoir
+  // retenter, sinon un courtier resterait écarté pour toujours sur la foi d'une
+  // seule lecture de son site.
   const row = getDb().prepare(`
     SELECT 1 FROM request
-    WHERE broker_id = ? AND status NOT IN ('failed','skipped','rejected')
+    WHERE broker_id = ? AND status NOT IN ('failed','skipped','rejected','unreachable')
     LIMIT 1
   `).get(brokerId);
   return row != null;

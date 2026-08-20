@@ -35,10 +35,10 @@ compilateurs de listes marketing.
 | --- | --- | --- |
 | Recherche de personnes aux États-Unis | ~200 | 11 |
 | Compilateurs de listes marketing | ~140 | oui |
-| Publicité programmatique européenne | non | 1 786 |
+| Publicité programmatique européenne | non | 1 785 |
 | Localisation revendue à la publicité | non | 23 |
 | Crédit et solvabilité | Equifax, TransUnion | plus SCHUFA, Creditsafe, CRIF |
-| Sociétés françaises | quasi aucune | 108 joignables |
+| Sociétés françaises | quasi aucune | 110 joignables |
 
 Vérifié sur leur [liste publique](https://blog.incogni.com/data-brokers-incogni-covers/)
 en août 2026: Kochava, Azira, Outlogic, Placer.ai, Foursquare et Blis n'y
@@ -48,11 +48,11 @@ vrai.
 
 ## Un catalogue européen, la France d'abord
 
-**1 605 sociétés joignables**, dont **108 françaises**, toutes soumises au RGPD.
+**1 607 sociétés joignables**, dont **110 françaises**, toutes soumises au RGPD.
 
 Le chiffre annoncé est celui des sociétés à qui une demande peut effectivement
-partir, adresse ou formulaire à l'appui. Le catalogue en répertorie 1 972: pour
-les 367 restantes, aucun contact n'a encore été trouvé, et les compter serait
+partir, adresse ou formulaire à l'appui. Le catalogue en répertorie 1 971: pour
+les 364 restantes, aucun contact n'a encore été trouvé, et les compter serait
 gonfler un nombre que vous ne pouvez pas utiliser.
 
 Le critère d'entrée n'est pas le siège social mais la donnée: une société
@@ -64,7 +64,7 @@ il ne détient rien sur une personne qui n'a jamais vécu aux États-Unis, et lu
 
 | Ce que fait la société | Nombre |
 | --- | --- |
-| Publicité ciblée, segments d'audience | 1 786 |
+| Publicité ciblée, segments d'audience | 1 785 |
 | Prospection commerciale B2B | 115 |
 | Crédit et solvabilité | 30 |
 | Localisation revendue à la publicité | 23 |
@@ -115,9 +115,9 @@ et l'application s'ouvre. Rien d'autre à installer.
 
 | Système | Fichier |
 | --- | --- |
-| Windows 10/11 | `RemoveBroker-1.0.0-installateur.exe` |
-| macOS | `RemoveBroker-1.0.0-arm64.dmg` ou `-x64.dmg` |
-| Linux | `RemoveBroker-1.0.0-x86_64.AppImage` ou `-amd64.deb` |
+| Windows 10/11 | `RemoveBroker-1.1.0-installateur.exe` |
+| macOS | `RemoveBroker-1.1.0-arm64.dmg` ou `-x64.dmg` |
+| Linux | `RemoveBroker-1.1.0-x86_64.AppImage` ou `-amd64.deb` |
 
 Les installateurs ne sont pas signés: Windows et macOS afficheront un
 avertissement au premier lancement. La marche à suivre est dans
@@ -210,10 +210,16 @@ américains retirés du périmètre. Tout est expliqué dans
 ## Ce qui reste à faire
 
 - Recettes d'automatisation pour les formulaires français et européens.
-- Détection des réponses en allemand, espagnol et italien: le classement ne
-  comprend aujourd'hui que le français et l'anglais.
+- Classement complet des réponses en allemand, espagnol et italien. Seules les
+  absences et quelques formules d'« aucune donnée » y sont reconnues; le reste
+  du classement ne comprend que le français et l'anglais, et une réponse dans
+  une autre langue revient à l'utilisateur plutôt que d'être mal comprise.
 - Traduction de l'interface.
 - Suivi de la réapparition d'une fiche après suppression.
+- Contact à trouver pour 364 sociétés du catalogue, dont 39 françaises.
+
+Les corrections de cette version sont détaillées dans
+[CHANGELOG.md](CHANGELOG.md).
 
 ## Licence
 

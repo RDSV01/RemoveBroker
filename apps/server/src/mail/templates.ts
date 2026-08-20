@@ -185,7 +185,7 @@ export function renderMail(options: {
 
   const outro = kind === 'escalation'
     ? 'Absent a response within 8 days, I will file a complaint with the competent supervisory authority and attach this entire correspondence.'
-    : `Under ${law}, you must respond to this request within ${deadline} days.\n\nIf you need additional information to verify my identity or locate my record, state precisely what is required and I will provide the strict minimum. I object to providing any document beyond what is necessary for vérification.`;
+    : `Under ${law}, you must respond to this request within ${deadline} days.\n\nIf you need additional information to verify my identity or locate my record, state precisely what is required and I will provide the strict minimum. I object to providing any document beyond what is necessary for verification.`;
 
   return {
     subject: subjects[kind],
@@ -206,7 +206,7 @@ export function renderMail(options: {
       v.fullName,
       v.date,
       '',
-      `Request référence: ${ref}`,
+      `Request reference: ${ref}`,
     ].join('\n'),
   };
 }
@@ -261,7 +261,7 @@ export function renderComplaint(options: { broker: Broker; profile: Profile; sen
     `As of today, ${days} days later, the request remains unanswered, in breach of Article 12(3) GDPR which sets a one-month deadline.`,
     '',
     'Attachments:',
-    `- copy of the initial request (référence RB-${token.toUpperCase()}), exportable from the history,`,
+    `- copy of the initial request (reference RB-${token.toUpperCase()}), exportable from the history,`,
     '- copies of the follow-ups,',
     '- screenshot of the published listing about me, if any.',
     '',

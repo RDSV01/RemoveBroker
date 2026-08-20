@@ -25,8 +25,19 @@ const CATEGORIES = new Set([
 const REGIONS = new Set(['us', 'eu', 'fr', 'uk', 'ca', 'au', 'intl']);
 const METHODS = new Set(['email', 'form', 'recipe', 'manual']);
 
+/**
+ * Boîtes qui existent mais ne traitent pas les demandes de droits.
+ *
+ * Une adresse commerciale ou de webmestre est syntaxiquement valable, part
+ * sans erreur, et n'aboutit à rien: la demande reste « envoyée » jusqu'à
+ * l'échéance légale, puis prépare une plainte pour un silence qu'on a
+ * soi-même provoqué en écrivant au mauvais service.
+ */
+const ROLE_SANS_RAPPORT = /^(webmaster|sales|marketing|jobs?|career|press|invest|billing|facturation|commercial|recrutement)([.+-]|@)/i;
+
 const errors = [];
 const warnings = [];
+const emailOwners = new Map();
 
 const fail = (message) => errors.push(message);
 const warn = (message) => warnings.push(message);
@@ -80,6 +91,16 @@ for (const broker of catalog.brokers ?? []) {
     fail(`${where}: adresse invalide (${broker.email})`);
   }
 
+  if (broker.email) {
+    const address = broker.email.toLowerCase();
+    if (ROLE_SANS_RAPPORT.test(address)) {
+      warn(`${where}: ${broker.email} n'est pas une adresse de protection des données`);
+    }
+    const owners = emailOwners.get(address) ?? [];
+    owners.push(broker.id);
+    emailOwners.set(address, owners);
+  }
+
   for (const field of ['website', 'optOutUrl', 'guideUrl', 'videoUrl']) {
     const value = broker[field];
     if (!value) continue;
@@ -105,6 +126,13 @@ for (const broker of catalog.brokers ?? []) {
   if (!broker.email && !broker.optOutUrl && !broker.website) {
     warn(`${where}: aucun moyen de contact, l'entrée ne sert à rien`);
   }
+}
+
+// Plusieurs marques derrière une même boîte: légitime quand ce sont des
+// traitements distincts, à revoir quand ce sont des doublons. Le signaler évite
+// d'envoyer cinq fois le même message au même service le même matin.
+for (const [address, owners] of emailOwners) {
+  if (owners.length >= 4) warn(`${address}: ${owners.length} entrées écrivent à cette adresse (${owners.slice(0, 4).join(', ')}...)`);
 }
 
 // --- index publié ------------------------------------------------------------

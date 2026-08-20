@@ -230,3 +230,95 @@ test('une prise en charge sans accusé formel est reconnue', () => {
   assert.equal(r.type, 'pending');
   assert.ok(r.confidence >= 0.7, `confiance trop faible: ${r.confidence}`);
 });
+
+/**
+ * Réponses réelles du 19 et 20 août 2026, réécrites sans données personnelles.
+ *
+ * Toutes étaient classées « suppression confirmée » avec 0,99 de confiance, et
+ * marquaient donc la demande terminée. Aucune n'annonçait la moindre
+ * suppression. C'est la panne la plus grave qu'un outil de vie privée puisse
+ * avoir: annoncer un effacement qui n'a pas eu lieu.
+ */
+const FAUX_SUCCES: [string, string, string][] = [
+  ["Absence jusqu'au 30 août 2026 Re: Demande d'effacement de données personnelles - Camille Moreau",
+    "Bonjour,\nJe suis absent jusqu'au 30 août 2026. Je reviendrai vers vous à mon retour.\nEn cas d'urgence, contactez l'équipe technique.",
+    'répondeur de vacances, notre sujet recopié dans le sien'],
+  ["Re: Demande d'effacement de données personnelles",
+    "Bonjour,\nPour supprimer vos données vous avez 2 possibilités : nous communiquer votre identifiant unique, ou le supprimer vous-même depuis notre site.",
+    'marche à suivre, pas un acte'],
+  ["Re: Demande d'effacement de données personnelles",
+    'Bonjour,\nSur quel site souhaitez-vous que vos données personnelles soient effacées ?',
+    'question posée en retour'],
+  ["Demande d'effacement de données personnelles",
+    "Bonjour,\nJe comprends que vous souhaitez demander la suppression de vos données sans fermer votre compte. Vous pouvez gérer vos informations personnelles à tout moment dans Votre compte.",
+    'renvoi vers les réglages du compte'],
+];
+
+for (const [subject, text, note] of FAUX_SUCCES) {
+  test(`ne conclut pas à une suppression: ${note}`, () => {
+    const r = classify({ subject, text });
+    assert.notEqual(r.type, 'success', `classé ${r.type} à ${r.confidence}`);
+  });
+}
+
+test("le sujet n'apporte que son marqueur, jamais notre propre objet", () => {
+  const corps = 'Je suis absent, de retour lundi.';
+  const avec = classify({ subject: "Absence Re: Demande d'effacement de données personnelles - Camille Moreau", text: corps });
+  const sans = classify({ subject: '', text: corps });
+  assert.equal(avec.type, sans.type, 'le sujet ne doit pas changer le sens du message');
+});
+
+/**
+ * L'ancienne formule ne pesait que la part relative: un motif isolé à deux
+ * points, faute de concurrent, sortait à 0,99 et concluait tout seul.
+ */
+test('un motif isolé et faible ne donne pas une quasi-certitude', () => {
+  const r = classify({ subject: 'Re: request', text: 'Your listing. We erased.' });
+  assert.ok(r.confidence < CONFIANCE_MINIMALE, `confiance trop haute: ${r.confidence} pour ${r.type}`);
+});
+
+test('un accord de suppression au futur n est pas un refus', () => {
+  const r = classify({ subject: 'Re: request', text: 'We will delete your personal data within 30 days and confirm once done.' });
+  assert.notEqual(r.type, 'rejected');
+});
+
+test('une adresse hors service est reconnue et le contact indiqué remonté', () => {
+  const r = classify({
+    subject: "Re: Demande d'effacement de données personnelles",
+    from: 'nepasrepondre@exemple.fr',
+    text: "Bonjour,\nCette adresse n'est plus en service. Pour toute question merci d'écrire à contact@exemple.fr",
+  });
+  assert.equal(r.type, 'address_changed');
+  assert.equal(r.altEmail, 'contact@exemple.fr');
+  assert.equal(statusForClassification('address_changed'), 'action_required');
+});
+
+test('une consigne de réacheminement seule ne suffit pas', () => {
+  const r = classify({
+    subject: 'Automatic reply',
+    text: 'Thank you for your email. You have sent your email to the right place, we will get back to you. To dispute a report, please direct your request to our support page.',
+  });
+  assert.notEqual(r.type, 'address_changed');
+});
+
+test('« unable to find any record » vaut absence de dossier', () => {
+  const r = classify({
+    subject: 'Your request is completed. No Record',
+    text: 'We have processed your request and reviewed our records, however, we were unable to find any record associated with the information you have provided. Request Type : DELETE',
+  });
+  assert.equal(r.type, 'no_data');
+});
+
+test('une absence en allemand ou en espagnol ne conclut rien', () => {
+  assert.equal(classify({ subject: 'Abwesenheitsbenachrichtigung', text: 'Wir befinden uns derzeit im Urlaub und sind ab dem 24. August wieder erreichbar.' }).type, 'pending');
+  assert.equal(classify({ subject: 'Respuesta automatica', text: 'Estamos de vacaciones hasta el 1 de septiembre.' }).type, 'pending');
+});
+
+test('un lien de suivi de ticket ne passe pas pour un lien de confirmation', () => {
+  const r = classify({
+    subject: '[Support] Re: request',
+    text: 'Your request (1415747) has been updated. Reply to this email or click the link below:\nhttps://support.example.com/hc/requests/1415747\n\nHello, we do not appear to have any accounts under your email address.',
+  });
+  assert.equal(r.type, 'no_data');
+  assert.equal(r.confirmUrl, undefined);
+});

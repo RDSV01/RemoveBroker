@@ -25,6 +25,73 @@ let catalog: Catalog = { brokers: [], recipes: [] };
 let recipeIndex = new Map<string, Recipe>();
 let brokerIndex = new Map<string, Broker>();
 
+/**
+ * Contacts trouvés par le navigateur local, superposés au catalogue.
+ *
+ * Sans cette couche, la recherche de contact ne servait à rien: elle trouvait
+ * bien l'adresse, la notait dans `broker_contact`, replanifiait l'envoi... et
+ * l'envoi relisait le catalogue, où le courtier n'a toujours pas d'adresse,
+ * pour conclure « ce courtier n'accepte pas les demandes par email ». Sur la
+ * première utilisation réelle: 65 adresses trouvées, 64 demandes abandonnées.
+ */
+export interface BrokerContact {
+  email?: string;
+  optOutUrl?: string;
+  /** L'adresse du catalogue rebondit: ne plus la proposer sur cette installation. */
+  dead?: boolean;
+}
+
+let discovered = new Map<string, BrokerContact>();
+
+function loadDiscoveredContacts(): void {
+  try {
+    const rows = getDb()
+      .prepare('SELECT broker_id, email, opt_out_url, dead FROM broker_contact WHERE email IS NOT NULL OR opt_out_url IS NOT NULL OR dead = 1')
+      .all() as { broker_id: string; email: string | null; opt_out_url: string | null; dead: number }[];
+    discovered = new Map(rows.map((r) => [r.broker_id, {
+      email: r.email ?? undefined,
+      optOutUrl: r.opt_out_url ?? undefined,
+      dead: r.dead === 1,
+    }]));
+  } catch {
+    discovered = new Map();
+  }
+}
+
+/** Applique un contact au courtier indexé, sans écraser celui du catalogue. */
+function overlay(broker: Broker, contact: BrokerContact): Broker {
+  // Une adresse dont on a constaté le rebond ne vaut plus rien, même écrite au
+  // catalogue: la garder revient à réécrire à un destinataire inexistant à
+  // chaque relance. Le courtier redevient « sans contact », ce qui déclenche la
+  // recherche sur son site plutôt qu'un nouvel envoi perdu.
+  const base = contact.dead ? undefined : broker.email;
+  const email = base ?? contact.email;
+  const optOutUrl = broker.optOutUrl ?? contact.optOutUrl;
+  if (email === broker.email && optOutUrl === broker.optOutUrl) return broker;
+  const methods = new Set(broker.methods);
+  if (email) methods.add('email');
+  else methods.delete('email');
+  if (optOutUrl) methods.add('form');
+  if (!methods.size) methods.add('manual');
+  else methods.delete('manual');
+  return { ...broker, email, optOutUrl, methods: [...methods] };
+}
+
+/**
+ * Enregistre un contact découvert et le rend immédiatement utilisable.
+ * Appelée par la recherche de contact, juste après l'écriture en base.
+ */
+export function applyDiscoveredContact(brokerId: string, contact: BrokerContact): void {
+  if (!contact.email && !contact.optOutUrl && !contact.dead) {
+    discovered.delete(brokerId);
+    return;
+  }
+  discovered.set(brokerId, contact);
+  const original = catalog.brokers.find((b) => b.id === brokerId) ?? brokerIndex.get(brokerId);
+  if (original) brokerIndex.set(brokerId, overlay(original, contact));
+}
+
+
 export function loadCatalog(): Catalog {
   const candidates = [paths.catalogCache, paths.catalogBundled];
   for (const file of candidates) {
@@ -46,6 +113,11 @@ export function loadCatalog(): Catalog {
 function reindex(): void {
   recipeIndex = new Map(catalog.recipes.map((r) => [r.id, r]));
   brokerIndex = new Map(catalog.brokers.map((b) => [b.id, b]));
+  loadDiscoveredContacts();
+  for (const [id, contact] of discovered) {
+    const broker = brokerIndex.get(id);
+    if (broker) brokerIndex.set(id, overlay(broker, contact));
+  }
   for (const custom of listCustomBrokers()) brokerIndex.set(custom.id, custom);
 }
 
@@ -139,7 +211,39 @@ export interface UpdateResult {
   total: number;
   added: string[];
   message: string;
+  /** L'empreinte publiée a-t-elle pu être comparée, et concorde-t-elle ? */
+  verified?: boolean;
 }
+
+/**
+ * Empreinte publiée à côté du catalogue.
+ *
+ * Le fichier `index.json` du dépôt porte le SHA256 de `catalog.json`, écrit par
+ * la même exécution qui l'a produit. Il était calculé côté application mais
+ * comparé à rien: le README promettait une vérification qui n'avait pas lieu.
+ * Un fichier tronqué ou modifié en chemin passait donc sans être remarqué.
+ *
+ * Une empreinte inaccessible n'interrompt pas la mise à jour: le contrôle de
+ * forme reste, et l'absence de vérification est signalée plutôt que masquée.
+ */
+async function publishedDigest(catalogUrl: string, signal: AbortSignal): Promise<string | null> {
+  if (!/catalog\.json$/i.test(catalogUrl)) return null;
+  try {
+    const res = await fetch(catalogUrl.replace(/catalog\.json$/i, 'index.json'), {
+      signal,
+      headers: { accept: 'application/json', 'user-agent': USER_AGENT },
+      redirect: 'follow',
+    });
+    if (!res.ok) return null;
+    const meta = (await res.json()) as { sha256?: string };
+    return typeof meta.sha256 === 'string' && /^[0-9a-f]{64}$/i.test(meta.sha256) ? meta.sha256.toLowerCase() : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Requête anonyme vers un fichier statique: aucun cookie, aucun identifiant. */
+const USER_AGENT = 'RemoveBroker';
 
 /**
  * Télécharge le catalogue publié et ne le remplace que s'il est validé et plus
@@ -157,14 +261,19 @@ export async function updateCatalog(force = false): Promise<UpdateResult> {
   try {
     const res = await fetch(privacy.catalogUrl, {
       signal: controller.signal,
-      // Aucun cookie, aucun identifiant: une requête anonyme vers un fichier statique.
-      headers: { accept: 'application/json', 'user-agent': 'RemoveBroker/0.1' },
+      headers: { accept: 'application/json', 'user-agent': USER_AGENT },
       redirect: 'follow',
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
-    const parsed = JSON.parse(text) as Catalog;
+    const digest = crypto.createHash('sha256').update(text).digest('hex');
 
+    const expected = await publishedDigest(privacy.catalogUrl, controller.signal);
+    if (expected && expected !== digest) {
+      throw new Error("l'empreinte du catalogue téléchargé ne correspond pas à celle publiée");
+    }
+
+    const parsed = JSON.parse(text) as Catalog;
     if (!Array.isArray(parsed.brokers) || parsed.brokers.length < 100) {
       throw new Error('catalogue distant invalide ou trop court');
     }
@@ -183,15 +292,17 @@ export async function updateCatalog(force = false): Promise<UpdateResult> {
       .run('catalog_meta', JSON.stringify({
         checkedAt: nowIso(),
         count: parsed.brokers.length,
-        sha256: crypto.createHash('sha256').update(text).digest('hex'),
+        sha256: digest,
+        verified: Boolean(expected),
         added,
       }), nowIso());
 
-    log.info('catalogue mis à jour', { total: parsed.brokers.length, nouveaux: added.length });
+    log.info('catalogue mis à jour', { total: parsed.brokers.length, nouveaux: added.length, empreinte: expected ? 'vérifiée' : 'non publiée' });
     return {
       updated: true,
       total: parsed.brokers.length,
       added,
+      verified: Boolean(expected),
       message: added.length ? `${added.length} nouveaux courtiers ajoutés.` : 'Catalogue déjà à jour.',
     };
   } catch (err) {
@@ -202,10 +313,17 @@ export async function updateCatalog(force = false): Promise<UpdateResult> {
   }
 }
 
-export function catalogMeta(): { checkedAt?: string; count: number; added: string[] } {
+export function catalogMeta(): { checkedAt?: string; count: number; added: string[]; verified?: boolean } {
   const row = getDb().prepare('SELECT value FROM settings WHERE key = ?').get('catalog_meta') as { value: string } | undefined;
-  const meta = row ? (JSON.parse(row.value) as { checkedAt: string; count: number; added: string[] }) : undefined;
-  return { checkedAt: meta?.checkedAt, count: catalog.brokers.length, added: meta?.added ?? [] };
+  let meta: { checkedAt: string; count: number; added: string[]; verified?: boolean } | undefined;
+  try {
+    meta = row ? JSON.parse(row.value) : undefined;
+  } catch {
+    // Métadonnée illisible: le catalogue reste utilisable, c'est le seul point
+    // qui compte. Planter ici rendrait l'application entière inutilisable.
+    meta = undefined;
+  }
+  return { checkedAt: meta?.checkedAt, count: catalog.brokers.length, added: meta?.added ?? [], verified: meta?.verified };
 }
 
 function slug(s: string): string {

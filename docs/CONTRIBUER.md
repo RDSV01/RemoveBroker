@@ -56,10 +56,15 @@ identifié par le domaine:
 ```yaml
 - patch: true
   domain: acxiom.com
-  email: dpo@acxiom.fr
+  email: askprivacy@acxiom.com
   regions: [us, eu]
-  notes: La filiale européenne traite les demandes RGPD en français.
+  notes: Filiale européenne soumise au RGPD.
 ```
+
+L'adresse doit être celle que la société publie elle-même. Celle de cet exemple
+figure dans l'avis de confidentialité RGPD d'Acxiom. N'inventez jamais une
+adresse plausible à partir du nom de domaine: elle rebondit, la demande part en
+échec, et le courtier passe pour injoignable alors qu'il ne l'est pas.
 
 Pour retirer une entrée invalide, par exemple une société qui n'existe plus:
 

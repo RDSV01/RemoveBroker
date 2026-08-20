@@ -40,6 +40,8 @@ export interface Broker {
 
 export type RequestStatus =
   | 'queued' | 'in_progress' | 'sent' | 'awaiting_reply' | 'action_required'
+  /** Aucun moyen de contact publié: rien à faire, ni pour vous ni pour l'application. */
+  | 'unreachable'
   | 'confirmed' | 'completed' | 'rejected' | 'no_data' | 'failed' | 'skipped';
 
 export interface RequestRow {
@@ -114,10 +116,12 @@ export interface AppState {
     france: number; franceReachable: number;
     byCategory: Record<string, number>; byRegion: Record<string, number>;
     checkedAt?: string; count: number; added: string[];
+    /** L'empreinte publiée a-t-elle été comparée à celle du fichier reçu ? */
+    verified?: boolean;
   };
   requests?: {
     total: number; byStatus: Record<string, number>; sent: number; done: number; inFlight: number; pendingSend: number;
-    actionRequired: number; failed: number; rejected: number; progress: number;
+    actionRequired: number; unreachable: number; failed: number; rejected: number; progress: number;
   };
   queue?: { paused: boolean; inFlight: number; concurrency: number; counts: Record<string, number> };
   browser?: { available: boolean; source: string; canInstall: boolean };

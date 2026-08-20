@@ -8,15 +8,15 @@ import { sendMail } from '../mail/smtp.js';
 import { runRecipe } from '../web/runner.js';
 import { followConfirmationLink } from '../web/confirm.js';
 import { bus, notify } from './bus.js';
-import { enqueue, registerHandler, type Job } from './queue.js';
+import { enqueue, registerHandler, requestIdsWithPendingJob, type Job } from './queue.js';
 import { browserStatus } from '../web/browser.js';
-import { discoverContact } from '../web/discover.js';
+import { discoverContact, isContactDead } from '../web/discover.js';
 import { submitAutomatically } from '../web/assist.js';
 import {
   addArtifact, addEvent, addMessage, createRequest, emailsSentToday, getRequest,
   hasOpenRequest, newId, setStatus, updateRequest,
 } from './store.js';
-import type { Broker, RequestMethod } from '../types.js';
+import type { Broker, RequestMethod, RequestRow } from '../types.js';
 
 const log = createLogger('campaign');
 
@@ -226,6 +226,135 @@ export function listCampaigns() {
   `).all() as Record<string, unknown>[];
 }
 
+/**
+ * Clôt les campagnes dont plus aucune demande n'attend d'envoi.
+ *
+ * Rien ne fermait une campagne: les huit campagnes de la première utilisation
+ * réelle affichaient encore « en cours » le lendemain, y compris celles d'une
+ * seule demande, aboutie depuis longtemps. Une campagne est terminée quand elle
+ * n'a plus rien à envoyer; les réponses des courtiers, elles, continuent
+ * d'arriver et de faire évoluer chaque demande.
+ */
+export function closeFinishedCampaigns(): number {
+  const rows = getDb().prepare(`
+    SELECT id FROM campaign WHERE status = 'running'
+      AND NOT EXISTS (
+        SELECT 1 FROM request r
+        WHERE r.campaign_id = campaign.id AND r.status IN ('queued','in_progress')
+      )
+  `).all() as { id: string }[];
+  for (const row of rows) {
+    getDb().prepare("UPDATE campaign SET status = 'done', finished_at = ? WHERE id = ? AND status = 'running'")
+      .run(nowIso(), row.id);
+    bus.emit('campaign', { id: row.id, status: 'done' });
+  }
+  if (rows.length) log.info('campagnes terminées', { nombre: rows.length });
+  return rows.length;
+}
+
+/**
+ * Remet en file les demandes qu'aucun travail ne reprend.
+ *
+ * Une demande « en attente » sans travail associé n'avance plus jamais: elle
+ * reste affichée comme programmée alors que rien ne la porte. Trois causes
+ * connues: un travail clos à tort (corrigé dans queue.ts), une purge de la file
+ * après sept jours, une fermeture pendant l'exécution.
+ *
+ * La réparation est passive et sans effet de bord: on ne renvoie rien qui soit
+ * déjà parti (`sent_at` renseigné), et le travail choisi est celui qu'une
+ * campagne aurait créé pour cette demande.
+ */
+export function recoverStuckRequests(): number {
+  const pending = requestIdsWithPendingJob();
+  const rows = getDb().prepare(`
+    SELECT * FROM request
+    WHERE status IN ('queued','in_progress') AND sent_at IS NULL
+  `).all() as RequestRow[];
+
+  /**
+   * Demandes rendues à l'utilisateur faute d'adresse, alors qu'on en a une.
+   *
+   * Le cas de la version 1.0: la recherche trouvait l'adresse sur le site du
+   * courtier, l'envoi ne la voyait pas, et la demande partait en « action
+   * requise » avec « ce courtier n'accepte pas les demandes par email ». 151
+   * demandes sur 403 étaient dans cet état, toutes avec une adresse
+   * parfaitement utilisable.
+   *
+   * Trois conditions, volontairement strictes: rien n'est jamais parti pour
+   * cette demande, aucun message n'a été échangé, et le courtier a maintenant
+   * une adresse. Un captcha, une pièce d'identité réclamée ou un formulaire
+   * exigé par le courtier surviennent toujours après un envoi: `sent_at`
+   * renseigné les exclut tous.
+   */
+  const rendues = getDb().prepare(`
+    SELECT * FROM request
+    WHERE status = 'action_required' AND sent_at IS NULL
+      AND NOT EXISTS (SELECT 1 FROM message m WHERE m.request_id = request.id)
+  `).all() as RequestRow[];
+
+  for (const request of rendues) {
+    if (pending.has(request.id)) continue;
+    const broker = getBroker(request.broker_id);
+    if (!broker) continue;
+
+    if (broker.email && getSetting('automation').emailEnabled) {
+      addEvent(request.id, 'discovered', `Une adresse utilisable est maintenant connue: ${broker.email}`);
+      updateRequest(request.id, { method: 'email', status: 'queued', last_error: null });
+      rows.push({ ...request, method: 'email', status: 'queued' });
+      continue;
+    }
+
+    // Ni adresse ni formulaire, et rien n'est jamais parti: il n'y a pas
+    // d'action, seulement une société qui ne publie aucun contact. Les 204
+    // demandes de la version 1.0 rangées ici encombraient la liste des actions
+    // sans que personne ne puisse rien en faire.
+    if (!broker.optOutUrl) {
+      setStatus(request.id, 'unreachable', 'Cette société ne publie aucun moyen de la joindre.', {
+        url: broker.privacyUrl ?? broker.website,
+      });
+    }
+  }
+
+  const automation = getSetting('automation');
+  let recovered = 0;
+
+  for (const request of rows) {
+    if (pending.has(request.id)) continue;
+    const broker = getBroker(request.broker_id);
+    if (!broker) continue;
+
+    let kind: 'send_email' | 'run_recipe' | 'submit_form' | 'discover_contact' | null = null;
+    if (request.method === 'email' && broker.email) kind = 'send_email';
+    else if (request.method === 'recipe' && getRecipe(broker.recipe) && browserStatus().available) kind = 'run_recipe';
+    else if (broker.email && automation.emailEnabled) kind = 'send_email';
+    else if (broker.optOutUrl && automation.autoSubmitForms && browserStatus().available) kind = 'submit_form';
+    else if (!broker.email && !broker.optOutUrl && broker.website && browserStatus().available) kind = 'discover_contact';
+
+    if (!kind) {
+      // Rien d'automatisable. Avec un formulaire connu, la demande revient à
+      // l'utilisateur; sans rien, elle rejoint les injoignables plutôt que de
+      // rester indéfiniment « en attente » sans que rien ne la porte.
+      if (broker.optOutUrl) {
+        setStatus(request.id, 'action_required', 'Formulaire à remplir sur le site du courtier.', { url: broker.optOutUrl });
+      } else {
+        setStatus(request.id, 'unreachable', 'Cette société ne publie aucun moyen de la joindre.', {
+          url: broker.privacyUrl ?? broker.website,
+        });
+      }
+      continue;
+    }
+
+    if (kind === 'send_email' && request.method !== 'email') updateRequest(request.id, { method: 'email', status: 'queued' });
+    else if (request.status !== 'queued') updateRequest(request.id, { status: 'queued' });
+
+    enqueue(kind, { requestId: request.id }, { priority: kind === 'discover_contact' ? 120 : 100 - Math.min(99, broker.score) });
+    recovered++;
+  }
+
+  if (recovered) log.info('demandes remises en file', { nombre: recovered });
+  return recovered;
+}
+
 // ---------------------------------------------------------------------------
 // Gestionnaires de travaux
 // ---------------------------------------------------------------------------
@@ -247,7 +376,31 @@ async function handleSendEmail(job: Job): Promise<void> {
   const profile = getProfile();
   if (!broker || !profile) throw new Error('courtier ou profil introuvable');
   if (!broker.email) {
-    setStatus(requestId, 'action_required', "Ce courtier n'accepte pas les demandes par email.", { url: broker.optOutUrl });
+    // Deux situations très différentes: le courtier n'a jamais publié
+    // d'adresse, ou celle qu'il publiait rebondit. Les confondre laissait
+    // l'utilisateur croire à un choix du courtier alors que c'est une panne.
+    const rebond = isContactDead(request.broker_id);
+    // Sans adresse et sans formulaire, il n'y a aucune action à proposer: la
+    // demande est injoignable, pas en attente de l'utilisateur.
+    if (!broker.optOutUrl) {
+      setStatus(
+        requestId,
+        'unreachable',
+        rebond
+          ? "L'adresse de cette société rebondit et elle n'en publie aucune autre."
+          : 'Cette société ne publie aucun moyen de la joindre.',
+        { url: broker.privacyUrl ?? broker.website },
+      );
+      return;
+    }
+    setStatus(
+      requestId,
+      'action_required',
+      rebond
+        ? "L'adresse connue de ce courtier rebondit: passez par son formulaire."
+        : "Ce courtier n'accepte pas les demandes par email.",
+      { url: broker.optOutUrl },
+    );
     return;
   }
 
@@ -255,7 +408,16 @@ async function handleSendEmail(job: Job): Promise<void> {
   if (emailsSentToday() >= automation.dailyEmailLimit) {
     // On ne consomme pas la tentative: c'est une pause, pas un échec.
     getDb().prepare("UPDATE job SET status = 'queued', run_after = ? WHERE id = ?").run(tomorrowMorning(), job.id);
-    addEvent(requestId, 'throttled', `Limite quotidienne atteinte (${automation.dailyEmailLimit} envois). Reprise demain matin.`);
+    // Une seule mention tant que la demande n'a pas bougé. Une campagne d'un
+    // millier d'envois est reportée chaque jour jusqu'à son tour: en inscrire
+    // la trace à chaque fois remplissait la chronologie de lignes identiques,
+    // au point de noyer l'historique réel de la demande.
+    const dernier = getDb()
+      .prepare('SELECT type FROM request_event WHERE request_id = ? ORDER BY at DESC, id DESC LIMIT 1')
+      .get(requestId) as { type: string } | undefined;
+    if (dernier?.type !== 'throttled') {
+      addEvent(requestId, 'throttled', `Limite quotidienne atteinte (${automation.dailyEmailLimit} envois). Reprise dès que possible.`);
+    }
     throw new SilentReschedule();
   }
 
@@ -363,8 +525,9 @@ async function handleFollowUp(job: Job): Promise<void> {
   const request = getRequest(requestId);
   if (!request) return;
 
-  // Une demande déjà aboutie ou abandonnée n'a plus besoin de relance.
-  if (['completed', 'no_data', 'rejected', 'failed', 'skipped'].includes(request.status)) return;
+  // Une demande déjà aboutie ou abandonnée n'a plus besoin de relance. Une
+  // société injoignable non plus: rien n'est parti, il n'y a rien à relancer.
+  if (['completed', 'no_data', 'rejected', 'failed', 'skipped', 'unreachable'].includes(request.status)) return;
 
   const broker = getBroker(request.broker_id);
   const profile = getProfile();
@@ -480,11 +643,29 @@ export function registerCampaignHandlers(): void {
 
     // Le statut passe « en cours » ici, quand la recherche démarre vraiment.
     setStatus(requestId, 'in_progress', 'Lecture de la politique de confidentialité du courtier.');
-    const found = await discoverContact(broker);
+
+    let found: Awaited<ReturnType<typeof discoverContact>>;
+    try {
+      found = await discoverContact(broker);
+    } catch (err) {
+      // Un site qui plante le navigateur laissait la demande figée « en cours »,
+      // sans travail pour la reprendre et sans rien dire à l'utilisateur. Elle
+      // lui revient avec la page à ouvrir, ce qu'aucune reprise n'aurait donné.
+      addEvent(requestId, 'error', `Lecture du site impossible: ${(err as Error).message}`);
+      updateRequest(requestId, { last_error: (err as Error).message.slice(0, 300) });
+      if (job.attempts + 1 < 2) throw err;
+      // Le site refuse la lecture automatique: il n'y a rien de plus à tenter,
+      // et rien que l'utilisateur puisse faire de mieux. La demande rejoint les
+      // injoignables plutôt que sa liste d'actions.
+      setStatus(requestId, 'unreachable', "Le site de cette société refuse toute lecture automatique.", {
+        url: broker.privacyUrl ?? broker.website,
+      });
+      return;
+    }
 
     if (found.email) {
       addEvent(requestId, 'discovered', `Adresse trouvée sur le site du courtier: ${found.email}`, { url: found.sourceUrl });
-      updateRequest(requestId, { method: 'email', status: 'queued' });
+      updateRequest(requestId, { method: 'email', status: 'queued', last_error: null });
       enqueue('send_email', { requestId }, { priority: 100 - Math.min(99, broker.score) });
       return;
     }
@@ -497,8 +678,8 @@ export function registerCampaignHandlers(): void {
 
     setStatus(
       requestId,
-      'action_required',
-      "Ce courtier ne publie ni adresse de contact ni formulaire: la démarche doit être trouvée sur son site.",
+      'unreachable',
+      "Cette société ne publie aucun moyen de la joindre: ni adresse, ni formulaire.",
       { url: broker.privacyUrl ?? broker.website },
     );
   });

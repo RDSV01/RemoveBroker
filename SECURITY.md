@@ -70,7 +70,7 @@ serait alors fausse.
 
 | Version | Support |
 | --- | --- |
-| 1.0.x | oui |
+| 1.1.x | oui |
 | antérieures | non |
 
 Le projet n'a qu'une ligne de versions: mettez à jour.

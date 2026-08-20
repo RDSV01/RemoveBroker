@@ -74,6 +74,18 @@ export const NOT_FOUND = compile([
   'came\\s+up\\s+empty', 'unable\\s+to\\s+locate', 'could\\s+not\\s+(find|locate)',
   'do\\s+not\\s+have\\s+(any|a)\\b', 'don.t\\s+have\\s+(any|a)\\b', 'never\\s+(had|existed)',
   'no\\s+such\\s+(record|profile|listing)',
+  // Relevés sur des réponses réelles le 19 août 2026: Choreograph écrit
+  // « unable to find any record », Fandom « we do not appear to have any
+  // accounts », Yasni « we have no data about your name ». Aucune de ces
+  // formules n'était reconnue, et les trois passaient pour des suppressions.
+  'unable\\s+to\\s+find', 'not\\s+able\\s+to\\s+(find|locate|identify)',
+  'do(es)?\\s+not\\s+appear\\s+to\\s+have', 'don.t\\s+appear\\s+to\\s+have',
+  'have\\s+no\\s+(data|record|information)', 'we\\s+hold\\s+no\\b',
+  'no\\s+record\\s+(associated|matching|found|of)', 'without\\s+a\\s+(match|record)',
+  'completely\\s+unknown\\s+to\\s+us', 'unknown\\s+to\\s+us',
+  // Allemand et espagnol: le classement ne couvrait que le français et l'anglais.
+  'keine\\s+(daten|informationen|eintr[äa]ge?)', 'nicht\\s+gefunden',
+  'no\\s+(hemos\\s+encontrado|tenemos\\s+(datos|registros?))', 'ning[úu]n\\s+(dato|registro)',
 ]);
 
 // --- notions d'action attendue de l'utilisateur ----------------------------
@@ -145,6 +157,7 @@ export const REFUSAL = compile([
 /** Accusé de réception, traitement annoncé. */
 export const ACK = compile([
   'bien\\s+re[çc]u', 'avons\\s+re[çc]u', 'a\\s+bien\\s+[ée]t[ée]\\s+enregistr[ée]e?',
+  'bonne\\s+r[ée]ception',
   'en\\s+cours\\s+de\\s+traitement', 'sera\\s+trait[ée]e?', 'reviendrons\\s+vers\\s+vous',
   'sous\\s+r[ée]f[ée]rence', 'num[ée]ro\\s+de\\s+(dossier|ticket)', 'd[ée]lai\\s+de\\s+\\d+',
   'received\\s+your', 'we\\s+(have|.ve)\\s+received', 'is\\s+being\\s+(processed|reviewed|handled)',
@@ -152,6 +165,11 @@ export const ACK = compile([
   'ticket\\s*#?\\s*\\w', 'case\\s*(number|#)', 'reference\\s*(number|#|:)',
   'please\\s+allow\\s+(up\\s+to\\s+)?\\d+', 'business\\s+days', 'thank\\s+you\\s+for\\s+(your|contacting|reaching)',
   'opened', 'logged',
+  // Marriott ouvre « un nouveau billet de demande » sans employer aucune des
+  // formules ci-dessus: la réponse ressortait indéterminée alors qu'elle dit
+  // exactement qu'une demande est en cours de traitement.
+  'ouvert\\s+un\\s+(nouveau\\s+)?(billet|ticket|dossier)', 'billet\\s+de\\s+demande',
+  'demande\\s+d.identit[ée]\\s+est', 'votre\\s+(nouvelle\\s+)?demande\\s+(est|porte\\s+le)',
 ]);
 
 /** Rebond technique du serveur de messagerie. */
@@ -163,11 +181,70 @@ export const BOUNCE = compile([
   '55[0-9]\\s+5\\.[0-9]\\.[0-9]', 'permanent\\s+(failure|error)',
 ]);
 
-/** Réponse automatique d'absence: à ignorer, ce n'est pas un traitement. */
+/**
+ * Réponse automatique d'absence: à ignorer, ce n'est pas un traitement.
+ *
+ * Les formules manquantes coûtaient cher: « Je suis absent jusqu'au 30 août »
+ * n'était pas reconnu, la réponse passait par le reste du classement et une
+ * demande a été marquée « supprimée » sur la foi d'un répondeur de vacances.
+ */
 export const OUT_OF_OFFICE = compile([
   'absen(t|ce)\\s+du\\s+bureau', 'message\\s+automatique\\s+d.absence', 'de\\s+retour\\s+le',
   'out\\s+of\\s+(the\\s+)?office', 'on\\s+(annual\\s+)?leave', 'auto[\\s-]?reply',
   'currently\\s+away', 'vacation\\s+(reply|responder)',
+  // Français
+  'suis\\s+(actuellement\\s+)?absent', 'sommes\\s+(actuellement\\s+)?absents?',
+  'en\\s+cong[ée]s?', 'en\\s+mon\\s+absence', 'de\\s+retour\\s+(le|[àa]\\s+partir)',
+  'ferm[ée]\\s+pour\\s+(les\\s+)?cong[ée]s', 'r[ée]ponse\\s+automatique',
+  'je\\s+reviendrai\\s+vers\\s+vous',
+  // Allemand
+  'abwesenheit', 'nicht\\s+im\\s+b[üu]ro', 'im\\s+urlaub', 'urlaubsvertretung',
+  'ab\\s+dem\\s+\\d+\\.\\s*\\w+\\s+wieder',
+  // Espagnol et italien
+  'fuera\\s+de\\s+la\\s+oficina', 'de\\s+vacaciones', 'respuesta\\s+autom[áa]tica',
+  'fuori\\s+sede', 'in\\s+ferie', 'risposta\\s+automatica',
+]);
+
+/**
+ * L'adresse écrite n'existe plus et le courtier en indique une autre.
+ *
+ * Trois réponses réelles sur quarante disaient exactement cela: « Cette adresse
+ * n'est plus en service », « CUENTA DE PRIVACIDAD INACTIVA », « Cette adresse
+ * mail n'est plus active, utilisez notre formulaire ». Aucune n'était reconnue:
+ * la demande restait « indéterminée », donc sans suite, alors que la marche à
+ * suivre était écrite noir sur blanc dans le message.
+ */
+export const ADDRESS_RETIRED = compile([
+  // Volontairement limité aux constats explicites. Une simple consigne de
+  // réacheminement ne suffit pas: « please direct your request to » figure dans
+  // la réponse de HireRight, qui commence pourtant par « vous avez écrit au bon
+  // endroit ». C'est la mort de l'adresse qui doit être affirmée, pas le fait
+  // qu'une autre existe.
+  'adresse\\s+(mail\\s+|e-?mail\\s+|de\\s+messagerie\\s+)?n.est\\s+plus\\s+(en\\s+service|active|utilis[ée]e|valide|surveill[ée]e)',
+  'cette\\s+(adresse|bo[îi]te)\\s+(mail\\s+)?n.est\\s+plus',
+  'n.est\\s+plus\\s+(en\\s+service|op[ée]rationnelle)',
+  'this\\s+(e-?mail\\s+)?(address|account|inbox|mailbox)\\s+is\\s+no\\s+longer',
+  '(address|inbox|mailbox)\\s+(is\\s+)?no\\s+longer\\s+(in\\s+use|active|monitored)',
+  'has\\s+been\\s+(retired|decommissioned)',
+  'cuenta\\s+de\\s+privacidad\\s+inactiva', 'ya\\s+no\\s+se\\s+encuentra\\s+operativa',
+  'diese\\s+adresse\\s+wird\\s+nicht\\s+mehr',
+]);
+
+/**
+ * Le verbe d'effacement décrit une marche à suivre, pas un acte accompli.
+ *
+ * « Pour supprimer vos données vous avez 2 possibilités », « Vous pouvez gérer
+ * vos informations personnelles », « Sur quel site souhaitez-vous que vos
+ * données soient effacées ? »: trois réponses réelles, trois demandes marquées
+ * « supprimée » à tort. Le verbe est bien là, l'acte non.
+ */
+export const INSTRUCTION = compile([
+  'pour\\s+(supprimer|effacer|retirer|g[ée]rer)', 'vous\\s+(pouvez|pourrez|devez|avez)\\s+\\w+',
+  'il\\s+(faudrait|faut)\\s+que\\s+vous', 'veuillez\\s+', 'merci\\s+de\\s+',
+  'souhaitez[\\s-]?vous', 'quel(le)?s?\\s+\\w+\\s+souhaitez',
+  'you\\s+(can|may|should|will\\s+need\\s+to|must)\\b', 'in\\s+order\\s+to\\s+(delete|remove|erase)',
+  'to\\s+(delete|remove|erase)\\s+your\\s+\\w+,?\\s+(please|you)',
+  'if\\s+you\\s+(would\\s+like|wish|want)\\s+to',
 ]);
 
 /** Négations qui inversent le sens d'un verbe d'effacement. */
@@ -176,7 +253,11 @@ export const NEGATED_DELETE = compile([
   // l'auxiliaire est facultatif en français.
   'ne\\s+(sera|seront|peut|peuvent|pouvons|pourrons)\\s+pas\\s+([êe]tre\\s+)?(supprim|effac|retir|anonymis)',
   'ne\\s+(supprimerons|effacerons|retirerons)\\s+pas',
-  '(will|can|cannot|can.t|won.t|do)\\s*(not)?\\s*(be\\s+)?(delete|remove|eras)\\w*\\s*(your|the|any)?',
+  // La négation est obligatoire. Écrite facultative, cette expression
+  // reconnaissait aussi « we will delete your data », c'est-à-dire l'exact
+  // contraire: un accord de suppression comptait comme un refus.
+  '(will|can|do|does)\\s+not\\s+(be\\s+)?(delete|remove|eras)\\w*',
+  '(cannot|can.t|won.t)\\s+(be\\s+)?(delete|remove|eras)\\w*',
   'not\\s+be\\s+(deleted|removed|erased)', 'do\\s+not\\s+(delete|remove)',
 ]);
 
@@ -192,6 +273,13 @@ export const REQUEST_NAMING = compile([
   '(demande|requ[êe]te)\\s+(de|d.)\\s*(suppression|effacement|retrait|radiation)',
   'request\\s+(to|for)\\s+(delet|remov|eras|suppress)',
   'deletion\\s+request', 'removal\\s+request', 'erasure\\s+request', 'opt[\\s-]?out\\s+request',
+  // Le courtier reformule notre demande avant d'y répondre: « vous demandez ce
+  // qui suit: Supprimer mes données », « vous souhaitez demander la suppression
+  // de vos données ». Le verbe d'effacement est le nôtre, pas le sien.
+  'vous\\s+(demandez|souhaitez|nous\\s+demandez)', 'demander\\s+(la\\s+)?(suppression|effacement)',
+  'nous\\s+comprenons\\s+(que|d.apr[èe]s)', 'je\\s+comprends\\s+que',
+  'we\\s+understand\\s+(that\\s+)?you', 'you\\s+(have\\s+)?requested\\s+(that|the|to)',
+  'your\\s+request\\s+(type|id)\\s*:',
 ]);
 
 /**

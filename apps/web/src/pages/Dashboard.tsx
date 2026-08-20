@@ -41,8 +41,15 @@ export function Dashboard({ state }: { state: AppState }) {
   const waiting = stats?.pendingSend ?? 0;
   const contacted = stats?.total ?? 0;
   const sent = stats?.sent ?? 0;
-  const removed = (stats?.byStatus.completed ?? 0) + (stats?.byStatus.no_data ?? 0);
+  // « Supprimées » ne compte que les suppressions confirmées. Les réponses
+  // « nous ne détenons rien sur vous » closent la demande sans qu'aucune donnée
+  // n'ait été effacée: les additionner annonçait des suppressions qui n'ont pas
+  // eu lieu, ce qui est exactement ce que cet outil doit éviter.
+  const removed = stats?.byStatus.completed ?? 0;
+  const noData = stats?.byStatus.no_data ?? 0;
+  const closed = removed + noData;
   const needsYou = stats?.actionRequired ?? 0;
+  const unreachable = stats?.byStatus.unreachable ?? 0;
   const mailReady = state.settings?.smtp.verified ?? false;
 
   async function toggleQueue() {
@@ -114,13 +121,28 @@ export function Dashboard({ state }: { state: AppState }) {
                 <p className="text-[0.82rem] uppercase tracking-wide text-[var(--color-ink-faint)]">Progression</p>
                 <p className="tnum mt-1 text-[2.4rem] font-semibold leading-none tracking-tight">{stats?.progress ?? 0}%</p>
                 <p className="mt-2 max-w-md text-[0.88rem] text-[var(--color-ink-soft)]">
-                  {removed > 0
-                    ? `${plural(removed, 'courtier')} ont confirmé ne plus détenir vos données.`
+                  {closed > 0
+                    ? [
+                      removed > 0 ? `${plural(removed, 'courtier')} ont confirmé la suppression` : '',
+                      noData > 0 ? `${plural(noData, 'courtier')} ne détenaient rien sur vous` : '',
+                    ].filter(Boolean).join(', ') + '.'
                     : 'Les premières réponses arrivent généralement sous 48 heures.'}
                 </p>
                 <p className="mt-1 text-[0.82rem] text-[var(--color-ink-faint)]">
                   {plural(contacted, 'demande')} au total.
                 </p>
+                {/* Dit une fois, sans rien demander: ces sociétés ne publient
+                    aucun contact, l'application a cherché, et il n'y a pas
+                    d'action à proposer. Les ranger parmi les actions requises
+                    en présentait des centaines d'impossibles à traiter. */}
+                {unreachable > 0 && (
+                  <p className="mt-1 text-[0.82rem] text-[var(--color-ink-faint)]">
+                    <Link to="/demandes?status=unreachable" className="underline underline-offset-2">
+                      {plural(unreachable, 'société')}
+                    </Link>{' '}
+                    ne {unreachable > 1 ? 'publient' : 'publie'} aucun moyen de contact. Rien à faire de votre côté.
+                  </p>
+                )}
               </div>
               {paused && <Badge tone="warn">Envois suspendus</Badge>}
             </div>
@@ -129,10 +151,11 @@ export function Dashboard({ state }: { state: AppState }) {
 
           <Divider />
 
-          <dl className="grid grid-cols-2 md:grid-cols-4">
+          <dl className="grid grid-cols-2 md:grid-cols-5">
             <Metric icon={Clock} label="En attente d'envoi" value={waiting} />
             <Metric icon={Send} label="Envoyées" value={sent} />
-            <Metric icon={CheckCircle2} label="Données supprimées" value={removed} tone="ok" />
+            <Metric icon={CheckCircle2} label="Suppressions confirmées" value={removed} tone="ok" />
+            <Metric icon={ShieldCheck} label="Sans donnée sur vous" value={noData} />
             <Metric icon={AlertTriangle} label="Action requise" value={needsYou} tone={needsYou > 0 ? 'warn' : 'neutral'} last />
           </dl>
         </Card>
@@ -196,6 +219,15 @@ export function Dashboard({ state }: { state: AppState }) {
                 <Row label="Sociétés françaises" value={(catalog?.franceReachable ?? 0).toLocaleString('fr-FR')} />
                 <Row label="Contact encore à trouver" value={(catalog?.needsDiscovery ?? 0).toLocaleString('fr-FR')} />
                 <Row label="Dernière vérification" value={catalog?.checkedAt ? formatDate(catalog.checkedAt) : 'jamais'} />
+                {/* L'empreinte publiée avec le catalogue est comparée au fichier
+                    reçu. Le dire permet de constater que le contrôle a bien eu
+                    lieu, au lieu de devoir croire la documentation sur parole. */}
+                {catalog?.checkedAt && (
+                  <Row
+                    label="Empreinte SHA256"
+                    value={catalog.verified ? 'vérifiée' : 'non publiée'}
+                  />
+                )}
               </dl>
 
               <FullCampaignButton />

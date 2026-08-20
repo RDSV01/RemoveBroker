@@ -12,6 +12,7 @@ export const STATUS_LABELS: Record<RequestStatus, string> = {
   completed: 'Supprimée',
   rejected: 'Refusée',
   no_data: 'Aucune donnée',
+  unreachable: 'Injoignable',
   failed: 'Échec',
   skipped: 'Ignorée',
 };
@@ -28,6 +29,8 @@ export const STATUS_TONES: Record<RequestStatus, Tone> = {
   completed: 'ok',
   rejected: 'danger',
   no_data: 'ok',
+  // Ni succès ni échec de l'utilisateur: c'est la société qui ne publie rien.
+  unreachable: 'neutral',
   failed: 'danger',
   skipped: 'neutral',
 };
@@ -43,6 +46,26 @@ export const CATEGORY_LABELS: Record<BrokerCategory, string> = {
   'credit-risk': 'Crédit et risque',
   health: 'Santé',
   other: 'Autre',
+};
+
+/**
+ * Sens attribué à une réponse de courtier.
+ *
+ * L'interface affichait la clé technique telle quelle: « form_required »,
+ * « no_data ». Ces mots ne veulent rien dire pour la personne qui lit sa propre
+ * correspondance, alors que c'est exactement ce qu'elle a besoin de vérifier.
+ */
+export const CLASSIFICATION_LABELS: Record<string, string> = {
+  success: 'Suppression confirmée',
+  no_data: 'Aucune donnée détenue',
+  rejected: 'Demande refusée',
+  bounced: 'Adresse invalide',
+  confirmation_required: 'Confirmation à donner',
+  form_required: 'Formulaire obligatoire',
+  id_required: "Pièce d'identité demandée",
+  address_changed: 'Adresse hors service',
+  pending: 'Accusé de réception',
+  unknown: 'Sens indéterminé',
 };
 
 export const METHOD_LABELS: Record<string, string> = {

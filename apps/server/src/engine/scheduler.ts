@@ -7,7 +7,8 @@ import { statusForClassification, CONCLUSIONS, CONFIANCE_MINIMALE } from '../mai
 import { notify } from './bus.js';
 import { enqueue, pruneJobs, registerHandler } from './queue.js';
 import { addEvent, addMessage, setStatus, updateRequest } from './store.js';
-import { createCampaign } from './campaign.js';
+import { closeFinishedCampaigns, createCampaign } from './campaign.js';
+import { forgetDiscoveredContact } from '../web/discover.js';
 
 const log = createLogger('scheduler');
 
@@ -48,7 +49,11 @@ export async function processInbox(): Promise<{ scanned: number; matched: number
     // jamais. Sous le seuil, la réponse lui est présentée telle quelle et
     // c'est lui qui tranche. Les états d'attente ne sont pas concernés: ils
     // laissent la demande ouverte de toute façon.
-    if (CONCLUSIONS.has(classification.type) && classification.confidence < CONFIANCE_MINIMALE) {
+    //
+    // `needsReview` complète le seuil: il signale une catégorie disputée, que
+    // la confiance seule ne rattrape pas toujours.
+    if (CONCLUSIONS.has(classification.type)
+      && (classification.confidence < CONFIANCE_MINIMALE || classification.needsReview)) {
       setStatus(
         request.id,
         'action_required',
@@ -85,8 +90,28 @@ export async function processInbox(): Promise<{ scanned: number; matched: number
       case 'form_required':
         setStatus(request.id, 'action_required', "Le courtier exige le passage par son formulaire en ligne.", { url: classification.formUrl, reason: classification.reason });
         break;
+      case 'address_changed': {
+        // Le courtier existe toujours, seule l'adresse est morte: c'est une
+        // demande à réémettre, pas un échec. On remonte le contact indiqué au
+        // lieu de laisser la réponse « indéterminée » sans suite.
+        const suite = classification.altEmail
+          ? `Le courtier indique une autre adresse: ${classification.altEmail}`
+          : 'Le courtier indique une autre voie sur son site.';
+        setStatus(request.id, 'action_required', `Cette adresse n'est plus en service. ${suite}`, {
+          reason: classification.reason,
+          altEmail: classification.altEmail,
+          url: classification.urls[0],
+        });
+        break;
+      }
       case 'bounced':
         setStatus(request.id, 'failed', "L'adresse du courtier est invalide (message rejeté).", { reason: classification.reason });
+        updateRequest(request.id, { last_error: 'Adresse du courtier invalide (message rejeté).' });
+        // L'adresse du catalogue est morte: le contact découvert précédemment,
+        // s'il y en avait un, ne vaut plus rien non plus. L'oublier permet à la
+        // prochaine tentative de relire le site au lieu de réécrire à une
+        // adresse dont on sait déjà qu'elle rebondit.
+        forgetDiscoveredContact(request.broker_id);
         break;
       case 'pending':
         updateRequest(request.id, { status: 'awaiting_reply', next_action_at: addDays(getSetting('schedule').followUpAfterDays) });
@@ -97,9 +122,15 @@ export async function processInbox(): Promise<{ scanned: number; matched: number
         updateRequest(request.id, { status: 'action_required' });
     }
 
-    if (nextStatus === 'completed') {
-      getDb().prepare("UPDATE broker_state SET last_status = 'completed', updated_at = ? WHERE broker_id = ?")
-        .run(nowIso(), request.broker_id);
+    // Mémoire par courtier, utilisée par la page Courtiers. Un simple UPDATE ne
+    // touchait aucune ligne tant que l'utilisateur n'avait ni masqué ni annoté
+    // ce courtier: la table est restée vide pendant toute la première
+    // utilisation réelle, et le dernier résultat connu n'y figurait jamais.
+    if (nextStatus) {
+      getDb().prepare(`
+        INSERT INTO broker_state (broker_id, last_status, updated_at) VALUES (?, ?, ?)
+        ON CONFLICT(broker_id) DO UPDATE SET last_status = excluded.last_status, updated_at = excluded.updated_at
+      `).run(request.broker_id, nextStatus, nowIso());
     }
   });
 
@@ -156,6 +187,16 @@ export function registerSchedulerHandlers(): void {
   });
 }
 
+/** Date du dernier balayage des nouveaux courtiers. */
+function lastSweepAt(): number {
+  const row = getDb().prepare('SELECT value FROM settings WHERE key = ?').get('last_sweep') as { value: string } | undefined;
+  try {
+    return row ? new Date((JSON.parse(row.value) as { at: string }).at).getTime() : 0;
+  } catch {
+    return 0;
+  }
+}
+
 export function startScheduler(): void {
   stopScheduler();
 
@@ -169,8 +210,29 @@ export function startScheduler(): void {
     if (getSetting('privacy').catalogAutoUpdate) enqueue('catalog_update', {}, { dedupeKey: 'catalog', priority: 200 });
   }, 24 * 60 * MINUTE));
 
-  // Entretien de la base.
-  timers.push(setInterval(() => pruneJobs(), 6 * 60 * MINUTE));
+  /**
+   * Balayage des courtiers jamais contactés.
+   *
+   * Le réglage « relancer les nouveaux courtiers tous les N jours » existait
+   * dans l'interface et dans les réglages, mais rien ne l'appliquait: seule une
+   * mise à jour du catalogue déclenchait des demandes, et un courtier ajouté
+   * pendant une panne de connexion n'était jamais rattrapé. Le contrôle horaire
+   * est bon marché; c'est la date du dernier passage qui décide.
+   */
+  timers.push(setInterval(() => {
+    const schedule = getSetting('schedule');
+    if (!schedule.enabled) return;
+    const days = Math.max(1, schedule.sweepEveryDays);
+    if (Date.now() - lastSweepAt() < days * 24 * 60 * MINUTE) return;
+    sweepNewBrokers();
+  }, 60 * MINUTE));
+
+  // Entretien de la base, et clôture des campagnes qui n'ont plus rien à envoyer.
+  timers.push(setInterval(() => {
+    pruneJobs();
+    closeFinishedCampaigns();
+  }, 6 * 60 * MINUTE));
+  timers.push(setInterval(() => closeFinishedCampaigns(), 5 * MINUTE));
 
   // Premier passage peu après le démarrage, le temps que l'interface s'ouvre.
   setTimeout(() => {

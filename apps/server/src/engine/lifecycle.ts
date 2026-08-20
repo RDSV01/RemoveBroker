@@ -1,7 +1,7 @@
 import { keyringStatus } from '../crypto/keyring.js';
 import { getSetting } from '../core/settings.js';
 import { createLogger } from '../util/logger.js';
-import { registerCampaignHandlers } from './campaign.js';
+import { closeFinishedCampaigns, recoverStuckRequests, registerCampaignHandlers } from './campaign.js';
 import { registerSchedulerHandlers, startScheduler, stopScheduler } from './scheduler.js';
 import { setConcurrency, startQueue, stopQueue } from './queue.js';
 
@@ -25,6 +25,14 @@ export function startEngine(): boolean {
   registerSchedulerHandlers();
   setConcurrency(getSetting('automation').concurrency);
   startQueue();
+
+  // Réparation au démarrage, avant le planificateur: une demande que plus aucun
+  // travail ne porte doit repartir, et une campagne dont tout est parti doit se
+  // fermer. Les deux sont silencieux quand il n'y a rien à réparer.
+  const remises = recoverStuckRequests();
+  const closes = closeFinishedCampaigns();
+  if (remises || closes) log.info('reprise après démarrage', { demandes: remises, campagnes: closes });
+
   startScheduler();
   started = true;
   log.info('moteur démarre');

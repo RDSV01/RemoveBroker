@@ -9,7 +9,10 @@ import {
   Badge, Button, Card, Divider, Dot, EmptyState, Input, Modal, Segmented, Spinner, useToast,
 } from '../components/ui';
 import { PageHeader } from '../components/Layout';
-import { METHOD_LABELS, STATUS_LABELS, STATUS_TONES, formatDate, formatDateTime, plural, relativeTime } from '../lib/format';
+import {
+  CLASSIFICATION_LABELS, METHOD_LABELS, STATUS_LABELS, STATUS_TONES,
+  formatDate, formatDateTime, plural, relativeTime,
+} from '../lib/format';
 import type { RequestDetail, RequestRow, RequestStatus } from '../lib/types';
 
 /**
@@ -26,6 +29,9 @@ const FILTERS: { value: string; label: string }[] = [
   { value: 'sent,awaiting_reply,confirmed,in_progress,queued', label: 'En cours' },
   { value: 'completed,no_data', label: 'Terminées' },
   { value: 'rejected,failed', label: 'Problèmes' },
+  // Séparées des actions: rien à y faire, mais elles restent consultables et
+  // exportables, le défaut de contact étant lui-même opposable à la CNIL.
+  { value: 'unreachable', label: 'Injoignables' },
 ];
 
 export function Requests() {
@@ -113,9 +119,12 @@ export function Requests() {
 }
 
 function RequestRowItem({ request, onOpen }: { request: RequestRow; onOpen: () => void }) {
+  // Un délai légal n'a de sens que si la demande est partie. Une société
+  // injoignable n'a jamais reçu de courrier: annoncer « délai dépassé »
+  // laisserait croire à un silence coupable qui n'existe pas.
   const overdue = request.deadline_at
     && new Date(request.deadline_at) < new Date()
-    && !['completed', 'no_data', 'rejected', 'skipped'].includes(request.status);
+    && !['completed', 'no_data', 'rejected', 'skipped', 'unreachable'].includes(request.status);
 
   return (
     <button type="button" onClick={onOpen} className="row-hover flex w-full items-center gap-3 px-4 py-3 text-left">
@@ -207,7 +216,11 @@ function RequestBody({ data, complaint, onComplaint }: {
 }) {
   const toast = useToast();
   const { request, broker, events, messages, artifacts } = data;
-  const deadlinePassed = request.deadline_at && new Date(request.deadline_at) < new Date();
+  // Le délai légal court à partir de la réception par le courtier. Sans envoi,
+  // il n'a pas commencé: proposer une plainte pour non-réponse serait faux.
+  const deadlinePassed = Boolean(request.deadline_at)
+    && new Date(request.deadline_at!) < new Date()
+    && request.status !== 'unreachable';
 
   return (
     <>
@@ -300,7 +313,15 @@ function RequestBody({ data, complaint, onComplaint }: {
                   </Badge>
                   <span className="font-medium">{message.subject || '(sans objet)'}</span>
                   <span className="text-[var(--color-ink-faint)]">{formatDateTime(message.at)}</span>
-                  {message.classification && <Badge>{message.classification}</Badge>}
+                  {message.classification && (
+                    <Badge>
+                      {CLASSIFICATION_LABELS[message.classification] ?? message.classification}
+                      {/* La confiance dit à quel point l'application s'engage:
+                          une lecture certaine et une lecture hésitante ne
+                          doivent pas s'afficher de la même façon. */}
+                      {message.confidence != null && ` · ${Math.round(message.confidence * 100)} %`}
+                    </Badge>
+                  )}
                 </div>
                 {message.body && (
                   <details className="mt-1.5">

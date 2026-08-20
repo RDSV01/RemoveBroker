@@ -1,8 +1,8 @@
 {
-  "revision": 30,
-  "generatedAt": "2026-08-19T20:54:17.519Z",
-  "count": 1972,
-  "sha256": "ac78ebc85b1efd862d2ead2facdb7a9bbc5feed127d324f5e01661f3ad590862",
+  "revision": 31,
+  "generatedAt": "2026-08-20T07:53:33.609Z",
+  "count": 1971,
+  "sha256": "02c7f9f2dd8b9b143cb523f29ad5c15a07e37586cc4a634549749c844313fa88",
   "sources": [
     {
       "id": "cppa",
@@ -36,29 +36,31 @@
     }
   ],
   "stats": {
-    "withEmail": 1568,
-    "withForm": 525,
+    "withEmail": 1570,
+    "withForm": 526,
     "withRecipe": 1,
     "registeredCA": 296,
-    "euRelevant": 1972,
-    "france": 150,
+    "euRelevant": 1971,
+    "france": 149,
     "byCategory": {
       "people-search": 11,
       "background-check": 2,
       "location": 23,
       "phone-directory": 5,
       "credit-risk": 30,
-      "marketing": 1786,
+      "marketing": 1785,
       "b2b": 115
     },
     "byRegion": {
       "us": 655,
-      "eu": 1459,
+      "eu": 1458,
       "intl": 252,
-      "fr": 150,
+      "fr": 149,
       "uk": 19
     }
   },
   "added": [],
-  "removed": []
+  "removed": [
+    "acxiom-fr"
+  ]
 }

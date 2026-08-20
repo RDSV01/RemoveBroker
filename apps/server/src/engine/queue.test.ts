@@ -19,7 +19,7 @@ const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'rb-queue-'));
 process.env.RB_DATA_DIR = dataDir;
 
 const { openDatabase, getDb, nowIso } = await import('../db/index.js');
-const { registerHandler, enqueue, startQueue, stopQueue, queueStatus, setJobTimeoutForTest } =
+const { registerHandler, enqueue, startQueue, stopQueue, queueStatus, setJobTimeoutForTest, requestIdsWithPendingJob } =
   await import('./queue.js');
 
 openDatabase();
@@ -70,4 +70,32 @@ test('une demande interrompue repart en file au démarrage', () => {
   const envoye = db.prepare("SELECT status FROM request WHERE id = 'envoye'").get() as { status: string };
   assert.equal(fige.status, 'queued', 'la demande jamais envoyée doit repartir');
   assert.equal(envoye.status, 'in_progress', 'une demande déjà envoyée ne doit pas être renvoyée');
+});
+
+/**
+ * Le travail que son propre gestionnaire a replanifié ne doit pas être clos.
+ *
+ * C'est la panne la plus coûteuse de la version 1.0: quand la limite
+ * quotidienne d'envoi était atteinte, l'envoi remettait sa ligne en file pour le
+ * lendemain matin, puis la file la marquait « faite » par-dessus. 1 429 demandes
+ * de la première utilisation réelle sont restées « en attente » sans qu'aucun
+ * travail ne les porte, donc sans jamais partir et sans le moindre message.
+ */
+test('un travail replanifié par son gestionnaire reste en file', async () => {
+  const db = getDb();
+  registerHandler('send_email', async (job) => {
+    db.prepare("UPDATE job SET status = 'queued', run_after = ? WHERE id = ?")
+      .run(new Date(Date.now() + 3_600_000).toISOString(), job.id);
+  });
+
+  const id = enqueue('send_email', { requestId: 'reporte' });
+  startQueue();
+  try {
+    await new Promise((r) => setTimeout(r, 1600));
+    const row = db.prepare('SELECT status FROM job WHERE id = ?').get(id) as { status: string };
+    assert.equal(row.status, 'queued', 'le report doit survivre à la clôture du travail');
+    assert.ok(requestIdsWithPendingJob().has('reporte'), 'la demande doit rester portée par un travail');
+  } finally {
+    stopQueue();
+  }
 });

@@ -112,6 +112,18 @@ export type RequestStatus =
   | 'completed'
   | 'rejected'
   | 'no_data'
+  /**
+   * La société ne publie aucun moyen de la joindre.
+   *
+   * Distinct de « action requise »: il n'y a pas d'action. L'application a lu
+   * le site, suivi les liens de politique de confidentialité, cherché une
+   * adresse et un formulaire, et n'a rien trouvé. Ranger ces demandes parmi les
+   * actions de l'utilisateur lui en présentait deux cents à traiter à la main,
+   * ce qu'il ne fera pas, et enfouissait les quelques-unes qui l'attendent
+   * vraiment. Le défaut de contact est lui-même un manquement aux articles 12
+   * et 13 du RGPD, opposable à l'autorité de contrôle.
+   */
+  | 'unreachable'
   | 'failed'
   | 'skipped';
 
