@@ -56,14 +56,27 @@ jobs:
           rm -f package-lock.json
           npm install --no-audit --no-fund
 
+      # `--publish never` et l'absence de GH_TOKEN sont indispensables, pour la
+      # même raison dite deux fois.
+      #
+      # electron-builder publie de lui-même sur GitHub dès qu'il voit un jeton
+      # et une étiquette. Les trois machines créaient donc la même version en
+      # même temps, chacune de son côté, avant que l'étape de publication ne
+      # s'en mêle. La 1.1.0 a gagné la course; la 1.1.1 l'a perdue et l'étape
+      # « Créer la version » a échoué sur une version déjà existante. Les
+      # fichiers `latest*.yml` attachés à la 1.1.0 sont la trace de ces
+      # publications parasites: ce sont des manifestes de mise à jour
+      # automatique, que ce projet n'utilise pas.
+      #
+      # Une seule étape publie désormais: « Créer la version », tout à la fin,
+      # quand les trois constructions ont abouti.
       - name: Construire l'installateur
-        run: npm run ${{ matrix.commande }}
+        run: npm run ${{ matrix.commande }} -- --publish never
         env:
           # Pas de signature de code: le projet n'a pas de certificat payant.
           # Les instructions pour passer l'avertissement du système sont dans
           # le fichier d'installation.
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Empreintes
         shell: bash
