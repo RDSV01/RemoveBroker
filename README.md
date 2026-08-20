@@ -115,9 +115,9 @@ et l'application s'ouvre. Rien d'autre à installer.
 
 | Système | Fichier |
 | --- | --- |
-| Windows 10/11 | `RemoveBroker-1.1.0-installateur.exe` |
-| macOS | `RemoveBroker-1.1.0-arm64.dmg` ou `-x64.dmg` |
-| Linux | `RemoveBroker-1.1.0-x86_64.AppImage` ou `-amd64.deb` |
+| Windows 10/11 | `RemoveBroker-1.1.1-installateur.exe` |
+| macOS | `RemoveBroker-1.1.1-arm64.dmg` ou `-x64.dmg` |
+| Linux | `RemoveBroker-1.1.1-x86_64.AppImage` ou `-amd64.deb` |
 
 Les installateurs ne sont pas signés: Windows et macOS afficheront un
 avertissement au premier lancement. La marche à suivre est dans

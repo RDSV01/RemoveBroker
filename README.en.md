@@ -76,9 +76,9 @@ it. Nothing else to install.
 
 | System | File |
 | --- | --- |
-| Windows 10/11 | `RemoveBroker-1.1.0-installateur.exe` |
-| macOS | `RemoveBroker-1.1.0-arm64.dmg` or `-x64.dmg` |
-| Linux | `RemoveBroker-1.1.0-x86_64.AppImage` or `-amd64.deb` |
+| Windows 10/11 | `RemoveBroker-1.1.1-installateur.exe` |
+| macOS | `RemoveBroker-1.1.1-arm64.dmg` or `-x64.dmg` |
+| Linux | `RemoveBroker-1.1.1-x86_64.AppImage` or `-amd64.deb` |
 
 The installers are unsigned, so Windows and macOS will warn you on first launch.
 [docs/INSTALLATION.md](docs/INSTALLATION.md) explains how to proceed and lists

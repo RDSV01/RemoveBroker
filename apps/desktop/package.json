@@ -1,6 +1,6 @@
 {
   "name": "@removebroker/desktop",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "Enveloppe de bureau RemoveBroker: lance le serveur local et affiche l'interface",
   "main": "main.cjs",

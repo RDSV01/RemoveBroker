@@ -9,7 +9,7 @@ et téléchargez le fichier correspondant à votre système.
 
 ### Windows
 
-Lancez `RemoveBroker-1.1.0-installateur.exe`.
+Lancez `RemoveBroker-1.1.1-installateur.exe`.
 
 Windows affiche « Windows a protégé votre ordinateur » parce que l'installateur
 n'est pas signé par un certificat commercial, qui coûte plusieurs centaines
@@ -34,14 +34,14 @@ xattr -dr com.apple.quarantine /Applications/RemoveBroker.app
 ### Linux
 
 ```bash
-chmod +x RemoveBroker-1.1.0-x64.AppImage
-./RemoveBroker-1.1.0-x64.AppImage
+chmod +x RemoveBroker-1.1.1-x64.AppImage
+./RemoveBroker-1.1.1-x64.AppImage
 ```
 
 Ou installez le paquet Debian:
 
 ```bash
-sudo dpkg -i removebroker_1.1.0_amd64.deb
+sudo dpkg -i removebroker_1.1.1_amd64.deb
 ```
 
 ### Vérifier votre téléchargement
@@ -51,10 +51,10 @@ votre fichier:
 
 ```bash
 # Windows (PowerShell)
-Get-FileHash .\RemoveBroker-1.1.0-installateur.exe -Algorithm SHA256
+Get-FileHash .\RemoveBroker-1.1.1-installateur.exe -Algorithm SHA256
 
 # macOS et Linux
-shasum -a 256 RemoveBroker-1.1.0-x64.AppImage
+shasum -a 256 RemoveBroker-1.1.1-x64.AppImage
 ```
 
 Si les empreintes diffèrent, ne lancez pas le fichier.

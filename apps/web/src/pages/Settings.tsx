@@ -349,17 +349,26 @@ function AutomationSection({ settings, state }: { settings: Settings; state: App
               onBlur={() => void save('automation', { dailyEmailLimit: values.dailyEmailLimit })}
             />
           </Field>
-          <Field label="Relance après (jours)">
+          {/* Le sens de 0 doit être écrit: sans cela, le réglage se lit comme
+              « relancer au bout de zéro jour », c'est-à-dire tout de suite. */}
+          <Field label="Relance après (jours)" hint={schedule.followUpAfterDays > 0 ? '0 pour ne jamais relancer.' : 'Aucune relance ne sera envoyée.'}>
             <Input
               type="number"
+              min={0}
               value={schedule.followUpAfterDays}
               onChange={(e) => setSchedule({ ...schedule, followUpAfterDays: Number(e.target.value) })}
               onBlur={() => void save('schedule', { followUpAfterDays: schedule.followUpAfterDays })}
             />
           </Field>
-          <Field label="Mise en demeure après (jours)">
+          <Field
+            label="Mise en demeure après (jours)"
+            hint={schedule.escalateAfterDays > 0
+              ? '0 pour ne jamais mettre en demeure.'
+              : 'Aucune mise en demeure ne sera envoyée.'}
+          >
             <Input
               type="number"
+              min={0}
               value={schedule.escalateAfterDays}
               onChange={(e) => setSchedule({ ...schedule, escalateAfterDays: Number(e.target.value) })}
               onBlur={() => void save('schedule', { escalateAfterDays: schedule.escalateAfterDays })}

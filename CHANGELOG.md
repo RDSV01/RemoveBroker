@@ -1,5 +1,27 @@
 # Journal des versions
 
+## 1.1.1
+
+Correctif d'un réglage qui faisait l'inverse de ce qu'il annonçait.
+
+### Corrigé
+
+- **« Relance après (jours) » et « Mise en demeure après (jours) » réglés sur 0
+  déclenchaient l'envoi immédiat**, au lieu de le désactiver. La comparaison
+  `jours écoulés >= délai` est vraie dès le premier instant quand le délai vaut
+  zéro: une demande partie à l'instant recevait aussitôt le courrier annonçant
+  la saisine de l'autorité de contrôle, et ce pour chaque courtier de la
+  campagne. Zéro veut désormais dire « jamais », ce que tout le monde y lit.
+- Aucun moyen ne permettait de désactiver ces envois. `enabled` ne gouvernait
+  que le balayage des nouveaux courtiers, pas le suivi.
+- Avec les deux réglages à zéro, plus aucun travail de suivi n'est mis en file:
+  il ne ferait rien et se replanifierait sans fin.
+- La date de prochaine action affichée sur une demande vaut « aucune » quand
+  aucun geste automatique n'est prévu, au lieu d'annoncer une échéance qui ne
+  viendra pas.
+- L'interface indique ce que vaut zéro, et confirme l'extinction une fois le
+  réglage enregistré.
+
 ## 1.1.0
 
 Version de fiabilité. Elle corrige ce qu'une première utilisation réelle, sur

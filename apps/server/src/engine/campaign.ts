@@ -16,7 +16,7 @@ import {
   addArtifact, addEvent, addMessage, createRequest, emailsSentToday, getRequest,
   hasOpenRequest, newId, setStatus, updateRequest,
 } from './store.js';
-import type { Broker, RequestMethod, RequestRow } from '../types.js';
+import type { Broker, RequestMethod, RequestRow, ScheduleSettings } from '../types.js';
 
 const log = createLogger('campaign');
 
@@ -359,6 +359,39 @@ export function recoverStuckRequests(): number {
 // Gestionnaires de travaux
 // ---------------------------------------------------------------------------
 
+/**
+ * Un délai nul, ou négatif, veut dire « jamais ».
+ *
+ * C'est la lecture que fait n'importe qui en tapant 0 dans « Relance après
+ * (jours) ». Le code faisait l'inverse: `jours >= 0` est vrai dès le premier
+ * instant, si bien que 0 déclenchait l'envoi immédiat, et 0 dans « Mise en
+ * demeure après » expédiait dans la seconde le courrier annonçant la saisine de
+ * l'autorité de contrôle. Un réglage ne doit jamais faire le contraire de ce
+ * qu'il dit.
+ */
+function relanceActive(jours: number): boolean {
+  return Number.isFinite(jours) && jours > 0;
+}
+
+/** Date du prochain geste automatique, ou null si l'utilisateur n'en veut aucun. */
+function prochaineEcheance(schedule: ScheduleSettings): string | null {
+  const delais = [schedule.followUpAfterDays, schedule.escalateAfterDays].filter(relanceActive);
+  return delais.length ? addDays(Math.min(...delais)) : null;
+}
+
+/**
+ * Programme le suivi d'une demande partie, s'il y a un suivi à programmer.
+ *
+ * Relance et mise en demeure toutes deux désactivées: aucun travail n'est mis
+ * en file. Sans cela, un travail serait créé pour ne rien faire, puis se
+ * replanifierait indéfiniment.
+ */
+function planifierSuivi(requestId: string, schedule: ScheduleSettings): void {
+  const echeance = prochaineEcheance(schedule);
+  if (!echeance) return;
+  enqueue('follow_up', { requestId }, { runAfter: echeance, dedupeKey: `followup:${requestId}` });
+}
+
 /** Prochaine fenêtre d'envoi quand la limite quotidienne est atteinte. */
 function tomorrowMorning(): string {
   const d = new Date();
@@ -443,11 +476,11 @@ async function handleSendEmail(job: Job): Promise<void> {
     status: 'sent',
     sent_at: nowIso(),
     message_id: result.messageId,
-    next_action_at: addDays(schedule.followUpAfterDays),
+    next_action_at: prochaineEcheance(schedule),
     deadline_at: addDays(30),
   });
   addEvent(requestId, 'sent', `Demande envoyée à ${broker.email}`, { legalBasis: mail.legalBasis });
-  enqueue('follow_up', { requestId }, { runAfter: addDays(schedule.followUpAfterDays), dedupeKey: `followup:${requestId}` });
+  planifierSuivi(requestId, schedule);
 }
 
 async function handleRunRecipe(job: Job): Promise<void> {
@@ -472,9 +505,9 @@ async function handleRunRecipe(job: Job): Promise<void> {
   switch (result.outcome) {
     case 'submitted': {
       const schedule = getSetting('schedule');
-      updateRequest(requestId, { status: recipe.confirmByEmail ? 'awaiting_reply' : 'sent', sent_at: nowIso(), next_action_at: addDays(schedule.followUpAfterDays) });
+      updateRequest(requestId, { status: recipe.confirmByEmail ? 'awaiting_reply' : 'sent', sent_at: nowIso(), next_action_at: prochaineEcheance(schedule) });
       addEvent(requestId, 'submitted', result.message, { url: result.finalUrl });
-      enqueue('follow_up', { requestId }, { runAfter: addDays(schedule.followUpAfterDays), dedupeKey: `followup:${requestId}` });
+      planifierSuivi(requestId, schedule);
       break;
     }
     case 'not_found':
@@ -514,7 +547,7 @@ async function handleConfirmLink(job: Job): Promise<void> {
 
   if (result.confirmed) {
     setStatus(requestId, 'confirmed', `Confirmation validée automatiquement. ${result.message}`);
-    updateRequest(requestId, { next_action_at: addDays(getSetting('schedule').followUpAfterDays) });
+    updateRequest(requestId, { next_action_at: prochaineEcheance(getSetting('schedule')) });
   } else {
     setStatus(requestId, 'action_required', result.message, { url, reason: 'confirmation à valider' });
   }
@@ -534,12 +567,16 @@ async function handleFollowUp(job: Job): Promise<void> {
   if (!broker || !profile || !broker.email) return;
 
   const schedule = getSetting('schedule');
+  const relance = relanceActive(schedule.followUpAfterDays);
+  const demeure = relanceActive(schedule.escalateAfterDays);
+  if (!relance && !demeure) return;
+
   const sentAt = request.sent_at ? new Date(request.sent_at) : new Date(request.created_at);
   const days = Math.floor((Date.now() - sentAt.getTime()) / 86_400_000);
 
   const alreadyEscalated = (getDb().prepare("SELECT COUNT(*) AS n FROM request_event WHERE request_id = ? AND type = 'escalation'").get(requestId) as { n: number }).n > 0;
 
-  if (days >= schedule.escalateAfterDays && !alreadyEscalated) {
+  if (demeure && days >= schedule.escalateAfterDays && !alreadyEscalated) {
     const mail = renderMail({ broker, profile, token: request.token, kind: 'escalation', daysElapsed: days });
     const result = await sendMail({ to: broker.email, subject: mail.subject, text: mail.text, token: request.token, inReplyTo: request.message_id ?? undefined });
     addMessage({ requestId, direction: 'out', subject: mail.subject, from: getSetting('smtp').user, to: broker.email, body: result.raw, messageId: result.messageId });
@@ -550,18 +587,30 @@ async function handleFollowUp(job: Job): Promise<void> {
   }
 
   const alreadyFollowedUp = (getDb().prepare("SELECT COUNT(*) AS n FROM request_event WHERE request_id = ? AND type = 'followup'").get(requestId) as { n: number }).n > 0;
-  if (days >= schedule.followUpAfterDays && !alreadyFollowedUp) {
+  if (relance && days >= schedule.followUpAfterDays && !alreadyFollowedUp) {
     const mail = renderMail({ broker, profile, token: request.token, kind: 'followup', daysElapsed: days });
     const result = await sendMail({ to: broker.email, subject: mail.subject, text: mail.text, token: request.token, inReplyTo: request.message_id ?? undefined });
     addMessage({ requestId, direction: 'out', subject: mail.subject, from: getSetting('smtp').user, to: broker.email, body: result.raw, messageId: result.messageId });
     addEvent(requestId, 'followup', `Relance envoyée après ${days} jours sans réponse.`);
-    updateRequest(requestId, { next_action_at: addDays(schedule.escalateAfterDays - schedule.followUpAfterDays) });
-    enqueue('follow_up', { requestId }, { runAfter: addDays(schedule.escalateAfterDays - schedule.followUpAfterDays), dedupeKey: `escalate:${requestId}` });
+    // Sans mise en demeure, la relance est le dernier geste: rien à replanifier.
+    if (!demeure) {
+      updateRequest(requestId, { next_action_at: null });
+      return;
+    }
+    const versDemeure = Math.max(1, schedule.escalateAfterDays - schedule.followUpAfterDays);
+    updateRequest(requestId, { next_action_at: addDays(versDemeure) });
+    enqueue('follow_up', { requestId }, { runAfter: addDays(versDemeure), dedupeKey: `escalate:${requestId}` });
     return;
   }
 
-  // Trop tôt: on repousse au bon moment.
-  const wait = Math.max(1, schedule.followUpAfterDays - days);
+  // Trop tôt: on repousse à la prochaine échéance réellement prévue.
+  const prochaine = [
+    relance && !alreadyFollowedUp ? schedule.followUpAfterDays : null,
+    demeure && !alreadyEscalated ? schedule.escalateAfterDays : null,
+  ].filter((d): d is number => d != null && d > days);
+  if (!prochaine.length) return;
+
+  const wait = Math.max(1, Math.min(...prochaine) - days);
   enqueue('follow_up', { requestId }, { runAfter: addDays(wait), dedupeKey: `followup-retry:${requestId}` });
 }
 
