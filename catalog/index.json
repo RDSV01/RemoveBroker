@@ -1,8 +1,8 @@
 {
-  "revision": 31,
-  "generatedAt": "2026-08-20T07:53:33.609Z",
-  "count": 1971,
-  "sha256": "02c7f9f2dd8b9b143cb523f29ad5c15a07e37586cc4a634549749c844313fa88",
+  "revision": 33,
+  "generatedAt": "2026-08-24T04:47:10.248Z",
+  "count": 1972,
+  "sha256": "1cccd28044f3501bf31ba694c097415b9e4a3bd7826d28cbaebf20f6c9e9eb36",
   "sources": [
     {
       "id": "cppa",
@@ -27,7 +27,7 @@
     {
       "id": "tcf",
       "label": "Liste des fournisseurs du cadre de consentement europeen (IAB Europe TCF)",
-      "count": 1202
+      "count": 1203
     },
     {
       "id": "overrides",
@@ -36,11 +36,11 @@
     }
   ],
   "stats": {
-    "withEmail": 1570,
+    "withEmail": 1569,
     "withForm": 526,
     "withRecipe": 1,
     "registeredCA": 296,
-    "euRelevant": 1971,
+    "euRelevant": 1972,
     "france": 149,
     "byCategory": {
       "people-search": 11,
@@ -48,19 +48,17 @@
       "location": 23,
       "phone-directory": 5,
       "credit-risk": 30,
-      "marketing": 1785,
+      "marketing": 1786,
       "b2b": 115
     },
     "byRegion": {
       "us": 655,
-      "eu": 1458,
+      "eu": 1459,
       "intl": 252,
       "fr": 149,
       "uk": 19
     }
   },
   "added": [],
-  "removed": [
-    "acxiom-fr"
-  ]
+  "removed": []
 }
