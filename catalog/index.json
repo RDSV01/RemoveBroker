@@ -1,8 +1,8 @@
 {
-  "revision": 35,
-  "generatedAt": "2026-08-31T10:39:21.851Z",
-  "count": 1976,
-  "sha256": "e8cfe4b4c9b0de590090e1eddbecf6ebc215754c37d1d6637e0c2b609b0d370f",
+  "revision": 37,
+  "generatedAt": "2026-09-07T09:03:29.110Z",
+  "count": 1977,
+  "sha256": "7f83d06c06f0597ce9781bfb3b7ff09fb4a17709f5afb22022cfca358f4709ac",
   "sources": [
     {
       "id": "cppa",
@@ -27,7 +27,7 @@
     {
       "id": "tcf",
       "label": "Liste des fournisseurs du cadre de consentement europeen (IAB Europe TCF)",
-      "count": 1207
+      "count": 1208
     },
     {
       "id": "overrides",
@@ -40,22 +40,22 @@
     "withForm": 526,
     "withRecipe": 1,
     "registeredCA": 296,
-    "euRelevant": 1976,
-    "france": 151,
+    "euRelevant": 1977,
+    "france": 150,
     "byCategory": {
       "people-search": 11,
       "background-check": 2,
       "location": 23,
       "phone-directory": 5,
       "credit-risk": 30,
-      "marketing": 1790,
+      "marketing": 1791,
       "b2b": 115
     },
     "byRegion": {
       "us": 655,
-      "eu": 1463,
+      "eu": 1464,
       "intl": 252,
-      "fr": 151,
+      "fr": 150,
       "uk": 19
     }
   },
