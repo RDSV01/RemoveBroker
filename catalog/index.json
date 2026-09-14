@@ -1,8 +1,8 @@
 {
-  "revision": 37,
-  "generatedAt": "2026-09-07T09:03:29.110Z",
-  "count": 1977,
-  "sha256": "7f83d06c06f0597ce9781bfb3b7ff09fb4a17709f5afb22022cfca358f4709ac",
+  "revision": 39,
+  "generatedAt": "2026-09-14T09:40:10.966Z",
+  "count": 1979,
+  "sha256": "80d2dd0e2f76081da5f8bfaabcf81c8bb1000fc64a915ceb21b13b9e1a0ed234",
   "sources": [
     {
       "id": "cppa",
@@ -22,12 +22,12 @@
     {
       "id": "datenanfragen",
       "label": "Base de contacts RGPD Datenanfragen (CC0)",
-      "count": 2554
+      "count": 2553
     },
     {
       "id": "tcf",
       "label": "Liste des fournisseurs du cadre de consentement europeen (IAB Europe TCF)",
-      "count": 1208
+      "count": 1211
     },
     {
       "id": "overrides",
@@ -37,10 +37,10 @@
   ],
   "stats": {
     "withEmail": 1569,
-    "withForm": 526,
+    "withForm": 527,
     "withRecipe": 1,
-    "registeredCA": 296,
-    "euRelevant": 1977,
+    "registeredCA": 297,
+    "euRelevant": 1979,
     "france": 150,
     "byCategory": {
       "people-search": 11,
@@ -48,13 +48,13 @@
       "location": 23,
       "phone-directory": 5,
       "credit-risk": 30,
-      "marketing": 1791,
+      "marketing": 1793,
       "b2b": 115
     },
     "byRegion": {
-      "us": 655,
-      "eu": 1464,
-      "intl": 252,
+      "us": 656,
+      "eu": 1466,
+      "intl": 251,
       "fr": 150,
       "uk": 19
     }
